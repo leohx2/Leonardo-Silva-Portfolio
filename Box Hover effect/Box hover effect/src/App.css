@@ -1,0 +1,218 @@
+:root {
+  --h1CltX: 0px;
+  --h1CltY: 0px;
+  --h1Opacity: 0;
+  --angle: 0deg;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Background (general color) */
+    --bg_color: #242425;
+    --text_color: #f8f8ff;
+
+    /* Box color */
+    --box_border_color: #929396;
+    --box_hover_bg: #344697;
+
+    /* Select var */
+    --select_bg: #2a3879;
+    --select_text: #f0efef;
+
+    /* Lantern effect */
+    --main_lanter_color: #42424b;
+    --secondary_lanter_color: white;
+  }
+}
+
+:root:has([value="dark"]:checked) {
+  /* Background (general color) */
+  --bg_color: #242425;
+  --text_color: #f8f8ff;
+
+  /* Box color */
+  --box_border_color: #929396;
+  --box_hover_bg: #344697;
+
+  /* Select var */
+  --select_bg: #2a3879;
+  --select_text: #f0efef;
+
+  /* Lantern effect */
+  --main_lanter_color: #42424b;
+  --secondary_lanter_color: white;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Background (general color) */
+    --bg_color: #f8f8ff;
+    --text_color: #242425;
+
+    /* Box color */
+    --box_border_color: #5c5d6d;
+    --box_hover_bg: #d5eeef;
+
+    /* Select var */
+    --select_bg: #c6ecee;
+    --select_text: #07373a;
+
+    /* Lantern effect */
+    --main_lanter_color: #b0d8da;
+    --secondary_lanter_color: #9ffaff;
+  }
+}
+
+:root:has([value="light"]:checked) {
+  /* Background (general color) */
+  --bg_color: #f8f8ff;
+  --text_color: #242425;
+
+  /* Box color */
+  --box_border_color: #5c5d6d;
+  --box_hover_bg: #d5eeef;
+
+  /* Select var */
+  --select_bg: #c6ecee;
+  --select_text: #07373a;
+
+  /* Lantern effect */
+  --main_lanter_color: #b0d8da;
+  --secondary_lanter_color: #9ffaff;
+}
+
+body {
+  align-items: center;
+  background-color: var(--bg_color);
+  color: var(--text_color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  margin-bottom: 50px;
+}
+
+.box,
+.box2 {
+  align-items: center;
+  border: 4px solid var(--box_border_color);
+  clip-path: border-box;
+  display: flex;
+  border-radius: 15px;
+  justify-content: center;
+  height: 300px;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+}
+
+.insideBox,
+.insideBox2 {
+  align-items: center;
+  clip-path: border-box;
+  background-color: var(--bg_color);
+  border: none;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  height: 300px;
+  width: 204px;
+  transition: all 0.3s ease-in-out;
+}
+
+select {
+  background-color: var(--select_bg);
+  border: none;
+  border-radius: 20px;
+  color: var(--select_text);
+  min-width: 250px;
+  padding: 0.5rem;
+}
+select:focus {
+  outline: none;
+}
+
+#Box1:hover .hoverType1::before,
+#Box1:hover .insideBox::before {
+  opacity: 1;
+}
+
+.hoverType1::before,
+.insideBox::before {
+  content: "";
+  border-radius: 100%;
+  box-shadow: 0px 0px 30px 40px var(--secondary_lanter_color);
+  height: 0px;
+  left: var(--h1CltX);
+  opacity: 0;
+  position: fixed;
+  top: var(--h1CltY);
+  width: 0px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.insideBox::before {
+  box-shadow: 0px 0px 30px 10px var(--main_lanter_color);
+}
+
+/* neon effect, box2 */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.box2::after,
+.box2::before {
+  animation: 3s neon_effect linear infinite;
+  content: "";
+  background-image: conic-gradient(
+    from var(--angle),
+    #3b1253,
+    #50216c,
+    #673187,
+    #7e41a2,
+    #9652be,
+    #846dd9,
+    #6b86ef,
+    #4c9dff,
+    #00b7ff,
+    #00ceff,
+    #00e0ed,
+    #52f0d7,
+    #00c2dc,
+    #0090d0,
+    #1b5bab,
+    #50216c,
+    #3b1253
+  );
+  height: 308px;
+  position: absolute;
+  border-radius: 15px;
+  width: 208px;
+  z-index: -1;
+}
+
+.box2,
+.insideBox2 {
+  clip-path: none;
+  border: none;
+}
+
+.box2::before {
+  filter: blur(10px);
+}
+
+@keyframes neon_effect {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
