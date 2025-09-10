@@ -1,0 +1,130 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* shadow */
+    --shadow_color: #cacad0;
+    --shadowHover_color: #d4d4d488;
+  }
+}
+
+:root:has([value="dark"]:checked) {
+  /* shadow */
+  --shadow_color: #cacad0;
+  --shadowHover_color: #d4d4d488;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* shadow */
+    --shadow_color: #07373a;
+    --shadowHover_color: #4a8286c0;
+  }
+}
+
+:root:has([value="light"]:checked) {
+  /* shadow */
+  --shadow_color: #07373a;
+  --shadowHover_color: #4a8286c0;
+}
+
+/* Modify the box content here */
+.boxContent {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Inicital box-shadow here, the clip-path can be removed if there's other place using it since "none" 
+is it's default value */
+.ballanceEffect {
+  display: grid;
+  box-shadow: 2px 3px 10px 0px var(--shadow_color);
+  clip-path: none;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+/* The desired effect will depend on the rotateX and rotateY amount select below*/
+
+/* Top row */
+.ballanceEffect:has(#gridcell0:hover) {
+  transform: rotateX(20deg) rotateY(-15deg);
+  box-shadow: -7px -10px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell1:hover) {
+  transform: rotateX(20deg) rotateY(-5deg);
+  box-shadow: -2px -10px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell2:hover) {
+  transform: rotateX(20deg) rotateY(5deg);
+  box-shadow: 2px -10px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell3:hover) {
+  transform: rotateX(20deg) rotateY(15deg);
+  box-shadow: 7px -10px 15px 0px var(--shadowHover_color);
+}
+
+/* Second row */
+.ballanceEffect:has(#gridcell4:hover) {
+  transform: rotateX(10deg) rotateY(-15deg);
+  box-shadow: -7px -5px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell5:hover) {
+  transform: rotateX(10deg) rotateY(-5deg);
+  box-shadow: -2px -5px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell6:hover) {
+  transform: rotateX(10deg) rotateY(5deg);
+  box-shadow: 2px -5px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell7:hover) {
+  transform: rotateX(10deg) rotateY(15deg);
+  box-shadow: 7px -5px 15px 0px var(--shadowHover_color);
+}
+
+/* Third row */
+.ballanceEffect:has(#gridcell8:hover) {
+  transform: rotateX(-10deg) rotateY(-15deg);
+  box-shadow: -7px 5px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell9:hover) {
+  transform: rotateX(-10deg) rotateY(-5deg);
+  box-shadow: -2px 5px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell10:hover) {
+  transform: rotateX(-10deg) rotateY(5deg);
+  box-shadow: 2px 5px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell11:hover) {
+  transform: rotateX(-10deg) rotateY(15deg);
+  box-shadow: 7px 5px 15px 0px var(--shadowHover_color);
+}
+
+/* Bottom row */
+.ballanceEffect:has(#gridcell12:hover) {
+  transform: rotateX(-20deg) rotateY(-15deg);
+  box-shadow: -7px 10px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell13:hover) {
+  transform: rotateX(-20deg) rotateY(-5deg);
+  box-shadow: -2px 10px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell14:hover) {
+  transform: rotateX(-20deg) rotateY(5deg);
+  box-shadow: 2px 10px 15px 0px var(--shadowHover_color);
+}
+.ballanceEffect:has(#gridcell15:hover) {
+  transform: rotateX(-20deg) rotateY(15deg);
+  box-shadow: 7px 10px 15px 0px var(--shadowHover_color);
+}
+
+.gridCell {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
