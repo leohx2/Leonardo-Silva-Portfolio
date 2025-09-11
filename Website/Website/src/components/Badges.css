@@ -1,0 +1,76 @@
+:root {
+  --angle: 0deg;
+}
+
+/* neon effect */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes neon_effect {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+.badge_container {
+  height: 250px;
+  width: 200px;
+}
+
+/* Creating both, the "shadow" and the border using a coninc-gradient */
+.badge_container::after,
+.badge_container::before {
+  animation: 5s neon_effect linear infinite;
+  content: "";
+  background-image: conic-gradient(
+    from var(--angle),
+    #3b1253,
+    #50216c,
+    #673187,
+    #7e41a2,
+    #9652be,
+    #846dd9,
+    #6b86ef,
+    #4c9dff,
+    #00b7ff,
+    #00ceff,
+    #00e0ed,
+    #52f0d7,
+    #00c2dc,
+    #0090d0,
+    #1b5bab,
+    #50216c,
+    #3b1253
+  );
+  height: 358px;
+  position: absolute;
+  border-radius: 15px;
+  width: 208px;
+  z-index: -1;
+}
+
+/* The "mask" that will be in front of the conic gradient */
+.badge_inside {
+  align-items: center;
+  clip-path: border-box;
+  background-color: var(--bg_color);
+  border: none;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  height: 300px;
+  width: 204px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Without the filter we won't have the "neon" effect, jut the border. 
+The blur will create the shadow behind the card*/
+.badge_container::before {
+  filter: blur(8px);
+}
