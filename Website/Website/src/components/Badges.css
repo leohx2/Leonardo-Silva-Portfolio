@@ -1,5 +1,7 @@
 :root {
   --angle: 0deg;
+  --badge-height: 258px;
+  --badge-width: 228px;
 }
 
 /* neon effect */
@@ -19,8 +21,8 @@
 }
 
 .badge_container {
-  height: 250px;
-  width: 200px;
+  height: var(--badge-height);
+  width: var(--badge-width);
 }
 
 /* Creating both, the "shadow" and the border using a coninc-gradient */
@@ -28,49 +30,101 @@
 .badge_container::before {
   animation: 5s neon_effect linear infinite;
   content: "";
-  background-image: conic-gradient(
-    from var(--angle),
-    #3b1253,
-    #50216c,
-    #673187,
-    #7e41a2,
-    #9652be,
-    #846dd9,
-    #6b86ef,
-    #4c9dff,
-    #00b7ff,
-    #00ceff,
-    #00e0ed,
-    #52f0d7,
-    #00c2dc,
-    #0090d0,
-    #1b5bab,
-    #50216c,
-    #3b1253
-  );
-  height: 358px;
+  height: var(--badge-height);
   position: absolute;
-  border-radius: 15px;
-  width: 208px;
-  z-index: -1;
+  border-radius: var(--radius-md);
+  width: var(--badge-width);
+  z-index: 0;
 }
 
 /* The "mask" that will be in front of the conic gradient */
 .badge_inside {
-  align-items: center;
-  clip-path: border-box;
-  background-color: var(--bg_color);
-  border: none;
-  display: flex;
-  border-radius: 10px;
-  justify-content: center;
-  height: 300px;
-  width: 204px;
+  height: calc(var(--badge-height) - 5px);
+  width: calc(var(--badge-width) - 5px);
   transition: all 0.3s ease-in-out;
 }
 
 /* Without the filter we won't have the "neon" effect, jut the border. 
 The blur will create the shadow behind the card*/
 .badge_container::before {
-  filter: blur(8px);
+  filter: blur(5px);
+}
+
+/* Creating the effect for evey single badge type based on the skill */
+.htmllogo::before,
+.htmllogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff3902,
+    #faab95,
+    #fa7049,
+    #ff3902
+  );
+}
+
+.jslogo::before,
+.jslogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #ffe600,
+    #fffacf,
+    #efe376,
+    #ffe600
+  );
+}
+.tslogo::before,
+.tslogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #2e78c7,
+    #aeb6e2,
+    #7b96d5,
+    #2e78c7
+  );
+}
+
+.csslogo::before,
+.csslogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #214ce4,
+    #92b0f0,
+    #6080c7,
+    #214ce4
+  );
+}
+
+.tailwindlogo::before,
+.tailwindlogo::after,
+.reactlogo::before,
+.reactlogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #35bef8,
+    #ccd3f7,
+    #92d1ec,
+    #35bef8
+  );
+}
+
+.clogo::before,
+.clogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #98c9fa,
+    #1f679d,
+    #1a5389,
+    #98c9fa
+  );
+}
+
+.gitlogo::before,
+.gitlogo::after {
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff3902,
+    #faab95,
+    #fa7049,
+    #ff3902
+  );
 }
