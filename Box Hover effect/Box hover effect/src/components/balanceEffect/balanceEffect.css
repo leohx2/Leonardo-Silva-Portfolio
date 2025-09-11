@@ -39,7 +39,7 @@
 
 /* Inicital box-shadow here, the clip-path can be removed if there's other place using it since "none" 
 is it's default value */
-.ballanceEffect {
+.balanceEffect {
   display: grid;
   box-shadow: 2px 3px 10px 0px var(--shadow_color);
   clip-path: none;
@@ -51,73 +51,73 @@ is it's default value */
 /* The desired effect will depend on the rotateX and rotateY amount select below*/
 
 /* Top row */
-.ballanceEffect:has(#gridcell0:hover) {
+.balanceEffect:has(#gridcell0:hover) {
   transform: rotateX(20deg) rotateY(-15deg);
   box-shadow: -7px -10px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell1:hover) {
+.balanceEffect:has(#gridcell1:hover) {
   transform: rotateX(20deg) rotateY(-5deg);
   box-shadow: -2px -10px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell2:hover) {
+.balanceEffect:has(#gridcell2:hover) {
   transform: rotateX(20deg) rotateY(5deg);
   box-shadow: 2px -10px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell3:hover) {
+.balanceEffect:has(#gridcell3:hover) {
   transform: rotateX(20deg) rotateY(15deg);
   box-shadow: 7px -10px 15px 0px var(--shadowHover_color);
 }
 
 /* Second row */
-.ballanceEffect:has(#gridcell4:hover) {
+.balanceEffect:has(#gridcell4:hover) {
   transform: rotateX(10deg) rotateY(-15deg);
   box-shadow: -7px -5px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell5:hover) {
+.balanceEffect:has(#gridcell5:hover) {
   transform: rotateX(10deg) rotateY(-5deg);
   box-shadow: -2px -5px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell6:hover) {
+.balanceEffect:has(#gridcell6:hover) {
   transform: rotateX(10deg) rotateY(5deg);
   box-shadow: 2px -5px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell7:hover) {
+.balanceEffect:has(#gridcell7:hover) {
   transform: rotateX(10deg) rotateY(15deg);
   box-shadow: 7px -5px 15px 0px var(--shadowHover_color);
 }
 
 /* Third row */
-.ballanceEffect:has(#gridcell8:hover) {
+.balanceEffect:has(#gridcell8:hover) {
   transform: rotateX(-10deg) rotateY(-15deg);
   box-shadow: -7px 5px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell9:hover) {
+.balanceEffect:has(#gridcell9:hover) {
   transform: rotateX(-10deg) rotateY(-5deg);
   box-shadow: -2px 5px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell10:hover) {
+.balanceEffect:has(#gridcell10:hover) {
   transform: rotateX(-10deg) rotateY(5deg);
   box-shadow: 2px 5px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell11:hover) {
+.balanceEffect:has(#gridcell11:hover) {
   transform: rotateX(-10deg) rotateY(15deg);
   box-shadow: 7px 5px 15px 0px var(--shadowHover_color);
 }
 
 /* Bottom row */
-.ballanceEffect:has(#gridcell12:hover) {
+.balanceEffect:has(#gridcell12:hover) {
   transform: rotateX(-20deg) rotateY(-15deg);
   box-shadow: -7px 10px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell13:hover) {
+.balanceEffect:has(#gridcell13:hover) {
   transform: rotateX(-20deg) rotateY(-5deg);
   box-shadow: -2px 10px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell14:hover) {
+.balanceEffect:has(#gridcell14:hover) {
   transform: rotateX(-20deg) rotateY(5deg);
   box-shadow: 2px 10px 15px 0px var(--shadowHover_color);
 }
-.ballanceEffect:has(#gridcell15:hover) {
+.balanceEffect:has(#gridcell15:hover) {
   transform: rotateX(-20deg) rotateY(15deg);
   box-shadow: 7px 10px 15px 0px var(--shadowHover_color);
 }

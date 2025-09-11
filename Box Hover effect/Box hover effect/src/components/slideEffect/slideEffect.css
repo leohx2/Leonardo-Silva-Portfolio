@@ -1,0 +1,112 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --slide_effect: #2a3879;
+    --btn_bg: #e7e6e6;
+    --slide_text_color: #fbfbfb;
+    --btn_text_color: #232323;
+  }
+}
+
+:root:has([value="dark"]:checked) {
+  --slide_effect: #2a3879;
+  --btn_bg: #fefefe;
+  --slide_text_color: #fbfbfb;
+  --btn_text_color: #232323;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --slide_effect: rgb(210, 210, 131);
+    --btn_bg: #fefefe;
+    --slide_text_color: #464654;
+    --btn_text_color: #464654;
+  }
+}
+
+:root:has([value="light"]:checked) {
+  --slide_effect: #d5eeef;
+  --btn_bg: #ffffff;
+  --slide_text_color: #464654;
+  --btn_text_color: #464654;
+}
+
+/* This class will be able to make sure the effect tutle, in the case "Card 4: slide effec" will be "under" the content
+There are many ways to it. */
+.effectTitle {
+  position: absolute;
+}
+
+/* The overflow hidden, will allow the slide to go to any direction and disappear after transpass the card border 
+make sure the border-radius is right to have a clean effect*/
+.effectContainer {
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Hold the commun style for every efect, in that case the color and the display style */
+.communStyle {
+  align-items: center;
+  background-color: var(--slide_effect);
+  border-radius: 10px;
+  color: var(--slide_text_color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 1rem;
+  transition: transform 1s ease-in-out;
+  width: calc(100% - 1rem);
+}
+
+.btnContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.changeEffectBtn {
+  background-color: var(--btn_bg);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  color: var(--btn_text_color);
+  flex-basis: 45%;
+  font-size: 0.8rem;
+  padding: 0.3rem 0;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.changeEffectBtn:hover {
+  opacity: 1;
+}
+
+/* Up and down */
+.upEffect {
+  transform: translateY(100%);
+}
+
+.downEffect {
+  transform: translateY(-100%);
+}
+
+.effectContainer:hover .downEffect,
+.effectContainer:hover .upEffect {
+  transform: translateY(0%);
+}
+
+/* Left and right */
+.leftEffect {
+  transform: translateX(100%);
+}
+.rightEffect {
+  transform: translateX(-100%);
+}
+
+.effectContainer:hover .leftEffect,
+.effectContainer:hover .rightEffect {
+  transform: translateX(0%);
+}

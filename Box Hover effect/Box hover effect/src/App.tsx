@@ -1,7 +1,8 @@
 import "./App.css";
-import BallanceEffect from "./components/balanceEffect/balanceEffect";
+import BalanceEffect from "./components/balanceEffect/balanceEffect";
 import LanternEffectBox from "./components/lanternEffect/lanternEffect";
 import NeonEffect from "./components/neonEffect/neonEffect";
+import SlideEffect from "./components/slideEffect/slideEffect";
 
 function App() {
   // All the comments and explanations will be at each css file
@@ -10,7 +11,8 @@ function App() {
       <div className="container">
         <LanternEffectBox />
         <NeonEffect />
-        <BallanceEffect />
+        <BalanceEffect />
+        <SlideEffect direction="down" />
       </div>
       <select>
         <option value="system">System</option>

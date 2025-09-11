@@ -12,3 +12,4 @@ I'm currently usig React with TypeScript and pure CSS.
 - 3d Balance effect
 - Lantern effect
 - Neon border effect
+- Slide up, down, left and right
