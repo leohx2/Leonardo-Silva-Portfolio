@@ -20,9 +20,9 @@ const Badges = ({ skill, text }: BadgesProps) => {
     >
       <div className="badge_inside z-10 flex items-center justify-center rounded-md border-none bg-badge text-amber-50 flex-col gap-y-8">
         <img
-          src={`/images/${skill}logo.png`}
+          src={`/src/assets/${skill}logo.png`}
           alt={`logo from ${skill}`}
-          className="h-20"
+          className="h-18"
         />
         <p className="font-bold text-xl">{text}</p>
       </div>
