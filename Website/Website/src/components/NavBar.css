@@ -1,0 +1,27 @@
+nav a {
+  display: flex;
+  flex-direction: column;
+}
+nav a::after {
+  content: "";
+  border-radius: 20px;
+  background-color: #00bd06;
+  height: 2px;
+  transition: all 0.3s ease-in-out;
+  width: 0%;
+}
+
+nav a:hover::after {
+  box-shadow: 0px 0px 5px #32dfb1;
+  width: 100%;
+}
+
+.active::after {
+  content: "";
+  border-radius: 20px;
+  background-color: #00bd06;
+  height: 2px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px #32dfb1;
+  width: 100%;
+}

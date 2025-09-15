@@ -1,0 +1,18 @@
+#myName {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+#myName::after {
+  content: "";
+  border-radius: 20px;
+  background-color: #00bd06;
+  height: 2px;
+  transition: all 0.3s ease-in-out;
+  width: 0%;
+}
+
+#containerName:hover #myName::after {
+  box-shadow: 0px 0px 5px #32dfb1;
+  width: 100%;
+}

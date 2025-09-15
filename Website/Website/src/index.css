@@ -3,4 +3,9 @@
 @theme {
   --color-main: #242425;
   --color-badge: #414148;
+  --navbar-size: 48px;
+}
+
+:root {
+  scroll-behavior: smooth;
 }
