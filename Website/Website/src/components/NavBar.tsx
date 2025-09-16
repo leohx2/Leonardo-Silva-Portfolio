@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import "./NavBar.css";
 import usePortView from "../customHooks/usePortView";
+import SvgSelector from "../assets/SvgSelector";
 
 interface NavProps {
   children: ReactNode;
@@ -18,20 +19,34 @@ const NavBar = ({ children }: NavProps) => {
   return (
     <>
       <nav
-        className="h-(--navbar-size) text-amber-50 bg-main w-screen fixed z-50 
-      flex items-center gap-x-8 ps-8 tracking-widest"
+        className="h-(--navbar-size) text-amber-50 bg-[#2a2a2b] w-screen fixed z-50 
+      flex items-center gap-x-8 lg:ps-8 tracking-widest lg:top-0 bottom-0 justify-center lg:justify-normal
+      lg:shadow-sm lg:shadow-neutral-700/50 lg:opacity-[0.97] lg:hover:opacity-100 lg:transition-opacity lg:duration-500 lg:ease-in-out"
       >
         <a
           className="active"
           href="#apresentation"
           onClick={(e) => handleClick(e)}
         >
-          About me
+          {screenSize === "small" ? (
+            <SvgSelector
+              svgName="profile"
+              cssClass="w-[20px] h-[20px] mb-[3px]"
+            />
+          ) : (
+            "About me"
+          )}
         </a>
         <a href="#skills" onClick={(e) => handleClick(e)}>
-          Skills
+          {screenSize === "small" ? (
+            <SvgSelector
+              svgName="skills"
+              cssClass="w-[20px] h-[20px] mb-[3px]"
+            />
+          ) : (
+            "Skills"
+          )}
         </a>
-        {/* TODO.. responsive */}
       </nav>
       <div className="lg:pb-0 pb-(--navbar-size)">{children}</div>
     </>

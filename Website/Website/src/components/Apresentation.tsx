@@ -13,7 +13,7 @@ const Apresentation = () => {
         <p className="text-amber-50 font-bold text-4xl flex">
           Hi, I'm&nbsp;<span id="myName">Leonardo!</span>
         </p>
-        <p className=" text-amber-50 font-bold text-xl tracking-[0.4em]">
+        <p className=" text-amber-50 font-bold text-xl lg:tracking-[0.4em] tracking-[0.3em]">
           Front-end Developer
         </p>
       </div>
