@@ -2,10 +2,18 @@ import SvgSelector from "../assets/SvgSelector";
 
 const Apresentation = () => {
   return (
-    <section className="min-h-screen max-w-screen flex flex-col-reverse lg:flex-row justify-center items-center">
-      <div className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50">
-        <p className="text-amber-50 font-bold text-4xl">Hi, I'm Leonardo!</p>
-        <p className=" text-amber-50 font-bold text-xl tracking-[0.4em]">
+    <section
+      id="apresentation"
+      className="min-h-screen max-w-screen flex flex-col-reverse lg:flex-row justify-center items-center"
+    >
+      <div
+        id="containerName"
+        className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50"
+      >
+        <p className="text-amber-50 font-bold text-4xl flex">
+          Hi, I'm&nbsp;<span id="myName">Leonardo!</span>
+        </p>
+        <p className=" text-amber-50 font-bold text-xl lg:tracking-[0.4em] tracking-[0.3em]">
           Front-end Developer
         </p>
       </div>

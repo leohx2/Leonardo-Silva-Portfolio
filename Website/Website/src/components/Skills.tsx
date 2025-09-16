@@ -2,7 +2,7 @@ import Badges from "./Badges";
 
 const Skills = () => {
   return (
-    <section className="flex flex-col gap-y-12 items-center">
+    <section id="skills" className="flex flex-col gap-y-12 items-center">
       <h2 className="text-amber-50 font-bold text-4xl">My skills</h2>
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-8 gap-y-8">
         <Badges skill="git" text="Git" />
