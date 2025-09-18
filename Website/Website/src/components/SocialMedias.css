@@ -1,0 +1,20 @@
+a * {
+  transition: all 0.3s ease-in-out;
+}
+
+.github:hover .githubBg {
+  fill: rgb(0, 0, 0);
+}
+
+.linkedin:hover .linkedinBg {
+  fill: #0077b5;
+}
+
+.youtube:hover:hover .youtubeBg {
+  fill: #ff0000;
+}
+
+.linkedin:hover .linkedinBgInside,
+.youtube:hover .youtubeBgInside {
+  fill: white;
+}

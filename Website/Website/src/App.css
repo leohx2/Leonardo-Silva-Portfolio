@@ -1,9 +1,11 @@
-#myName {
+#myName,
+.fixedGlowing {
   display: flex;
   flex-direction: column;
   width: fit-content;
 }
-#myName::after {
+#myName::after,
+.fixedGlowing::after {
   content: "";
   border-radius: 20px;
   background-color: #00bd06;
@@ -13,6 +15,11 @@
 }
 
 #containerName:hover #myName::after {
+  box-shadow: 0px 0px 5px #32dfb1;
+  width: 100%;
+}
+
+.fixedGlowing::after {
   box-shadow: 0px 0px 5px #32dfb1;
   width: 100%;
 }
