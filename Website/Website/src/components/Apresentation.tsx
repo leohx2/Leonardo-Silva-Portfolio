@@ -17,7 +17,7 @@ const Apresentation = () => {
         <p className=" text-amber-50 font-bold text-xl lg:tracking-[0.4em] tracking-[0.3em]">
           Front-end Developer
         </p>
-        <div className="text-amber-50  w-[340px] flex flex-col lg:mb-0 mb-14 absolute lg:top-[270px] top-[130px] lg:text-start text-center">
+        <div className="text-amber-50  w-[310px] sm:w-[340px] flex flex-col lg:mb-0 mb-14 absolute lg:top-[270px] top-[130px] lg:text-start text-center">
           <p className="tracking-wider lg:text-lg">
             I'm a 25 years old developer based in Portugal, focused on creating
             modern, user-friendly, practical and beautiful web apps. Feel free

@@ -12,12 +12,13 @@ const NavBar = ({ children }: NavProps) => {
 
   useEffect(() => {
     const locationHash = window.location.hash;
-    const element = document.querySelector(`${locationHash}Link`);
-    const elementToGo = document.querySelector(`${locationHash}`);
 
-    if (locationHash && element && elementToGo) {
-      element.classList.add("active");
-      elementToGo.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (locationHash.length > 2) {
+      const element = document.querySelector(`${locationHash}Link`);
+      const elementToGo = document.querySelector(`${locationHash}`);
+
+      element?.classList.add("active");
+      elementToGo?.scrollIntoView({ behavior: "smooth", block: "start" });
     } else {
       document.querySelector("#apresentationLink")?.classList.add("active");
     }
@@ -32,7 +33,7 @@ const NavBar = ({ children }: NavProps) => {
   return (
     <>
       <nav
-        className="h-(--navbar-size) text-amber-50 bg-[#2a2a2b] w-screen fixed z-50 
+        className="h-(--navbar-size) text-amber-50 bg-[#2a2a2b] w-screen fixed z-90 
       flex items-center gap-x-8 lg:ps-8 tracking-widest lg:top-0 bottom-0 justify-center lg:justify-normal
       lg:shadow-sm lg:shadow-neutral-700/50 lg:opacity-[0.97] lg:hover:opacity-100 lg:transition-opacity lg:duration-500 lg:ease-in-out"
       >
