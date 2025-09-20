@@ -5,7 +5,7 @@ const Apresentation = () => {
   return (
     <section
       id="apresentation"
-      className="min-h-screen max-w-screen flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
+      className="min-h-screen w-100% flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
     >
       <div
         id="containerName"
