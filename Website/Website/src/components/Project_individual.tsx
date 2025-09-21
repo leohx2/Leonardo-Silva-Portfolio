@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import SvgSelector from "../assets/SvgSelector";
-import AtelierDaEssencia from "./projects/atelierDaEssencia";
+import AtelierDaEssencia from "./projects/AtelierDaEssencia";
 
 interface ProjectProps {
   title: string;
@@ -52,8 +52,11 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
         <div className="flex gap-x-2 pt-2 ">
           <p className="text-amber-50 font-bold text-sm underline">Stack: </p>
           <div className="flex gap-x-2  flex-wrap gap-y-2">
-            {stack.map((item) => (
-              <p className="text-[0.7rem] text-amber-50 p-[0.2rem_1rem] rounded-lg bg-badge font-bold">
+            {stack.map((item, index) => (
+              <p
+                key={index}
+                className="text-[0.7rem] text-amber-50 p-[0.2rem_1rem] rounded-lg bg-badge font-bold"
+              >
                 {item}
               </p>
             ))}
