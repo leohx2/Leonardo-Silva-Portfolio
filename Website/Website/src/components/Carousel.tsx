@@ -16,7 +16,7 @@ interface CarouselProps {
    * @props string - pass the css class to define the width and height
    */
   cssClass: string;
-  size: number;
+
   unique_ID: string;
 }
 
@@ -24,12 +24,8 @@ interface changeImageProps {
   side: "left" | "right";
 }
 
-const Carousel = ({
-  images_info,
-  cssClass,
-  size,
-  unique_ID,
-}: CarouselProps) => {
+const Carousel = ({ images_info, cssClass, unique_ID }: CarouselProps) => {
+  const size = images_info.length;
   const [currentImage, setCurrentImage] = useState(1);
   const [previousImage, setPreviousImage] = useState(size);
   const [nextImage, setNextImage] = useState(2);

@@ -14,7 +14,6 @@ const AtelierDaEssencia = () => {
         <div className="sm:basis-1/2 pb-4">
           <Carousel
             unique_ID={"atelier da essencia"}
-            size={3}
             images_info={[
               {
                 address:
