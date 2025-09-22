@@ -11,7 +11,7 @@ const AtelierDaEssencia = () => {
             UI.
           </p>
         </div>
-        <div className="sm:basis-1/2">
+        <div className="sm:basis-1/2 pb-4">
           <Carousel
             unique_ID={"atelier da essencia"}
             size={3}
@@ -30,7 +30,7 @@ const AtelierDaEssencia = () => {
                 alt: "events page",
               },
             ]}
-            cssClass="w-full max-h-[400px] rounded-sm overflow-hidden"
+            cssClass="w-full max-h-[400px] "
           />
         </div>
       </div>

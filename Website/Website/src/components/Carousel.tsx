@@ -66,13 +66,26 @@ const Carousel = ({
       if (currentImage == 2) {
         img = document.getElementById(`${unique_ID}_1`);
         if (img) img.style.left = "-110%";
+
         img = document.getElementById(`${unique_ID}_2`);
         if (img) img.style.left = "0%";
+
+        btn_img = document.getElementById(`${unique_ID}_btn_2`);
+        if (btn_img) btn_img.classList.add("activeDot");
+
+        btn_img = document.getElementById(`${unique_ID}_btn_1`);
+        if (btn_img) btn_img.classList.remove("activeDot");
       } else {
         img = document.getElementById(`${unique_ID}_2`);
         if (img) img.style.left = "110%";
         img = document.getElementById(`${unique_ID}_1`);
         if (img) img.style.left = "0%";
+
+        btn_img = document.getElementById(`${unique_ID}_btn_1`);
+        if (btn_img) btn_img.classList.add("activeDot");
+
+        btn_img = document.getElementById(`${unique_ID}_btn_2`);
+        if (btn_img) btn_img.classList.remove("activeDot");
       }
     }
   }, [currentImage]);
@@ -106,7 +119,7 @@ const Carousel = ({
           />
         </div>
       </button>
-      <div className="flex items-center h-[400px] w-full">
+      <div className="flex items-center h-[400px] w-full rounded-sm overflow-hidden relative">
         {images_info.map((image, index) => (
           <div
             className="transition-[left] duration-300 ease-in-out h-full flex items-center w-full absolute"
@@ -137,14 +150,13 @@ const Carousel = ({
         </div>
       </button>
 
-      <div className="absolute w-[80%] rounded-4xl bg-amber-50/50 h-[20px] left-[10%] bottom-2 flex justify-center items-center gap-x-2">
+      <div className="grow absolute w-[100%] pl-[5px] pr-[5px] h-[5px] top-[102%] flex justify-center items-center gap-x-0.5">
         {images_info.map((_, index) => (
-          <button
+          <span
             key={index}
             id={`${unique_ID}_btn_${index + 1}`}
-            value={index + 1}
-            className="rounded-full h-[15px] w-[15px] bg-gray-600 transition-all duration-300 ease-in-out"
-          ></button>
+            className="flex-1 h-[3px] w-auto bg-amber-50 transition-all duration-300 ease-in-out"
+          ></span>
         ))}
       </div>
     </div>

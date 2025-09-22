@@ -296,9 +296,9 @@ const SvgSelector = ({ svgName, cssClass, color, colorInside }: SVGProps) => {
       return (
         <svg
           className={`${cssClass ? cssClass : "w-[64px] h-[64px]"}`}
-          viewBox="0 0 24 24"
+          viewBox="0 0 1024 1024"
+          version="1.1"
           xmlns="http://www.w3.org/2000/svg"
-          mirror-in-rtl="true"
           fill="#000000"
         >
           <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -308,11 +308,10 @@ const SvgSelector = ({ svgName, cssClass, color, colorInside }: SVGProps) => {
             strokeLinejoin="round"
           ></g>
           <g id="SVGRepo_iconCarrier">
-            {" "}
             <path
+              d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
               className={`${color ? color : "fill-amber-50"}`}
-              d="M10.25 22.987l7.99-9c.51-.57.76-1.28.76-1.99s-.25-1.42-.74-1.98c-.01 0-.01-.01-.01-.01l-.02-.02-7.98-8.98c-1.1-1.24-3.002-1.35-4.242-.25-1.24 1.1-1.35 3-.25 4.23l6.23 7.01-6.23 7.01c-1.1 1.24-.99 3.13.25 4.24 1.24 1.1 3.13.98 4.24-.26z"
-            ></path>{" "}
+            ></path>
           </g>
         </svg>
       );
@@ -320,9 +319,9 @@ const SvgSelector = ({ svgName, cssClass, color, colorInside }: SVGProps) => {
       return (
         <svg
           className={`${cssClass ? cssClass : "w-[64px] h-[64px]"}`}
-          viewBox="0 0 24 24"
+          viewBox="0 0 1024 1024"
+          version="1.1"
           xmlns="http://www.w3.org/2000/svg"
-          mirror-in-rtl="true"
           fill="#000000"
         >
           <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -332,11 +331,10 @@ const SvgSelector = ({ svgName, cssClass, color, colorInside }: SVGProps) => {
             strokeLinejoin="round"
           ></g>
           <g id="SVGRepo_iconCarrier">
-            {" "}
             <path
+              d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
               className={`${color ? color : "fill-amber-50"}`}
-              d="M13.75 22.987l-7.99-9c-.51-.57-.76-1.28-.76-1.99s.25-1.42.74-1.98c.01 0 .01-.01.01-.01l.02-.02 7.98-8.98c1.1-1.24 3.002-1.35 4.242-.25 1.24 1.1 1.35 3 .25 4.23l-6.23 7.01 6.23 7.01c1.1 1.24.99 3.13-.25 4.24-1.24 1.1-3.13.98-4.24-.26z"
-            ></path>{" "}
+            ></path>
           </g>
         </svg>
       );
