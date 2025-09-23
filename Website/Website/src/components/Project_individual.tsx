@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import SvgSelector from "../assets/SvgSelector";
-import AtelierDaEssencia from "./projects/AtelierDaEssencia";
+import ProjectTemplate from "./ProjectTemplate";
 
 interface ProjectProps {
   title: string;
@@ -25,7 +25,78 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
   const projectToRender = (id: number) => {
     switch (id) {
       case 1:
-        return <AtelierDaEssencia />;
+        return (
+          <ProjectTemplate
+            title="A Holistic Therapy Website"
+            brief="I designed and developed a responsive website for a holistic
+          therapist, focusing on a calm, brand-aligned experience."
+            bulletPoints={[
+              "Built with React, TypeScript, Tailwind CSS.",
+              "Structured content with semantic HTML for accessibility and SEO.",
+              "Created reusable components and responsive layouts.",
+              "Integrated a simple contact/booking form.",
+              "Optimized images and performance for fast mobile load.",
+              "Deployed via Git workflow.",
+              "Delivered using an Agile approach: held several client meetings, iterated on feedback, and ensured smooth delivery.",
+              "Added the company to Google Maps and set up a basic database for business information.",
+            ]}
+            images_info={[
+              {
+                address: "./src/assets/projects/atelier_services.png",
+                alt: "Part of the available services",
+              },
+              {
+                address: "./src/assets/projects/Atelier da Essência.png",
+                alt: "Site inicial page",
+              },
+              {
+                address: "./src/assets/projects/atelier_eventos.png",
+                alt: "events page",
+              },
+              {
+                address: "./src/assets/projects/atelier_all_services.png",
+                alt: "all services page",
+              },
+              {
+                address: "./src/assets/projects/atelier_about_me_footer.png",
+                alt: "a piece of about me and the footer",
+              },
+            ]}
+            carouselCss="w-full lg:h-[400px] h-[250px]"
+          />
+        );
+      case 2:
+        return (
+          <ProjectTemplate
+            title="E-commerce Features Development"
+            brief="I developed new e-commerce functionalities to enhance customer experience and improve client results."
+            bulletPoints={[
+              "Implemented fast-buy, shop filters, bundle product pages, and new grid views",
+              "Built with React, Preact, TypeScript, Tailwind CSS, HTML.",
+              "Focused on clean UI, accessibility, and performance optimization.",
+              "Structured reusable components to ensure scalability and maintainability.",
+              "Delivered through an iterative process, collaborating with stakeholders to refine features.",
+            ]}
+            images_info={[
+              {
+                address: "./src/assets/projects/aviator_fastbuy_smartphone.gif",
+                alt: "Fast buy smartphone GIF",
+              },
+              {
+                address: "./src/assets/projects/aviator_fastbuy.gif",
+                alt: "Fast buy animation GIF",
+              },
+              {
+                address: "./src/assets/projects/aviator_applying_filter.gif",
+                alt: "Applying filter GIF",
+              },
+              {
+                address: "./src/assets/projects/aviator_filter.png",
+                alt: "Sort feature",
+              },
+            ]}
+          />
+        );
     }
   };
 

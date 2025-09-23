@@ -2,7 +2,7 @@ import "../App.css";
 import { useState, useEffect } from "react";
 import SvgSelector from "../assets/SvgSelector";
 
-interface ImagesProp {
+export interface ImagesProp {
   address: string;
   alt: string;
 }
@@ -15,7 +15,7 @@ interface CarouselProps {
   /**
    * @props string - pass the css class to define the width and height
    */
-  cssClass: string;
+  cssClass?: string;
 
   unique_ID: string;
 }
@@ -74,6 +74,7 @@ const Carousel = ({ images_info, cssClass, unique_ID }: CarouselProps) => {
       } else {
         img = document.getElementById(`${unique_ID}_2`);
         if (img) img.style.left = "110%";
+
         img = document.getElementById(`${unique_ID}_1`);
         if (img) img.style.left = "0%";
 
@@ -115,10 +116,10 @@ const Carousel = ({ images_info, cssClass, unique_ID }: CarouselProps) => {
           />
         </div>
       </button>
-      <div className="flex items-center h-[400px] w-full rounded-sm overflow-hidden relative">
+      <div className="flex items-center h-full w-full rounded-sm overflow-hidden relative">
         {images_info.map((image, index) => (
           <div
-            className="transition-[left] duration-300 ease-in-out h-full flex items-center w-full absolute"
+            className="transition-[left] duration-300 ease-in-out h-full flex items-center justify-center w-full absolute"
             // the style will put the last element on the first element's left and the rest on the right
             key={index * unique_ID.length}
             id={`${unique_ID}_${index + 1}`}
@@ -126,7 +127,7 @@ const Carousel = ({ images_info, cssClass, unique_ID }: CarouselProps) => {
             <img
               src={image.address}
               alt={image.alt}
-              className="object-contain rounded-sm "
+              className="object-contain rounded-sm max-h-full max-w-full"
             />
           </div>
         ))}
