@@ -19,7 +19,7 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
 
       <a
         href="https://github.com/leohx2"
-        target="blank"
+        target="_blank"
         className=" grayscale-75 github"
       >
         <SvgSelector
@@ -30,7 +30,7 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
       </a>
       <a
         href="https://www.linkedin.com/in/leonardorosendosilva/"
-        target="blank"
+        target="_blank"
         className="linkedin"
       >
         <SvgSelector
@@ -42,7 +42,7 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
       </a>
       <a
         href="https://www.youtube.com/@leohx2"
-        target="blank"
+        target="_blank"
         className="youtube"
       >
         <SvgSelector

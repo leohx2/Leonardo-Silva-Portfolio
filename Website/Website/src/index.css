@@ -9,4 +9,10 @@
 
 :root {
   scroll-behavior: smooth;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
 }

@@ -5,11 +5,12 @@ interface ProjectProps {
   title: string;
   brief: string;
   bulletPoints: string[];
-  images_info: ImagesProp[];
+  images_info?: ImagesProp[];
   /**
    * @props string - pass the css class to define the width and height
    */
   carouselCss?: string;
+  video?: React.ReactNode;
 }
 
 const ProjectTemplate = ({
@@ -18,6 +19,7 @@ const ProjectTemplate = ({
   bulletPoints,
   images_info,
   carouselCss,
+  video,
 }: ProjectProps) => {
   return (
     <div className="flex max-lg:flex-col text-amber-50 gap-x-5 lg:tracking-wider">
@@ -30,15 +32,18 @@ const ProjectTemplate = ({
           ))}
         </ul>
       </div>
-      <div className="sm:basis-1/2 pb-4">
-        <Carousel
-          unique_ID={title}
-          images_info={images_info}
-          cssClass={`${
-            carouselCss ? carouselCss : "w-full lg:h-[400px] h-[300px]"
-          }`}
-        />
-      </div>
+      {images_info && (
+        <div className="sm:basis-1/2 pb-4 max-sm:pt-2">
+          <Carousel
+            unique_ID={title}
+            images_info={images_info}
+            cssClass={`${
+              carouselCss ? carouselCss : "w-full lg:h-[400px] h-[300px]"
+            }`}
+          />
+        </div>
+      )}
+      {video && video}
     </div>
   );
 };

@@ -9,7 +9,7 @@ interface ProjectProps {
   /**
    * @props {string} - link for the website or github link
    */
-  link?: string;
+  link?: string[];
 }
 
 const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
@@ -97,6 +97,55 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
             ]}
           />
         );
+      case 3:
+        return (
+          <ProjectTemplate
+            title="CS50 Web Final Project"
+            brief="I built a full-stack web application as my final project for CS50 Web, applying web fundamentals and deploying a working product."
+            bulletPoints={[
+              "Developed core features such as authentication, CRUD operations, dynamic views, and API integrations.",
+              "Built with Django, JavaScript, HTML and CSS.",
+              "Ensured responsive layouts, client-server communication, and data persistence.",
+              "Designed a modular front-end architecture using plain JavaScript (since frameworks like React were not allowed).",
+              "Implemented a system where the user can add new posts and configure styling options such as color, font size, image size, and borders.",
+            ]}
+            video={
+              <iframe
+                className="sm:basis-1/2 pb-4 rounded-sm max-sm:pt-2"
+                src="https://www.youtube.com/embed/umRPNgarDkw?si=fvILWiyreFVymjYw"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            }
+          />
+        );
+      case 4:
+        return (
+          <ProjectTemplate
+            title="CS50 Web Network"
+            brief="I built a full-stack web application for a social network as my final project for CS50 Web, applying web fundamentals and deploying a working product."
+            bulletPoints={[
+              "I built a full-stack web application for a social network as my final project for CS50 Web, applying web fundamentals and deploying a working product.",
+              "Developed core features such as authentication, CRUD operations for posts, and dynamic views for different content feeds.",
+              "Built with Django, JavaScript (no frameworks), HTML, CSS, and SQL.",
+              "Ensured responsive layouts, client-server communication via a custom API, and data persistence using a database.",
+              "Designed a modular front-end architecture using plain JavaScript to handle user interactions and dynamically update the page.",
+              "Implemented a system where users can create, edit, and like posts, as well as follow and unfollow other users. Pagination was added to manage large amounts of content efficiently.",
+            ]}
+            video={
+              <iframe
+                className="sm:basis-1/2 pb-4 rounded-sm max-sm:pt-2"
+                src="https://www.youtube.com/embed/jd9w08nGSPA?si=juLKntIjDkRy9NFU"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
+            }
+          />
+        );
     }
   };
 
@@ -134,15 +183,21 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
           </div>
         </div>
         {link && (
-          <div className="flex gap-x-3 relative items-center">
-            <p className="text-amber-50 font-bold text-sm underline">Link: </p>
-            <a
-              href={link}
-              target="blank"
-              className="text-amber-50 transtion-all duration-300 ease-in-out hover:text-green-400"
-            >
-              {link}
-            </a>
+          <div className="flex gap-x-3 relative items-center flex-wrap">
+            <p className="text-amber-50 font-bold text-sm underline">
+              {link.length == 1 ? "Link" : "Links"}:
+            </p>
+            {link.map((item, index) => (
+              <a
+                key={index + item.length}
+                href={item}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-50 transtion-all duration-300 ease-in-out hover:text-green-400 break-all"
+              >
+                {item}
+              </a>
+            ))}
           </div>
         )}
         <div className="pt-4">{projectToRender(id)}</div>

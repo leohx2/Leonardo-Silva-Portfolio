@@ -12,13 +12,25 @@ const Projects = () => {
           title="Atelier da Essência"
           id={1}
           stack={["Git", "HTML", "TypeScript", "Tailwind", "React"]}
-          link="https://atelierdaessencia.com/"
+          link={["https://atelierdaessencia.com/"]}
         />
         <Project_individual
           title="Aviator"
           id={2}
           stack={["Git", "HTML", "TypeScript", "Tailwind", "Preact"]}
-          link="https://www.aviator.com.br/"
+          link={["https://www.aviator.com.br/"]}
+        />
+        <Project_individual
+          title="CS50 Web"
+          id={3}
+          stack={["Git", "HTML", "CSS", "JavaScript", "Django"]}
+          link={["https://github.com/leohx2/CS50s_Web/tree/main/FinalProject"]}
+        />
+        <Project_individual
+          title="Network"
+          id={4}
+          stack={["Git", "HTML", "CSS", "JavaScript", "Django"]}
+          link={["https://github.com/leohx2/CS50s_Web/tree/main/Network"]}
         />
       </div>
     </section>
