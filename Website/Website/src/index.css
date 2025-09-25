@@ -2,10 +2,17 @@
 
 @theme {
   --color-main: #242425;
+  --color-main_2: #2c2c2c;
   --color-badge: #414148;
   --navbar-size: 48px;
 }
 
 :root {
   scroll-behavior: smooth;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.space-grotesk {
+  font-family: "Space Grotesk", sans-serif;
+  font-optical-sizing: auto;
 }

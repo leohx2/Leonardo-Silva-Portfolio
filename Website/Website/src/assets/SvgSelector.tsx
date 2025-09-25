@@ -1,5 +1,15 @@
 interface SVGProps {
-  svgName: "bubble" | "profile" | "skills" | "linkedin" | "github" | "youtube";
+  svgName:
+    | "bubble"
+    | "profile"
+    | "skills"
+    | "linkedin"
+    | "github"
+    | "youtube"
+    | "arrowdown"
+    | "arrowleft"
+    | "arrowright"
+    | "projects";
   cssClass?: string;
   color?: string;
   /** *
@@ -225,6 +235,106 @@ const SvgSelector = ({ svgName, cssClass, color, colorInside }: SVGProps) => {
               d="M35.3005 16.3781C35.6996 16.7772 35.9872 17.2739 36.1346 17.8187C36.9835 21.2357 36.7873 26.6324 36.1511 30.1813C36.0037 30.7261 35.7161 31.2228 35.317 31.6219C34.9179 32.021 34.4212 32.3086 33.8764 32.456C31.8819 33 23.8544 33 23.8544 33C23.8544 33 15.8269 33 13.8324 32.456C13.2876 32.3086 12.7909 32.021 12.3918 31.6219C11.9927 31.2228 11.7051 30.7261 11.5577 30.1813C10.7038 26.7791 10.9379 21.3791 11.5412 17.8352C11.6886 17.2903 11.9762 16.7936 12.3753 16.3945C12.7744 15.9954 13.2711 15.7079 13.8159 15.5604C15.8104 15.0165 23.8379 15 23.8379 15C23.8379 15 31.8654 15 33.8599 15.544C34.4047 15.6914 34.9014 15.979 35.3005 16.3781ZM27.9423 24L21.283 27.8571V20.1428L27.9423 24Z"
               className={`${colorInside ? colorInside : "fill-amber-50"}`}
             ></path>{" "}
+          </g>
+        </svg>
+      );
+    case "arrowdown":
+      return (
+        <svg
+          viewBox="0 0 32 32"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          className={`${cssClass ? cssClass : "w-[64px] h-[64px]"} ${
+            color ? color : "fill-black"
+          }`}
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <title>down</title>{" "}
+            <path d="M11.125 16.313l7.688-7.688 3.594 3.719-11.094 11.063-11.313-11.313 3.5-3.531z"></path>{" "}
+          </g>
+        </svg>
+      );
+    case "projects":
+      return (
+        <svg
+          className={`${cssClass ? cssClass : "w-[64px] h-[64px]"}`}
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          mirror-in-rtl="true"
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <path
+              className={`${color ? color : "fill-amber-50"}`}
+              d="M8 6H5c-.553 0-1-.448-1-1s.447-1 1-1h3c.553 0 1 .448 1 1s-.447 1-1 1zM13 10H5c-.553 0-1-.448-1-1s.447-1 1-1h8c.553 0 1 .448 1 1s-.447 1-1 1zM13 14H5c-.553 0-1-.448-1-1s.447-1 1-1h8c.553 0 1 .448 1 1s-.447 1-1 1z"
+            ></path>{" "}
+            <path
+              className={`${color ? color : "fill-amber-50"}`}
+              d="M18 2v8c0 .55-.45 1-1 1s-1-.45-1-1V2.5c0-.28-.22-.5-.5-.5h-13c-.28 0-.5.22-.5.5v19c0 .28.22.5.5.5h13c.28 0 .5-.22.5-.5V21c0-.55.45-1 1-1s1 .45 1 1v1c0 1.1-.9 2-2 2H2c-1.1 0-2-.9-2-2V2C0 .9.9 0 2 0h14c1.1 0 2 .9 2 2z"
+            ></path>{" "}
+            <path
+              className={`${color ? color : "fill-amber-50"}`}
+              d="M23.87 11.882c.31.54.045 1.273-.595 1.643l-9.65 5.57c-.084.05-.176.086-.265.11l-2.656.66c-.37.092-.72-.035-.88-.314-.162-.278-.09-.65.17-.913l1.907-1.958c.063-.072.137-.123.214-.167.004-.01.012-.015.012-.015l9.65-5.57c.64-.37 1.408-.234 1.72.305l.374.65z"
+            ></path>{" "}
+          </g>
+        </svg>
+      );
+    case "arrowright":
+      return (
+        <svg
+          className={`${cssClass ? cssClass : "w-[64px] h-[64px]"}`}
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M256 120.768L306.432 64 768 512l-461.568 448L256 903.232 659.072 512z"
+              className={`${color ? color : "fill-amber-50"}`}
+            ></path>
+          </g>
+        </svg>
+      );
+    case "arrowleft":
+      return (
+        <svg
+          className={`${cssClass ? cssClass : "w-[64px] h-[64px]"}`}
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
+              className={`${color ? color : "fill-amber-50"}`}
+            ></path>
           </g>
         </svg>
       );

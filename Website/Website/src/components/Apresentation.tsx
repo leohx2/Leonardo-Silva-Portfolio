@@ -5,16 +5,16 @@ const Apresentation = () => {
   return (
     <section
       id="apresentation"
-      className="min-h-screen max-w-screen flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
+      className="min-h-screen w-100% flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
     >
       <div
         id="containerName"
-        className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50 relative"
+        className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50 relative "
       >
-        <p className="text-amber-50 font-bold text-4xl flex">
+        <p className="text-amber-50 font-bold text-4xl flex space-grotesk">
           Hi, I'm&nbsp;<span id="myName">Leonardo!</span>
         </p>
-        <p className=" text-amber-50 font-bold text-xl lg:tracking-[0.4em] tracking-[0.3em]">
+        <p className=" text-amber-50 font-bold text-xl lg:tracking-[0.4em] tracking-[0.3em] space-grotesk">
           Front-end Developer
         </p>
         <div className="text-amber-50  w-[310px] sm:w-[340px] flex flex-col lg:mb-0 mb-14 absolute lg:top-[270px] top-[130px] lg:text-start text-center">

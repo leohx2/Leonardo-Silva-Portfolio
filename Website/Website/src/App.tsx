@@ -1,6 +1,7 @@
 import "./App.css";
 import Apresentation from "./components/Apresentation";
 import NavBar from "./components/NavBar";
+import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import SocialMedias from "./components/SocialMedias";
 import usePortView from "./customHooks/usePortView";
@@ -19,6 +20,7 @@ function App() {
 
         <Apresentation />
         <Skills />
+        <Projects />
       </div>
     </NavBar>
   );

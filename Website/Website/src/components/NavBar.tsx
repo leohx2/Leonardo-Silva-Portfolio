@@ -61,6 +61,17 @@ const NavBar = ({ children }: NavProps) => {
             "Skills"
           )}
         </a>
+
+        <a id="projectsLink" href="#projects" onClick={(e) => handleClick(e)}>
+          {screenSize === "small" ? (
+            <SvgSelector
+              svgName="projects"
+              cssClass="w-[20px] h-[20px] mb-[3px]"
+            />
+          ) : (
+            "Projects"
+          )}
+        </a>
       </nav>
       <div className="lg:pb-0 pb-(--navbar-size)">{children}</div>
     </>
