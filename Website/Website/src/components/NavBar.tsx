@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode } from "react";
+import { useEffect, type ReactNode, useRef, type HTMLAttributes } from "react";
 import "./NavBar.css";
 import usePortView from "../customHooks/usePortView";
 import SvgSelector from "../assets/SvgSelector";
@@ -9,9 +9,25 @@ interface NavProps {
 
 const NavBar = ({ children }: NavProps) => {
   const screenSize = usePortView();
+  const navBar = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const locationHash = window.location.hash;
+    const handleScroll = () => {
+      console.log("Scroll position:", window.scrollY);
+      // bg-[#2a2a2b]
+      if (window.scrollY > 10 && navBar.current) {
+        // navBar.current.classList.add("bg-[#2a2a2b]");
+        // navBar.current.classList.add("lg:opacity-[0.97]");
+        // navBar.current.classList.add("lg:shadow-sm");
+        navBar.current.classList.add("onScroll");
+      } else if (window.scrollY == 0 && navBar.current) {
+        // navBar.current.classList.remove("bg-[#2a2a2b]");
+        // navBar.current.classList.remove("lg:opacity-[0.97]");
+        // navBar.current.classList.remove("lg:shadow-sm");
+        navBar.current.classList.remove("onScroll");
+      }
+    };
 
     if (locationHash.length > 2) {
       const element = document.querySelector(`${locationHash}Link`);
@@ -22,6 +38,12 @@ const NavBar = ({ children }: NavProps) => {
     } else {
       document.querySelector("#apresentationLink")?.classList.add("active");
     }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -33,9 +55,10 @@ const NavBar = ({ children }: NavProps) => {
   return (
     <>
       <nav
-        className="h-(--navbar-size) text-amber-50 bg-[#2a2a2b] w-screen fixed z-90 
+        ref={navBar}
+        className="h-(--navbar-size) text-amber-50 w-screen  fixed z-90 
       flex items-center gap-x-8 lg:ps-8 tracking-widest lg:top-0 bottom-0 justify-center lg:justify-normal
-      lg:shadow-sm lg:shadow-neutral-700/50 lg:opacity-[0.97] lg:hover:opacity-100 lg:transition-opacity lg:duration-500 lg:ease-in-out"
+      lg:shadow-neutral-700/50 transition-all duration-500 ease-in-out max-sm:bg-[#2a2a2b]"
       >
         <a
           id="apresentationLink"
@@ -73,7 +96,7 @@ const NavBar = ({ children }: NavProps) => {
           )}
         </a>
       </nav>
-      <div className="lg:pb-0 pb-(--navbar-size)">{children}</div>
+      <div className="lg:pb-0">{children}</div>
     </>
   );
 };

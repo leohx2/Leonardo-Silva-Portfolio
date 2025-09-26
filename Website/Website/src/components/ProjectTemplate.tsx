@@ -27,8 +27,8 @@ const ProjectTemplate = ({
         <h3 className="text-2xl font-semibold">{title}</h3>
         <p>{brief}</p>
         <ul className="list-disc list-inside max-sm:text-sm flex flex-col gap-y-2 pb-2">
-          {bulletPoints.map((point) => (
-            <li>{point}</li>
+          {bulletPoints.map((point, index) => (
+            <li key={index * point.length}>{point}</li>
           ))}
         </ul>
       </div>
