@@ -1,8 +1,15 @@
+import { motion } from "motion/react";
 import Project_individual from "./Project_individual";
 
 const Projects = () => {
   return (
-    <section
+    <motion.section
+      viewport={{ amount: 0.8 }}
+      onViewportEnter={() => {
+        // adding the underline on the correct nav item
+        document.querySelector(".active")?.classList.remove("active");
+        document.getElementById("projectsLink")?.classList.add("active");
+      }}
       id="projects"
       className="max-w-screen flex items-center flex-col  gap-y-12 mt-8 w-[80%]"
     >
@@ -33,7 +40,7 @@ const Projects = () => {
           link={["https://github.com/leohx2/CS50s_Web/tree/main/Network"]}
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

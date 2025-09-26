@@ -7,8 +7,13 @@ const Apresentation = () => {
   const spanEl = useRef<HTMLSpanElement | null>(null);
   return (
     <motion.section
-      viewport={{ amount: 0.6 }}
+      viewport={{ amount: 0.8 }}
       onViewportEnter={() => {
+        // adding the underline on the correct nav item
+        document.querySelector(".active")?.classList.remove("active");
+        document.getElementById("apresentationLink")?.classList.add("active");
+
+        // adding the underline on my name
         if (spanEl) {
           spanEl.current?.style.setProperty(
             "--myName-after-box",

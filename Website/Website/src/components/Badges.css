@@ -1,9 +1,16 @@
 :root {
   --angle: 0deg;
-  --badge-height: 248px;
-  --badge-width: 218px;
+  --badge-height: 218px;
+  --badge-width: 188px;
 }
 
+@media (width < 40rem /* 640px */) {
+  :root {
+    --angle: 0deg;
+    --badge-height: 148px;
+    --badge-width: 108px;
+  }
+}
 /* neon effect */
 @property --angle {
   syntax: "<angle>";

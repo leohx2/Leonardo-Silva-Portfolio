@@ -16,14 +16,8 @@ const NavBar = ({ children }: NavProps) => {
     const handleScroll = () => {
       // bg-[#2a2a2b]
       if (window.scrollY > 10 && navBar.current) {
-        // navBar.current.classList.add("bg-[#2a2a2b]");
-        // navBar.current.classList.add("lg:opacity-[0.97]");
-        // navBar.current.classList.add("lg:shadow-sm");
         navBar.current.classList.add("onScroll");
       } else if (window.scrollY == 0 && navBar.current) {
-        // navBar.current.classList.remove("bg-[#2a2a2b]");
-        // navBar.current.classList.remove("lg:opacity-[0.97]");
-        // navBar.current.classList.remove("lg:shadow-sm");
         navBar.current.classList.remove("onScroll");
       }
     };
