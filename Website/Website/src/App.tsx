@@ -8,7 +8,6 @@ import usePortView from "./customHooks/usePortView";
 
 function App() {
   const portView = usePortView();
-
   return (
     <NavBar>
       <div className="min-h-screen max-w-screen pb-16 bg-main flex flex-col items-center justify-center">
