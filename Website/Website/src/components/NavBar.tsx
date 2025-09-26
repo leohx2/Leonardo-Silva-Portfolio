@@ -14,7 +14,6 @@ const NavBar = ({ children }: NavProps) => {
   useEffect(() => {
     const locationHash = window.location.hash;
     const handleScroll = () => {
-      console.log("Scroll position:", window.scrollY);
       // bg-[#2a2a2b]
       if (window.scrollY > 10 && navBar.current) {
         // navBar.current.classList.add("bg-[#2a2a2b]");
@@ -58,7 +57,7 @@ const NavBar = ({ children }: NavProps) => {
         ref={navBar}
         className="h-(--navbar-size) text-amber-50 w-screen  fixed z-90 
       flex items-center gap-x-8 lg:ps-8 tracking-widest lg:top-0 bottom-0 justify-center lg:justify-normal
-      lg:shadow-neutral-700/50 transition-all duration-500 ease-in-out max-sm:bg-[#2a2a2b]"
+      lg:shadow-neutral-700/50 transition-all duration-300 max-sm:bg-[#2a2a2b]"
       >
         <a
           id="apresentationLink"

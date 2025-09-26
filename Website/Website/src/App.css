@@ -1,10 +1,15 @@
-#myName,
+:root {
+  --myName-after-box: 0px 0px 5px #32dfb1;
+  --myName-after-w: 100%;
+}
+
+.myName,
 .fixedGlowing {
   display: flex;
   flex-direction: column;
   width: fit-content;
 }
-#myName::after,
+.myName::after,
 .fixedGlowing::after {
   content: "";
   border-radius: 20px;
@@ -14,9 +19,9 @@
   width: 0%;
 }
 
-#containerName:hover #myName::after {
-  box-shadow: 0px 0px 5px #32dfb1;
-  width: 100%;
+.myName::after {
+  box-shadow: var(--myName-after-box);
+  width: var(--myName-after-w);
 }
 
 .fixedGlowing::after {

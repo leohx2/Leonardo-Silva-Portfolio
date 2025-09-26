@@ -1,18 +1,37 @@
 import SvgSelector from "../assets/SvgSelector";
 import "../App.css";
+import { motion } from "motion/react";
+import { useRef } from "react";
 
 const Apresentation = () => {
+  const spanEl = useRef<HTMLSpanElement | null>(null);
   return (
-    <section
+    <motion.section
+      viewport={{ amount: 0.6 }}
+      onViewportEnter={() => {
+        if (spanEl) {
+          spanEl.current?.style.setProperty(
+            "--myName-after-box",
+            "0px 0px 5px #32dfb1"
+          );
+          spanEl.current?.style.setProperty("--myName-after-w", "100%");
+        }
+      }}
+      onViewportLeave={() => {
+        if (spanEl) {
+          spanEl.current?.style.setProperty("--myName-after-box", "unset");
+          spanEl.current?.style.setProperty("--myName-after-w", "0%");
+        }
+      }}
       id="apresentation"
       className="min-h-screen w-100% flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
     >
-      <div
-        id="containerName"
-        className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50 relative "
-      >
+      <div className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50 relative ">
         <p className="text-amber-50 font-bold text-4xl flex space-grotesk">
-          Hi, I'm&nbsp;<span id="myName">Leonardo!</span>
+          Hi, I'm&nbsp;
+          <span ref={spanEl} className="myName transition-all duration-500">
+            Leonardo!
+          </span>
         </p>
         <p className=" text-amber-50 font-bold text-xl lg:tracking-[0.4em] tracking-[0.3em] space-grotesk">
           Front-end Developer
@@ -38,7 +57,7 @@ const Apresentation = () => {
           className=" grayscale-60 lg:h-[400px] h-[300px]"
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
 
