@@ -22,9 +22,9 @@ const Badges = ({ skill, text }: BadgesProps) => {
         <img
           src={`/src/assets/${skill}logo.png`}
           alt={`logo from ${skill}`}
-          className="h-18"
+          className="sm:h-14 h-8"
         />
-        <p className="font-bold text-xl">{text}</p>
+        <p className="font-bold sm:text-xl text-md">{text}</p>
       </div>
     </div>
   );

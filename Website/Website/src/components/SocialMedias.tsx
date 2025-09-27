@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import SvgSelector from "../assets/SvgSelector";
 import usePortView from "../customHooks/usePortView";
 import "./SocialMedias.css";
@@ -10,9 +11,15 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
   const portView = usePortView();
 
   return (
-    <div className={`${cssClass} flex `}>
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.1, once: true }}
+      transition={{ duration: 2, type: "spring" }}
+      className={`${cssClass} flex `}
+    >
       {portView === "small" ? (
-        <hr className=" bg-zinc-300 h-[2px] basis-1/5 rounded-sm" />
+        <hr className=" bg-zinc-300 h-[2px] basis-1/6 rounded-sm" />
       ) : (
         <hr className="absolute bg-zinc-300 h-[190px] w-[2px] top-[-205px] left-[14px] rounded-sm" />
       )}
@@ -52,10 +59,18 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
           colorInside="fill-zinc-800 youtubeBgInside"
         />
       </a>
+      <a href="mailto:leobgse@gmail.com" target="_blank">
+        <SvgSelector
+          svgName="gmail"
+          cssClass={`w-[28px] h-[28px] rounded-full`}
+          color="fill-zinc-100"
+          colorInside="fill-zinc-800"
+        />
+      </a>
       {portView === "small" && (
-        <hr className=" bg-zinc-300 h-[2px] basis-1/5 rounded-sm" />
+        <hr className=" bg-zinc-300 h-[2px] basis-1/6 rounded-sm" />
       )}
-    </div>
+    </motion.div>
   );
 };
 

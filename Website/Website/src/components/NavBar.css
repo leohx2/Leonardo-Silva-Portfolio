@@ -27,7 +27,7 @@ nav a:hover::after {
 }
 
 .onScroll {
-  background-color: #4242425d;
+  background-color: #3b3b3b9a;
   backdrop-filter: blur(10px);
   border-radius: 10px;
   box-shadow: 0px 2px 3px 0px #79797b5d;

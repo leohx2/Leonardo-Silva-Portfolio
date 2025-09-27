@@ -23,7 +23,7 @@ const ProjectTemplate = ({
 }: ProjectProps) => {
   return (
     <div className="flex max-lg:flex-col text-amber-50 gap-x-5 lg:tracking-wider">
-      <div className="min-h-[400px] basis-1/2 flex flex-col gap-y-4 ">
+      <div className="min-h-[400px] basis-[45%] flex flex-col gap-y-4 ">
         <h3 className="text-2xl font-semibold">{title}</h3>
         <p>{brief}</p>
         <ul className="list-disc list-inside max-sm:text-sm flex flex-col gap-y-2 pb-2">
@@ -33,7 +33,7 @@ const ProjectTemplate = ({
         </ul>
       </div>
       {images_info && (
-        <div className="sm:basis-1/2 pb-4 max-sm:pt-2">
+        <div className="sm:basis-[45%] pb-4 max-sm:pt-2">
           <Carousel
             unique_ID={title}
             images_info={images_info}
