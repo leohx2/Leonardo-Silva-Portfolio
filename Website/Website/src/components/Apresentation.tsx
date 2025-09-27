@@ -31,7 +31,13 @@ const Apresentation = () => {
       id="apresentation"
       className="min-h-screen w-100% flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
     >
-      <div className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50 relative ">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.1, once: true }}
+        transition={{ duration: 1, type: "spring" }}
+        className="lg:h-[400px] h-[150px] flex justify-center lg:items-start items-center flex-col text-amber-50 relative "
+      >
         <p className="text-amber-50 font-bold text-4xl flex space-grotesk">
           Hi, I'm&nbsp;
           <span ref={spanEl} className="myName transition-all duration-500">
@@ -48,8 +54,14 @@ const Apresentation = () => {
             to check out my projects below.
           </p>
         </div>
-      </div>
-      <div className="overflow-hidden lg:w-[400px] w-[300px] rounded-[30%] relative">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.1, once: true }}
+        transition={{ duration: 1, type: "spring" }}
+        className="overflow-hidden lg:w-[400px] w-[300px] rounded-[30%] relative"
+      >
         <div className="absolute lg:h-[400px] lg:w-[400px]">
           <SvgSelector
             svgName="bubble"
@@ -61,7 +73,7 @@ const Apresentation = () => {
           alt="Leonardo Silva picture"
           className=" grayscale-60 lg:h-[400px] h-[300px]"
         />
-      </div>
+      </motion.div>
     </motion.section>
   );
 };

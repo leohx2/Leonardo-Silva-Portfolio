@@ -10,9 +10,20 @@
 :root {
   scroll-behavior: smooth;
   font-family: "Space Grotesk", sans-serif;
+  background-color: var(--color-main);
 }
 
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
   font-optical-sizing: auto;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00bd06;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  border-radius: 2px;
 }

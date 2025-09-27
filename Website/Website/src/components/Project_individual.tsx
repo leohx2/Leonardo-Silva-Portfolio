@@ -19,7 +19,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
   const handleClickProject = () => {
     svgDiv.current?.classList.toggle("-rotate-180");
     svgDiv.current?.classList.toggle("-translate-x-1.5");
-    projectDiv.current?.classList.toggle("h-0");
+    projectDiv.current?.classList.toggle("h-[510px]");
   };
 
   const projectToRender = (id: number) => {
@@ -127,7 +127,6 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
             title="CS50 Web Network"
             brief="I built a full-stack web application for a social network as my final project for CS50 Web, applying web fundamentals and deploying a working product."
             bulletPoints={[
-              "I built a full-stack web application for a social network as my final project for CS50 Web, applying web fundamentals and deploying a working product.",
               "Developed core features such as authentication, CRUD operations for posts, and dynamic views for different content feeds.",
               "Built with Django, JavaScript (no frameworks), HTML, CSS, and SQL.",
               "Ensured responsive layouts, client-server communication via a custom API, and data persistence using a database.",
@@ -136,7 +135,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
             ]}
             video={
               <iframe
-                className="sm:basis-1/2 pb-4 rounded-sm max-sm:pt-2"
+                className="sm:basis-1/2 pb-4 rounded-sm max-sm:pt-2 h-[400px]"
                 src="https://www.youtube.com/embed/jd9w08nGSPA?si=juLKntIjDkRy9NFU"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -150,7 +149,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
   };
 
   return (
-    <div className=" p-0.5 flex flex-col">
+    <div className="p-0.5 flex flex-col">
       <button
         className="flex gap-x-2 items-center cursor-pointer"
         onClick={handleClickProject}
@@ -167,7 +166,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
       <hr className="w-full border-neutral-500" />
       <div
         ref={projectDiv}
-        className="h-0 overflow-hidden transition-all duration-300 ease-in-out flex flex-col gap-y-2"
+        className="h-0 overflow-scroll overflow-x-hidden transition-all duration-200 ease-in-out flex flex-col gap-y-2"
       >
         <div className="flex gap-x-2 pt-2 ">
           <p className="text-amber-50 font-bold text-sm underline">Stack: </p>

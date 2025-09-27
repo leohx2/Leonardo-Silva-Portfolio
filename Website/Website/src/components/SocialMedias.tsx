@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import SvgSelector from "../assets/SvgSelector";
 import usePortView from "../customHooks/usePortView";
 import "./SocialMedias.css";
@@ -10,7 +11,13 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
   const portView = usePortView();
 
   return (
-    <div className={`${cssClass} flex `}>
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.1, once: true }}
+      transition={{ duration: 2, type: "spring" }}
+      className={`${cssClass} flex `}
+    >
       {portView === "small" ? (
         <hr className=" bg-zinc-300 h-[2px] basis-1/5 rounded-sm" />
       ) : (
@@ -55,7 +62,7 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
       {portView === "small" && (
         <hr className=" bg-zinc-300 h-[2px] basis-1/5 rounded-sm" />
       )}
-    </div>
+    </motion.div>
   );
 };
 
