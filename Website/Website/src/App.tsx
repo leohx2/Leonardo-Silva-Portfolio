@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import SocialMedias from "./components/SocialMedias";
+import StarEffect from "./components/StarEffect";
 import usePortView from "./customHooks/usePortView";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Apresentation />
         <Skills />
         <Projects />
+        <StarEffect />
       </div>
     </NavBar>
   );

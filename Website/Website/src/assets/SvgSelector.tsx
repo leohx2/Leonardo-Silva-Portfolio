@@ -9,7 +9,8 @@ interface SVGProps {
     | "arrowdown"
     | "arrowleft"
     | "arrowright"
-    | "projects";
+    | "projects"
+    | "gmail";
   cssClass?: string;
   color?: string;
   /** *
@@ -334,6 +335,61 @@ const SvgSelector = ({ svgName, cssClass, color, colorInside }: SVGProps) => {
             <path
               d="M768 903.232l-50.432 56.768L256 512l461.568-448 50.432 56.768L364.928 512z"
               className={`${color ? color : "fill-amber-50"}`}
+            ></path>
+          </g>
+        </svg>
+      );
+    case "gmail":
+      return (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-label="Gmail"
+          role="img"
+          viewBox="0 0 512 512"
+          className={`${cssClass ? cssClass : "w-[64px] h-[64px]"} gmail`}
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <rect
+              width="512"
+              height="512"
+              rx="15%"
+              className={`${color ? color : "fill-amber-50"}`}
+            ></rect>
+            <path
+              d="M158 391v-142l-82-63V361q0 30 30 30"
+              className={`${
+                colorInside ? colorInside : "fill-amber-[#4285f4]"
+              } gmailColor1`}
+            ></path>
+            <path
+              d="M 154 248l102 77l102-77v-98l-102 77l-102-77"
+              className={`${
+                colorInside ? colorInside : "fill-amber-[#ea4335]"
+              } gmailColor2`}
+            ></path>
+            <path
+              d="M354 391v-142l82-63V361q0 30-30 30"
+              className={`${
+                colorInside ? colorInside : "fill-amber-[#34a853]"
+              } gmailColor5`}
+            ></path>
+            <path
+              d="M76 188l82 63v-98l-30-23c-27-21-52 0-52 26"
+              className={`${
+                colorInside ? colorInside : "fill-amber-[#c5221f]"
+              } gmailColor3`}
+            ></path>
+            <path
+              d="M436 188l-82 63v-98l30-23c27-21 52 0 52 26"
+              className={`${
+                colorInside ? colorInside : "fill-amber-[#fbbc04]"
+              } gmailColor4`}
             ></path>
           </g>
         </svg>

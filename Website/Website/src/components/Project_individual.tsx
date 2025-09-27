@@ -149,7 +149,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
   };
 
   return (
-    <div className="p-0.5 flex flex-col">
+    <div className="p-0.5 flex flex-col project">
       <button
         className="flex gap-x-2 items-center cursor-pointer"
         onClick={handleClickProject}
