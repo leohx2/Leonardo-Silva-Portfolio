@@ -14,6 +14,13 @@ const Skills = () => {
       id="skills"
       className="flex flex-col gap-y-12 items-center w-full pb-18 pt-12 relative z-2"
     >
+      <motion.hr
+        className="w-[90%] h-0.5 bg-badge"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.1 }}
+        transition={{ duration: 1, type: "spring" }}
+      />
       <motion.h2
         className="text-amber-50 font-bold text-4xl "
         initial={{ opacity: 0, y: 50 }}

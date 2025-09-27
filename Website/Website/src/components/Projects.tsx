@@ -11,8 +11,15 @@ const Projects = () => {
         document.getElementById("projectsLink")?.classList.add("active");
       }}
       id="projects"
-      className="max-w-screen flex items-center flex-col  gap-y-12 mt-8 w-[80%] relative z-1"
+      className=" flex items-center flex-col  gap-y-12 mt-8 w-[90%] relative z-1"
     >
+      <motion.hr
+        className="w-full h-0.5 bg-badge"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ amount: 0.1 }}
+        transition={{ duration: 1, type: "spring" }}
+      />
       <motion.h2
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
