@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import SvgSelector from "../assets/SvgSelector";
 import ProjectTemplate from "./ProjectTemplate";
+import { motion } from "motion/react";
 
 interface ProjectProps {
   title: string;
@@ -149,7 +150,13 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
   };
 
   return (
-    <div className="p-0.5 flex flex-col project">
+    <motion.div
+      className="p-0.5 flex flex-col project"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ amount: 0.1 }}
+      transition={{ duration: 1, type: "spring" }}
+    >
       <button
         className="flex gap-x-2 items-center cursor-pointer"
         onClick={handleClickProject}
@@ -201,7 +208,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
         )}
         <div className="pt-4">{projectToRender(id)}</div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

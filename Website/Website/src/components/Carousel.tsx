@@ -32,8 +32,8 @@ const Carousel = ({ images_info, cssClass, unique_ID }: CarouselProps) => {
   const [side, setSide] = useState("left");
 
   useEffect(() => {
-    var i = 1;
-    var img, btn_img;
+    let i = 1;
+    let img, btn_img;
 
     if (size > 2) {
       for (i; i <= size; i++) {

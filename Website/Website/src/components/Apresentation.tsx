@@ -29,7 +29,7 @@ const Apresentation = () => {
         }
       }}
       id="apresentation"
-      className="min-h-screen w-100% flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14"
+      className="min-h-screen w-100% flex flex-col-reverse justify-center items-center lg:flex-row sm:pb-0 pb-14 relative z-10"
     >
       <motion.div
         initial={{ opacity: 0, y: 100 }}

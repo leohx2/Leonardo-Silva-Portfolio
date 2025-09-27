@@ -11,7 +11,7 @@ const Projects = () => {
         document.getElementById("projectsLink")?.classList.add("active");
       }}
       id="projects"
-      className="max-w-screen flex items-center flex-col  gap-y-12 mt-8 w-[80%]"
+      className="max-w-screen flex items-center flex-col  gap-y-12 mt-8 w-[80%] relative z-1"
     >
       <motion.h2
         initial={{ opacity: 0, y: 100 }}
@@ -22,13 +22,7 @@ const Projects = () => {
       >
         Projects
       </motion.h2>
-      <motion.div
-        initial={{ opacity: 0, y: 100 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.1 }}
-        transition={{ duration: 1, type: "spring" }}
-        className=" w-full flex flex-col gap-y-6"
-      >
+      <motion.div className=" w-full flex flex-col gap-y-6">
         <Project_individual
           title="Atelier da Essência"
           id={1}
