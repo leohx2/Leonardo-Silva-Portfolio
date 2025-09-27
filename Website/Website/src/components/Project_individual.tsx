@@ -154,7 +154,7 @@ const Project_individual = ({ title, id, stack, link }: ProjectProps) => {
       className="p-0.5 flex flex-col project"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ amount: 0.1 }}
+      viewport={{ amount: 0.08, once: true }}
       transition={{ duration: 1, type: "spring" }}
     >
       <button

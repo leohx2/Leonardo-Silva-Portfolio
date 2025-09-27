@@ -34,11 +34,12 @@ const RandomDiv = ({ partOfScreen }: RandomDivProps) => {
   return (
     <motion.div
       className="bg-amber-50 absolute rounded-full"
-      initial={{ y: random_y }}
+      initial={{ y: random_y, boxShadow: "0px 0px 0px 0px #fefefeb" }}
       animate={{
         opacity: [1, 0],
         y: getRandomArbitrary(random_y + 100, window.screen.height),
         scale: [0.5, 2, 1],
+        boxShadow: [`0px 0px 0px ${random_size + 1}px #fefefe09`],
       }}
       transition={{
         duration: getRandomArbitrary(5, 30),

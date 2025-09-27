@@ -4,7 +4,7 @@ import Project_individual from "./Project_individual";
 const Projects = () => {
   return (
     <motion.section
-      viewport={{ amount: 0.8 }}
+      viewport={{ amount: 0.8, once: true }}
       onViewportEnter={() => {
         // adding the underline on the correct nav item
         document.querySelector(".active")?.classList.remove("active");
@@ -17,13 +17,13 @@ const Projects = () => {
         className="w-full h-0.5 bg-badge"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.1 }}
+        viewport={{ amount: 0.1, once: true }}
         transition={{ duration: 1, type: "spring" }}
       />
       <motion.h2
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.1 }}
+        viewport={{ amount: 0.1, once: true }}
         transition={{ duration: 1, type: "spring" }}
         className="text-4xl font-bold text-amber-50"
       >

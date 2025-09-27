@@ -18,14 +18,14 @@ const Skills = () => {
         className="w-[90%] h-0.5 bg-badge"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.1 }}
+        viewport={{ amount: 0.1, once: true }}
         transition={{ duration: 1, type: "spring" }}
       />
       <motion.h2
         className="text-amber-50 font-bold text-4xl "
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.1 }}
+        viewport={{ amount: 0.1, once: true }}
         transition={{ duration: 1, type: "spring" }}
       >
         My skills
@@ -33,7 +33,7 @@ const Skills = () => {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.1 }}
+        viewport={{ amount: 0.1, once: true }}
         transition={{ duration: 1, type: "spring" }}
         className="sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 max-sm:flex max-sm:relative max-sm:overflow-scroll max-sm:w-[90%] max-sm:p-4"
       >
