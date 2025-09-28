@@ -5,9 +5,10 @@ import "./SocialMedias.css";
 
 interface SocialMediasProps {
   cssClass: string;
+  hasLine: boolean;
 }
 
-const SocialMedias = ({ cssClass }: SocialMediasProps) => {
+const SocialMedias = ({ cssClass, hasLine }: SocialMediasProps) => {
   const portView = usePortView();
 
   return (
@@ -15,14 +16,15 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ amount: 0.1, once: true }}
-      transition={{ duration: 2, type: "spring" }}
+      transition={{ duration: 1, type: "spring" }}
       className={`${cssClass} flex `}
     >
-      {portView === "small" ? (
-        <hr className=" bg-zinc-300 h-[2px] basis-1/6 rounded-sm" />
-      ) : (
-        <hr className="absolute bg-zinc-300 h-[190px] w-[2px] top-[-205px] left-[14px] rounded-sm" />
-      )}
+      {hasLine &&
+        (portView === "small" ? (
+          <hr className=" bg-zinc-300 h-[2px] basis-1/6 rounded-sm" />
+        ) : (
+          <hr className="absolute bg-zinc-300 h-[190px] w-[2px] top-[-205px] left-[14px] rounded-sm" />
+        ))}
 
       <a
         href="https://github.com/leohx2"
@@ -67,7 +69,7 @@ const SocialMedias = ({ cssClass }: SocialMediasProps) => {
           colorInside="fill-zinc-800"
         />
       </a>
-      {portView === "small" && (
+      {hasLine && portView === "small" && (
         <hr className=" bg-zinc-300 h-[2px] basis-1/6 rounded-sm" />
       )}
     </motion.div>
