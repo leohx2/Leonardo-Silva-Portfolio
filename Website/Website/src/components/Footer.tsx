@@ -47,7 +47,7 @@ const Footer = () => {
             viewport={{ amount: 0.1, once: true }}
             transition={{ duration: 1, type: "spring" }}
           >
-            Download my Cv <SvgSelector svgName="download" cssClass="w-6 h-6" />
+            Download my CV <SvgSelector svgName="download" cssClass="w-6 h-6" />
           </motion.a>
         </div>
         <SocialMedias

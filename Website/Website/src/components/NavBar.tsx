@@ -1,4 +1,4 @@
-import { useEffect, type ReactNode, useRef, type HTMLAttributes } from "react";
+import { useEffect, type ReactNode, useRef } from "react";
 import "./NavBar.css";
 import usePortView from "../customHooks/usePortView";
 import SvgSelector from "../assets/SvgSelector";
@@ -50,7 +50,7 @@ const NavBar = ({ children }: NavProps) => {
       <nav
         ref={navBar}
         className="h-(--navbar-size) text-amber-50 w-screen  fixed z-90 
-      flex items-center gap-x-8 lg:ps-8 tracking-widest lg:top-0 bottom-0 justify-center lg:justify-normal
+      flex items-center gap-x-8 lg:pr-8 lg:pl-8 tracking-widest lg:top-0 bottom-0 justify-center lg:justify-normal
       lg:shadow-neutral-700/50 transition-all duration-300 max-sm:bg-[#2a2a2b]"
       >
         <a
@@ -86,6 +86,26 @@ const NavBar = ({ children }: NavProps) => {
             />
           ) : (
             "Projects"
+          )}
+        </a>
+        <a
+          href="/src/assets/LeonardoSilvaCv.pdf"
+          download
+          className={`${screenSize == "large" ? "ml-auto" : ""}`}
+        >
+          {screenSize === "small" ? (
+            <SvgSelector
+              svgName="download"
+              cssClass="w-[20px] h-[20px] mb-[3px]"
+            />
+          ) : (
+            <p className="flex gap-x-2">
+              Download my CV{" "}
+              <SvgSelector
+                svgName="download"
+                cssClass="w-[20px] h-[20px] mb-[3px]"
+              />
+            </p>
           )}
         </a>
       </nav>
