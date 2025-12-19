@@ -15,6 +15,9 @@ Aqui está uma lista do que este projeto ensina:
 ## Teste de Código
 
 Como estamos a falar de Node.js, aqui vai um exemplo de código que o teu parser deve tentar manter formatado (ou pelo menos legível):
+***
+---
+___
 
 ```javascript
 const mensagem = "Olá, Mundo!";

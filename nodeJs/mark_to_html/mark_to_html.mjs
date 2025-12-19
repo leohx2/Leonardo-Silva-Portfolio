@@ -40,3 +40,18 @@ const main = () => {
 };
 
 main();
+
+// TODO:
+// paragraph
+// Line Breaks
+// Bold
+// Italic
+// Bold & Italic
+// Ordered lists
+// Unordered lists
+// Escaping Backticks
+// Code Blocks
+// Horizontal Rules
+// Links
+// Images
+// Escaping Characters
