@@ -10,11 +10,11 @@ Aqui está uma lista do que este projeto ensina:
 3. Manipulação de *strings* básica.
 
 ### Um pouco de estilo
-É importante testar se o texto fica em **negrito** e também em *itálico*.
+É importante testar se o texto fica em **negrito**, em *itálico* e nos ***nos dois, negrito e itálico!***
 
 ## Teste de Código
 
-Como estamos a falar de Node.js, aqui vai um exemplo de código que o teu parser deve tentar manter formatado (ou pelo menos legível):
+***Como estamos a falar de Node.js, aqui vai um exemplo de código que o teu parser deve tentar manter formatado (ou pelo menos legível):
 ***
 ---
 ___
@@ -22,3 +22,7 @@ ___
 ```javascript
 const mensagem = "Olá, Mundo!";
 console.log(mensagem);
+```
+***
+---
+___

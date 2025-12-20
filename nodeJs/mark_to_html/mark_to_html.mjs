@@ -1,6 +1,7 @@
 import convertHeader from "./convert_header.mjs";
 import { argv } from "node:process";
 import fs from "node:fs";
+import handle_asterisk from "./handle_asterisk.mjs";
 
 class MdData {
   constructor(content, index, fileToWrite) {
@@ -27,6 +28,9 @@ const main = () => {
         case "#":
           convertHeader(mdData);
           break;
+        case "*":
+          handle_asterisk(mdData);
+          break;
         default:
           fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
       }
@@ -44,14 +48,17 @@ main();
 // TODO:
 // paragraph
 // Line Breaks
-// Bold
-// Italic
-// Bold & Italic
 // Ordered lists
 // Unordered lists
 // Escaping Backticks
 // Code Blocks
-// Horizontal Rules
+// Horizontal Rules - asterisk handled
 // Links
 // Images
 // Escaping Characters
+
+// DONE:
+// Headings - DONE
+// Bold - DONE
+// Italic - DONE
+// Bold & Italic - DONE
