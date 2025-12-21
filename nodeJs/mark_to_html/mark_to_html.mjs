@@ -2,6 +2,7 @@ import convertHeader from "./convert_header.mjs";
 import { argv } from "node:process";
 import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
+import convertOrderedList from "./convert_ordered_list.mjs";
 
 class MdData {
   constructor(content, index, fileToWrite) {
@@ -30,6 +31,9 @@ const main = () => {
           break;
         case "*":
           handle_asterisk(mdData);
+          break;
+        case "1":
+          convertOrderedList(mdData);
           break;
         default:
           fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
