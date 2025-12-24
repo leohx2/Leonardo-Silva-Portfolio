@@ -2,13 +2,35 @@ import convertHeader from "./convert_header.mjs";
 import { argv } from "node:process";
 import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
-import convertOrderedList from "./convert_ordered_list.mjs";
+import convertList from "./convert_list.mjs";
 
 class MdData {
   constructor(content, index, fileToWrite) {
     this.content = content;
     this.index = index;
     this.fileToWrite = fileToWrite;
+  }
+}
+
+export function writeHTML(mdData, mode) {
+  switch (mdData.content[mdData.index]) {
+    case "#":
+      convertHeader(mdData);
+      break;
+    case "*":
+      handle_asterisk(mdData, mode);
+      break;
+    case "1":
+      if (mode === "insideAList")
+        fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+      else convertList(mdData, "orderedList");
+      break;
+    case "-":
+    case "+":
+      convertList(mdData, "unorderedList");
+      break;
+    default:
+      fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
   }
 }
 
@@ -22,24 +44,8 @@ const main = () => {
 
     // Create or erase the content from the file
     fs.writeFileSync(mdData.fileToWrite, "<html><body>");
-
-    for (mdData.index; mdData.index < mdData.content.length; mdData.index++) {
-      switch (mdData.content[mdData.index]) {
-        // # means there's a header
-        case "#":
-          convertHeader(mdData);
-          break;
-        case "*":
-          handle_asterisk(mdData);
-          break;
-        case "1":
-          convertOrderedList(mdData);
-          break;
-        default:
-          fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
-      }
-    }
-
+    for (mdData.index; mdData.index < mdData.content.length; mdData.index++)
+      writeHTML(mdData, "regular");
     //Finish the HTML body
     fs.appendFileSync(mdData.fileToWrite, "</body></html>");
   } catch (err) {

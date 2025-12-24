@@ -1,5 +1,5 @@
 import fs from "node:fs";
-// import convertUnorderedList from "./convert_unordered_list.mjs";
+import convertList from "./convert_list.mjs";
 
 // Checking if it's well formated. In case the user types "***something" I need to write
 // "***something" and not <strong>something</strong>, because there's no asterisk in the end.
@@ -12,7 +12,11 @@ function check_asterisk(mdData, asterisk_qtd) {
 
   // If there's no *, means the user forgot to close the syntax.
   // Or, if there's a \n before the *, means the user is probably using a <hr> now and forgot to close the syntax
-  if (!mdData.content[counter] || mdData.content[counter - 1] == "\n")
+  if (
+    !mdData.content[counter] ||
+    mdData.content[counter - 1] == "\n" ||
+    mdData.content[counter - 1] == " "
+  )
     return false;
 
   while (mdData.content[counter] == "*") {
@@ -24,7 +28,7 @@ function check_asterisk(mdData, asterisk_qtd) {
   return asterisk_counter == asterisk_qtd;
 }
 
-function handle_asterisk(mdData) {
+function handle_asterisk(mdData, mode) {
   let asterisk_counter = 0;
   let finish_as = "";
 
@@ -52,7 +56,13 @@ function handle_asterisk(mdData) {
   // Handle italic, bold or both
   if (asterisk_counter === 1) {
     if (mdData.content[mdData.index] === " ") {
-      // convertUnorderedList(mdData);
+      // goes back to the asterisk position
+      mdData.index--;
+      if (mode === "insideAList") {
+        fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+        return;
+      }
+      convertList(mdData, "unorderedList");
       return;
     }
     fs.appendFileSync(mdData.fileToWrite, "<em>");
