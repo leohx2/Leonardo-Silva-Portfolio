@@ -30,7 +30,24 @@ export function writeHTML(mdData, mode) {
         fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
       else convertList(mdData, "orderedList");
       break;
+    case "_":
+      if (
+        mdData.content[mdData.index + 1] === "_" &&
+        mdData.content[mdData.index + 2] === "_"
+      ) {
+        fs.appendFileSync(mdData.fileToWrite, "<hr>");
+        mdData.index += 2;
+        break;
+      }
     case "-":
+      if (
+        mdData.content[mdData.index + 1] === "-" &&
+        mdData.content[mdData.index + 2] === "-"
+      ) {
+        fs.appendFileSync(mdData.fileToWrite, "<hr>");
+        mdData.index += 2;
+        break;
+      }
     case "+":
       convertList(mdData, "unorderedList");
       break;
@@ -61,11 +78,10 @@ const main = () => {
 main();
 
 // TODO:
-// Horizontal Rules - asterisk handled
+// paragraph
 // Links
 // Images
 // Line Breaks
-// paragraph
 // Code Blocks
 // Escaping Characters
 
@@ -76,3 +92,4 @@ main();
 // Bold & Italic - DONE
 // Ordered lists - DONE
 // Unordered lists - DONE
+// Horizontal Rules - DONE
