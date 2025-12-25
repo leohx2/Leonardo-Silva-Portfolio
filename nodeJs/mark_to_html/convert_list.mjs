@@ -15,22 +15,21 @@ function rightSyntax(mdData, mode, listType) {
   if (mode === "firstList") {
     if (listType === "orderedList")
       return (
-        !isNaN(mdData.content[mdData.index]) &&
+        !isNaN(mdData.contentIndex) &&
         mdData.content[mdData.index + 1] === "." &&
         mdData.content[mdData.index + 2] === " "
       );
     else
       return (
-        isInArray(mdData.content[mdData.index], unorderedListChar) &&
+        isInArray(mdData.contentIndex, unorderedListChar) &&
         mdData.content[mdData.index + 1] === " "
       );
   } else {
     if (listType === "orderedList")
       return (
-        mdData.content[mdData.index] === "." &&
-        mdData.content[mdData.index + 1] === " "
+        mdData.contentIndex === "." && mdData.content[mdData.index + 1] === " "
       );
-    else return mdData.content[mdData.index] === " ";
+    else return mdData.contentIndex === " ";
   }
 }
 
@@ -68,21 +67,18 @@ function writeLists(mdData, blankIndexes, listType) {
   // Checking if it's a number via isNaN or if it's a unordered list char.
   // isNaN returns false for numbers and special chars like "\n" or " "
   if (listType === "orderedList") {
-    while (
-      !isNaN(mdData.content[mdData.index]) &&
-      mdData.content[mdData.index]
-    ) {
+    while (!isNaN(mdData.contentIndex) && mdData.contentIndex) {
       mdData.index++;
     }
   } else {
     while (
-      (isInArray(mdData.content[mdData.index], unorderedListChar) ||
-        mdData.content[mdData.index] === "\n") &&
-      mdData.content[mdData.index]
+      (isInArray(mdData.contentIndex, unorderedListChar) ||
+        mdData.contentIndex === "\n") &&
+      mdData.contentIndex
     ) {
       if (
         // Special case, when dealing with * inside a list
-        mdData.content[mdData.index] === "*" &&
+        mdData.contentIndex === "*" &&
         isInArray(mdData.content[mdData.index - 2], unorderedListChar)
       ) {
         break;
@@ -118,7 +114,7 @@ function writeLists(mdData, blankIndexes, listType) {
   }
 
   fs.appendFileSync(mdData.fileToWrite, "<li>");
-  while (mdData.content[mdData.index] != "\n" && mdData.content[mdData.index]) {
+  while (mdData.contentIndex != "\n" && mdData.contentIndex) {
     writeHTML(mdData, "insideAList");
     mdData.index++;
   }
@@ -145,7 +141,7 @@ function convertList(mdData, listType) {
     // make sure the index is in the right position, otherwise it's "one position ahead"
     if (listType === "orderedList") mdData.index--;
   } else {
-    fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+    fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
   }
 }
 

@@ -35,10 +35,10 @@ Há também unorder lists
 ---
 ___
 
-```javascript
-const mensagem = "Olá, Mundo!";
+``
+const `mensagem` = "Olá, Mundo!";
 console.log(mensagem);
-```
+``
 ***
 ---
 ___

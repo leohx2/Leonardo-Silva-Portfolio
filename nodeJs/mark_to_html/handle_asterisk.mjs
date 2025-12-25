@@ -32,7 +32,7 @@ function handle_asterisk(mdData, mode) {
   let asterisk_counter = 0;
   let finish_as = "";
 
-  while (mdData.content[mdData.index] === "*" && mdData.content) {
+  while (mdData.contentIndex === "*" && mdData.content) {
     asterisk_counter++;
     mdData.index++;
   }
@@ -40,7 +40,7 @@ function handle_asterisk(mdData, mode) {
   // Handle horizontal rule
   if (
     asterisk_counter >= 3 &&
-    (mdData.content[mdData.index] === "\n" || !mdData.content[mdData.index])
+    (mdData.contentIndex === "\n" || !mdData.contentIndex)
   ) {
     fs.appendFileSync(mdData.fileToWrite, "<hr>");
     return;
@@ -55,11 +55,11 @@ function handle_asterisk(mdData, mode) {
 
   // Handle italic, bold or both
   if (asterisk_counter === 1) {
-    if (mdData.content[mdData.index] === " ") {
+    if (mdData.contentIndex === " ") {
       // goes back to the asterisk position
       mdData.index--;
       if (mode === "insideAList") {
-        fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+        fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
         return;
       }
       convertList(mdData, "unorderedList");
@@ -75,8 +75,8 @@ function handle_asterisk(mdData, mode) {
     finish_as = "</em></strong>";
   }
 
-  while (mdData.content[mdData.index] != "*") {
-    fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+  while (mdData.contentIndex != "*") {
+    fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
     mdData.index++;
   }
   fs.appendFileSync(mdData.fileToWrite, finish_as);

@@ -10,10 +10,15 @@ class MdData {
     this.index = index;
     this.fileToWrite = fileToWrite;
   }
+
+  //Getter to know what is the current content[index]
+  get contentIndex() {
+    return this.content[this.index];
+  }
 }
 
 export function writeHTML(mdData, mode) {
-  switch (mdData.content[mdData.index]) {
+  switch (mdData.contentIndex) {
     case "#":
       convertHeader(mdData);
       break;
@@ -22,7 +27,7 @@ export function writeHTML(mdData, mode) {
       break;
     case "1":
       if (mode === "insideAList")
-        fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+        fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
       else convertList(mdData, "orderedList");
       break;
     case "-":
@@ -30,7 +35,7 @@ export function writeHTML(mdData, mode) {
       convertList(mdData, "unorderedList");
       break;
     default:
-      fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
+      fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
   }
 }
 
@@ -56,15 +61,12 @@ const main = () => {
 main();
 
 // TODO:
-// paragraph
-// Line Breaks
-// Ordered lists
-// Unordered lists
-// Escaping Backticks
-// Code Blocks
 // Horizontal Rules - asterisk handled
 // Links
 // Images
+// Line Breaks
+// paragraph
+// Code Blocks
 // Escaping Characters
 
 // DONE:
@@ -72,3 +74,5 @@ main();
 // Bold - DONE
 // Italic - DONE
 // Bold & Italic - DONE
+// Ordered lists - DONE
+// Unordered lists - DONE
