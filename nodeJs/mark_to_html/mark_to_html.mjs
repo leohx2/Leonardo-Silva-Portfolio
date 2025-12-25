@@ -2,12 +2,40 @@ import convertHeader from "./convert_header.mjs";
 import { argv } from "node:process";
 import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
+import convertList from "./convert_list.mjs";
 
 class MdData {
   constructor(content, index, fileToWrite) {
     this.content = content;
     this.index = index;
     this.fileToWrite = fileToWrite;
+  }
+
+  //Getter to know what is the current content[index]
+  get contentIndex() {
+    return this.content[this.index];
+  }
+}
+
+export function writeHTML(mdData, mode) {
+  switch (mdData.contentIndex) {
+    case "#":
+      convertHeader(mdData);
+      break;
+    case "*":
+      handle_asterisk(mdData, mode);
+      break;
+    case "1":
+      if (mode === "insideAList")
+        fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+      else convertList(mdData, "orderedList");
+      break;
+    case "-":
+    case "+":
+      convertList(mdData, "unorderedList");
+      break;
+    default:
+      fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
   }
 }
 
@@ -21,21 +49,8 @@ const main = () => {
 
     // Create or erase the content from the file
     fs.writeFileSync(mdData.fileToWrite, "<html><body>");
-
-    for (mdData.index; mdData.index < mdData.content.length; mdData.index++) {
-      switch (mdData.content[mdData.index]) {
-        // # means there's a header
-        case "#":
-          convertHeader(mdData);
-          break;
-        case "*":
-          handle_asterisk(mdData);
-          break;
-        default:
-          fs.appendFileSync(mdData.fileToWrite, mdData.content[mdData.index]);
-      }
-    }
-
+    for (mdData.index; mdData.index < mdData.content.length; mdData.index++)
+      writeHTML(mdData, "regular");
     //Finish the HTML body
     fs.appendFileSync(mdData.fileToWrite, "</body></html>");
   } catch (err) {
@@ -46,15 +61,12 @@ const main = () => {
 main();
 
 // TODO:
-// paragraph
-// Line Breaks
-// Ordered lists
-// Unordered lists
-// Escaping Backticks
-// Code Blocks
 // Horizontal Rules - asterisk handled
 // Links
 // Images
+// Line Breaks
+// paragraph
+// Code Blocks
 // Escaping Characters
 
 // DONE:
@@ -62,3 +74,5 @@ main();
 // Bold - DONE
 // Italic - DONE
 // Bold & Italic - DONE
+// Ordered lists - DONE
+// Unordered lists - DONE

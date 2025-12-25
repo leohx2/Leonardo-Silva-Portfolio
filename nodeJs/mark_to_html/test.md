@@ -5,24 +5,40 @@ Este é um ficheiro de exemplo para testar o **Mini-Projeto 1**. Se estiveres a 
 ## Coisas que estou a aprender
 Aqui está uma lista do que este projeto ensina:
 
-1. Como ler ficheiros com `fs.readFile`.
-2. Como ler argumentos da linha de comandos (`process.argv`).
-3. Manipulação de *strings* básica.
+1. # First item
+2. ## Second in a list
+3. ### Third item
+    1. **Indented item 1**
+    2. *Indented item 2*
+        1. ***2x Indented item  1**
+        1. *2x Indented item 2 1. test a ul inside a ol
+4. #### Fourth item
+5. ***
+
+Há também unorder lists
+- ul 1
+- ul 1.2
+    + ul 2
+    + *Just an asteriks
+        - *Italic list* 1. test
+        - **Bold 3.1** * a ul inside another ul
+        - ***Both 3.1***
+- + two lists
+* ***
 
 ### Um pouco de estilo
 É importante testar se o texto fica em **negrito**, em *itálico* e nos ***nos dois, negrito e itálico!***
 
 ## Teste de Código
-
-***Como estamos a falar de Node.js, aqui vai um exemplo de código que o teu parser deve tentar manter formatado (ou pelo menos legível):
+**Como estamos a falar de Node.js, aqui vai um exemplo de código que o teu parser deve tentar manter formatado (ou pelo menos legível):
 ***
 ---
 ___
 
-```javascript
-const mensagem = "Olá, Mundo!";
+``
+const `mensagem` = "Olá, Mundo!";
 console.log(mensagem);
-```
+``
 ***
 ---
 ___
