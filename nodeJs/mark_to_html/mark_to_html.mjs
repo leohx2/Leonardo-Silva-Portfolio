@@ -3,6 +3,7 @@ import { argv } from "node:process";
 import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
 import convertList from "./convert_list.mjs";
+import convertLink from "./convert_link.mjs";
 
 class MdData {
   constructor(content, index, fileToWrite) {
@@ -51,6 +52,9 @@ export function writeHTML(mdData, mode) {
     case "+":
       convertList(mdData, "unorderedList");
       break;
+    case "[":
+      convertLink(mdData);
+      break;
     default:
       fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
   }
@@ -78,9 +82,9 @@ const main = () => {
 main();
 
 // TODO:
-// paragraph
 // Links
 // Images
+// paragraph
 // Line Breaks
 // Code Blocks
 // Escaping Characters
