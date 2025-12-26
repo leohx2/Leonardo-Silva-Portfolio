@@ -43,6 +43,7 @@ function handle_asterisk(mdData, mode) {
     (mdData.contentIndex === "\n" || !mdData.contentIndex)
   ) {
     fs.appendFileSync(mdData.fileToWrite, "<hr>");
+    mdData.index--;
     return;
   }
 

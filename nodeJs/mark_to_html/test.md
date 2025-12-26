@@ -14,6 +14,8 @@ Aqui está uma lista do que este projeto ensina:
         1. *2x Indented item 2 1. test a ul inside a ol
 4. #### Fourth item
 5. ***
+6. A link [the image source "teste title"](https://unsplash.com/pt-br/fotografias/gato-preto-no-chao-de-madeira-marrom-gbTg2qob3hY)
+7. An image ![A cute kitten](https://images.unsplash.com/photo-1604447190317-195eb0c28eee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 Há também unorder lists
 - ul 1
