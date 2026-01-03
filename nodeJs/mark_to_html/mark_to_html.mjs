@@ -9,6 +9,7 @@ import {
   writeParagraph,
 } from "./convert_paragraph_and_linebreak.mjs";
 import { convertCode, converCodeIndent } from "./convert_code.mjs";
+import escapingChar from "./convert_escaping.mjs";
 class MdData {
   constructor(content, index, fileToWrite) {
     this.content = content;
@@ -111,6 +112,10 @@ export function writeHTML(mdData, mode) {
       convertCode(mdData);
       break;
     }
+    case "\\": {
+      escapingChar(mdData, mode);
+      break;
+    }
     default:
       writeParagraph(mdData, mode);
   }
@@ -136,20 +141,3 @@ const main = () => {
 };
 
 main();
-
-// TODO:
-// Escaping Characters
-
-// DONE:
-// Code Blocks - DONE
-// Line Breaks - DONE
-// Paragraph - DONE
-// Images - DONE
-// Headings - DONE
-// Bold - DONE
-// Italic - DONE
-// Bold & Italic - DONE
-// Ordered lists - DONE
-// Unordered lists - DONE
-// Horizontal Rules - DONE
-// Links - DONE
