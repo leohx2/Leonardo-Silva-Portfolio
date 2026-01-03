@@ -2,19 +2,32 @@ import convertHeader from "./convert_header.mjs";
 import { argv } from "node:process";
 import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
-import convertList from "./convert_list.mjs";
+import { convertList } from "./convert_list.mjs";
 import convertLinkAndImage from "./convert_link.mjs";
-
+import { writeParagraph } from "./convert_paragraph_and_linebreak.mjs";
 class MdData {
   constructor(content, index, fileToWrite) {
     this.content = content;
     this.index = index;
     this.fileToWrite = fileToWrite;
+
+    // Inform if we're currently in an existent paragraph, then we can decide if we wanna add the <p>, </p> or do nothing
+    this.inParagraph = false;
   }
 
   //Getter to know what is the current content[index]
   get contentIndex() {
     return this.content[this.index];
+  }
+
+  openParagraph() {
+    fs.appendFileSync(this.fileToWrite, `<p>`);
+    this.inParagraph = !this.inParagraph;
+  }
+
+  closeParagraph() {
+    fs.appendFileSync(this.fileToWrite, `</p>`);
+    this.inParagraph = !this.inParagraph;
   }
 }
 
@@ -63,7 +76,7 @@ export function writeHTML(mdData, mode) {
         break;
       }
     default:
-      fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+      writeParagraph(mdData, mode);
   }
 }
 
@@ -78,7 +91,7 @@ const main = () => {
     // Create or erase the content from the file
     fs.writeFileSync(mdData.fileToWrite, "<html><body>");
     for (mdData.index; mdData.index < mdData.content.length; mdData.index++)
-      writeHTML(mdData, "regular");
+      writeHTML(mdData, "default");
     //Finish the HTML body
     fs.appendFileSync(mdData.fileToWrite, "</body></html>");
   } catch (err) {
@@ -89,12 +102,12 @@ const main = () => {
 main();
 
 // TODO:
-// Paragraph
 // Line Breaks
 // Code Blocks
 // Escaping Characters
 
 // DONE:
+// Paragraph - DONE
 // Images - DONE
 // Headings - DONE
 // Bold - DONE

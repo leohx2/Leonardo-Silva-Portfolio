@@ -1,6 +1,6 @@
 # O Meu Primeiro Teste de Conversão
 
-Este é um ficheiro de exemplo para testar o **Mini-Projeto 1**. Se estiveres a ler isto num browser com formatação, significa que o teu script funcionou!
+Este é um ficheiro de exemplo para testar o **Mini-Projeto 1**. Se estiveres a ler isto num browser com formatação, significa que o teu script funcionou! 
 
 ## Coisas que estou a aprender
 Aqui está uma lista do que este projeto ensina:
@@ -44,3 +44,5 @@ console.log(mensagem);
 ***
 ---
 ___
+
+Fim

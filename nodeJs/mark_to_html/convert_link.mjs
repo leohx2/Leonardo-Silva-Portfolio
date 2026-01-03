@@ -61,6 +61,8 @@ function convertLinkAndImage(mdData, type) {
     if (mdData.content[aux.auxCounter] === ")") {
       // If we are here, it means we have the whole link
       aux.link = mdData.content.slice(aux.linkStartPosition, aux.auxCounter);
+      //We need to close the paragraph tag, if it's opened before we write a link or image
+      if (mdData.inParagraph) mdData.closeParagraph();
       if (type === "image") {
         fs.appendFileSync(
           mdData.fileToWrite,
@@ -68,7 +70,7 @@ function convertLinkAndImage(mdData, type) {
           <img src="${aux.link}"  title="${aux.title ? aux.title : ""}"
           alt="${
             aux.placeHolder ? aux.placeHolder : ""
-          }" style="max-height:100vh; max-width:100vw"> 
+          }" style="max-height:100vh; max-width:100vw; display: block"> 
           `
         );
       } else {
