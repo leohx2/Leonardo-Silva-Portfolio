@@ -11,7 +11,7 @@ class ConvertLinkAux {
   }
 }
 
-function convertLink(mdData) {
+function convertLinkAndImage(mdData, type) {
   /**  First of all, we need must confirm if there's an actual link
    * which means me must have an ] followed by a "(" and ")" in the end
    * But, instead looping twice through every char of the link, I will reserve
@@ -61,17 +61,29 @@ function convertLink(mdData) {
     if (mdData.content[aux.auxCounter] === ")") {
       // If we are here, it means we have the whole link
       aux.link = mdData.content.slice(aux.linkStartPosition, aux.auxCounter);
-      fs.appendFileSync(
-        mdData.fileToWrite,
-        `
-        <a href="${aux.link}" target="_blank" title="${
-          aux.title ? aux.title : ""
-        }"
-        style="text-decoration: none">
-        ${aux.placeHolder}
-        </a>
-        `
-      );
+      if (type === "image") {
+        fs.appendFileSync(
+          mdData.fileToWrite,
+          `
+          <img src="${aux.link}"  title="${aux.title ? aux.title : ""}"
+          alt="${
+            aux.placeHolder ? aux.placeHolder : ""
+          }" style="max-height:100vh; max-width:100vw"> 
+          `
+        );
+      } else {
+        fs.appendFileSync(
+          mdData.fileToWrite,
+          `
+          <a href="${aux.link}" target="_blank" title="${
+            aux.title ? aux.title : ""
+          }"
+          style="text-decoration: none">
+          ${aux.placeHolder}
+          </a>
+          `
+        );
+      }
       mdData.index = aux.auxCounter;
       return;
     }
@@ -80,4 +92,4 @@ function convertLink(mdData) {
   fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
 }
 
-export default convertLink;
+export default convertLinkAndImage;

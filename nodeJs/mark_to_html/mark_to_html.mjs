@@ -3,7 +3,7 @@ import { argv } from "node:process";
 import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
 import convertList from "./convert_list.mjs";
-import convertLink from "./convert_link.mjs";
+import convertLinkAndImage from "./convert_link.mjs";
 
 class MdData {
   constructor(content, index, fileToWrite) {
@@ -53,8 +53,15 @@ export function writeHTML(mdData, mode) {
       convertList(mdData, "unorderedList");
       break;
     case "[":
-      convertLink(mdData);
+      convertLinkAndImage(mdData, "link");
       break;
+    case "!":
+      // Use the same logic as convertLink but index get incresead by 1 to skip the "!" char
+      if (mdData.content[mdData.index + 1] === "[") {
+        mdData.index++;
+        convertLinkAndImage(mdData, "image");
+        break;
+      }
     default:
       fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
   }
@@ -82,14 +89,13 @@ const main = () => {
 main();
 
 // TODO:
-// Links
-// Images
-// paragraph
+// Paragraph
 // Line Breaks
 // Code Blocks
 // Escaping Characters
 
 // DONE:
+// Images - DONE
 // Headings - DONE
 // Bold - DONE
 // Italic - DONE
@@ -97,3 +103,4 @@ main();
 // Ordered lists - DONE
 // Unordered lists - DONE
 // Horizontal Rules - DONE
+// Links - DONE
