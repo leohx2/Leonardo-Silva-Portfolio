@@ -58,6 +58,9 @@ ___
 
 ### Escaping Characters:
 
-\\ \` \* \_ \{ \} \[ \] \< \> \( \) \# \+ \- \. \! \|
+\-\> \\ \` \* \_ \{ \} \[ \] \< \> \( \) \# \+ \- \. \!
+
+1. Let's try them inside a list, this is half of them \-\> \\ \` \* \_ \{ \} \[ \] and the other half below
+2. \< \> \( \) \# \+ \- \. \! \| now we're done :) 
 
 ***The End***
