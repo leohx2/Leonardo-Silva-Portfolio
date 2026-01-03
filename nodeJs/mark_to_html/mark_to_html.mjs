@@ -4,7 +4,10 @@ import fs from "node:fs";
 import handle_asterisk from "./handle_asterisk.mjs";
 import { convertList } from "./convert_list.mjs";
 import convertLinkAndImage from "./convert_link.mjs";
-import { writeParagraph } from "./convert_paragraph_and_linebreak.mjs";
+import {
+  breakLine,
+  writeParagraph,
+} from "./convert_paragraph_and_linebreak.mjs";
 class MdData {
   constructor(content, index, fileToWrite) {
     this.content = content;
@@ -75,6 +78,11 @@ export function writeHTML(mdData, mode) {
         convertLinkAndImage(mdData, "image");
         break;
       }
+    case " ":
+    case "<": {
+      breakLine(mdData);
+      break;
+    }
     default:
       writeParagraph(mdData, mode);
   }
@@ -102,11 +110,11 @@ const main = () => {
 main();
 
 // TODO:
-// Line Breaks
 // Code Blocks
 // Escaping Characters
 
 // DONE:
+// Line Breaks - DONE
 // Paragraph - DONE
 // Images - DONE
 // Headings - DONE
