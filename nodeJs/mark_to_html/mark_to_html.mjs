@@ -8,6 +8,7 @@ import {
   breakLine,
   writeParagraph,
 } from "./convert_paragraph_and_linebreak.mjs";
+import { convertCode, converCodeIndent } from "./convert_code.mjs";
 class MdData {
   constructor(content, index, fileToWrite) {
     this.content = content;
@@ -85,9 +86,29 @@ export function writeHTML(mdData, mode) {
         convertLinkAndImage(mdData, "image");
         break;
       }
-    case " ":
+    case " ": {
+      if (
+        mdData.contentIndex === " " &&
+        mdData.content[mdData.index + 1] == " " &&
+        mdData.content[mdData.index + 2] == " " &&
+        mdData.content[mdData.index + 3] == " "
+      ) {
+        mdData.appendFile(
+          `<code style="display:block; width:100vw; padding:1rem; color:white; background-color:#0E0E0E; border-radius:5px">`
+        );
+        mdData.index += 4;
+        converCodeIndent(mdData);
+        mdData.index--;
+        mdData.appendFile("</code>");
+        break;
+      }
+    }
     case "<": {
       breakLine(mdData);
+      break;
+    }
+    case "`": {
+      convertCode(mdData);
       break;
     }
     default:
@@ -117,10 +138,10 @@ const main = () => {
 main();
 
 // TODO:
-// Code Blocks
 // Escaping Characters
 
 // DONE:
+// Code Blocks - DONE
 // Line Breaks - DONE
 // Paragraph - DONE
 // Images - DONE
