@@ -64,8 +64,7 @@ function convertLinkAndImage(mdData, type) {
       //We need to close the paragraph tag, if it's opened before we write a link or image
       if (mdData.inParagraph) mdData.closeParagraph();
       if (type === "image") {
-        fs.appendFileSync(
-          mdData.fileToWrite,
+        mdData.appendFile(
           `
           <img src="${aux.link}"  title="${aux.title ? aux.title : ""}"
           alt="${
@@ -74,8 +73,7 @@ function convertLinkAndImage(mdData, type) {
           `
         );
       } else {
-        fs.appendFileSync(
-          mdData.fileToWrite,
+        mdData.appendFile(
           `
           <a href="${aux.link}" target="_blank" title="${
             aux.title ? aux.title : ""
@@ -91,7 +89,7 @@ function convertLinkAndImage(mdData, type) {
     }
   }
 
-  fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+  mdData.appendFile(mdData.contentIndex);
 }
 
 export default convertLinkAndImage;

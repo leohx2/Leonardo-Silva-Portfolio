@@ -92,15 +92,9 @@ function writeLists(mdData, blankIndexes, listType) {
   // blankIndexes was created to help to deal with nestead lists. It first check if there's a
   // nestead list by checking if there's "    1. " before it. But if we have 2 neasted lists , we must ignore 8 blanks spaces
   if (neastedList(mdData, blankIndexes, listType)) {
-    fs.appendFileSync(
-      mdData.fileToWrite,
-      `${listType === "orderedList" ? "<ol>" : "<ul>"}`
-    );
+    mdData.appendFile(`${listType === "orderedList" ? "<ol>" : "<ul>"}`);
     writeLists(mdData, blankIndexes + 4, listType);
-    fs.appendFileSync(
-      mdData.fileToWrite,
-      `${listType === "orderedList" ? "</ol>" : "</ul>"}`
-    );
+    mdData.appendFile(`${listType === "orderedList" ? "</ol>" : "</ul>"}`);
   }
 
   // Skip the "dot" if the sintax is right. Also, find out if the neasted list ended or not.
@@ -113,12 +107,12 @@ function writeLists(mdData, blankIndexes, listType) {
     return;
   }
 
-  fs.appendFileSync(mdData.fileToWrite, "<li>");
+  mdData.appendFile("<li>");
   while (mdData.contentIndex != "\n" && mdData.contentIndex) {
     writeHTML(mdData, "insideAList");
     mdData.index++;
   }
-  fs.appendFileSync(mdData.fileToWrite, "</li>");
+  mdData.appendFile("</li>");
 
   return writeLists(mdData, blankIndexes, listType);
 }
@@ -130,22 +124,16 @@ function convertList(mdData, listType) {
   if (rightSyntax(mdData, "firstList", listType)) {
     //We need to close the paragraph tag, if it's opened before we write a list
     if (mdData.inParagraph) mdData.closeParagraph();
-    fs.appendFileSync(
-      mdData.fileToWrite,
-      `${listType === "orderedList" ? "<ol>" : "<ul>"}`
-    );
+    mdData.appendFile(`${listType === "orderedList" ? "<ol>" : "<ul>"}`);
     writeLists(mdData, 0, listType);
-    fs.appendFileSync(
-      mdData.fileToWrite,
-      `${listType === "orderedList" ? "</ol>" : "</ul>"}`
-    );
+    mdData.appendFile(`${listType === "orderedList" ? "</ol>" : "</ul>"}`);
 
     // make sure the index is in the right position, otherwise it's "one position ahead"
     if (listType === "orderedList") mdData.index--;
   } else {
     //We need to open the paragraph tag, if it's closed before we write the char
     if (!mdData.inParagraph) mdData.openParagraph();
-    fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+    mdData.appendFile(mdData.contentIndex);
   }
 }
 

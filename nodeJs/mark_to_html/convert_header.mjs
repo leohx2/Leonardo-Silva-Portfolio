@@ -13,7 +13,7 @@ function convertHeader(mdData) {
     if (!mdData.inParagraph) {
       mdData.openParagraph();
     }
-    fs.appendFileSync(mdData.fileToWrite, `${"#".repeat(h_size)}`);
+    mdData.appendFile(`${"#".repeat(h_size)}`);
     mdData.index--;
     return;
   }
@@ -21,17 +21,16 @@ function convertHeader(mdData) {
   // Here we know that we're writingle and title, so we need to close the paragraph tag, if it's opened
   if (mdData.inParagraph) mdData.closeParagraph();
 
-  fs.appendFileSync(
-    mdData.fileToWrite,
+  mdData.appendFile(
     `<h${h_size} ${h_size < 3 ? "style=margin-bottom:0px" : ""}>`
   );
 
   while (mdData.contentIndex != "\n" && mdData.contentIndex) {
-    fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+    mdData.appendFile(mdData.contentIndex);
     mdData.index++;
   }
-  fs.appendFileSync(mdData.fileToWrite, `</h${h_size}>`);
-  if (h_size < 3) fs.appendFileSync(mdData.fileToWrite, `<hr >`);
+  mdData.appendFile(`</h${h_size}>`);
+  if (h_size < 3) mdData.appendFile(`<hr >`);
 
   // making sure the index is in the write position, since the "while loop" will always go one more than necessary
   // do our logic when using this function in other loops

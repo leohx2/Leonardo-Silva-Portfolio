@@ -4,7 +4,7 @@ function writeParagraph(mdData, mode) {
   if (!mdData.inParagraph && mode === "default" && mdData.contentIndex != "\n")
     mdData.openParagraph();
 
-  fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+  mdData.appendFile(mdData.contentIndex);
 
   if (mdData.inParagraph) {
     if (
@@ -24,7 +24,7 @@ function breakLine(mdData) {
     mdData.content[mdData.index + 1] === " " &&
     mdData.content[mdData.index + 2] === "\n"
   ) {
-    fs.appendFileSync(mdData.fileToWrite, "<br>");
+    mdData.appendFile("<br>");
     mdData.index += 2;
   } else if (
     mdData.contentIndex === "<" &&
@@ -32,10 +32,10 @@ function breakLine(mdData) {
     mdData.content[mdData.index + 2] === "r" &&
     mdData.content[mdData.index + 3] === ">"
   ) {
-    fs.appendFileSync(mdData.fileToWrite, "<br>");
+    mdData.appendFile("<br>");
     mdData.index += 3;
   } else {
-    fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+    mdData.appendFile(mdData.contentIndex);
   }
 }
 

@@ -23,13 +23,21 @@ class MdData {
     return this.content[this.index];
   }
 
+  writeFile(string) {
+    fs.writeFileSync(this.fileToWrite, string);
+  }
+
+  appendFile(string) {
+    fs.appendFileSync(this.fileToWrite, string);
+  }
+
   openParagraph() {
-    fs.appendFileSync(this.fileToWrite, `<p>`);
+    this.appendFile(`<p>`);
     this.inParagraph = !this.inParagraph;
   }
 
   closeParagraph() {
-    fs.appendFileSync(this.fileToWrite, `</p>`);
+    this.appendFile(`</p>`);
     this.inParagraph = !this.inParagraph;
   }
 }
@@ -43,8 +51,7 @@ export function writeHTML(mdData, mode) {
       handle_asterisk(mdData, mode);
       break;
     case "1":
-      if (mode === "insideAList")
-        fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+      if (mode === "insideAList") mdData.appendFile(mdData.contentIndex);
       else convertList(mdData, "orderedList");
       break;
     case "_":
@@ -52,7 +59,7 @@ export function writeHTML(mdData, mode) {
         mdData.content[mdData.index + 1] === "_" &&
         mdData.content[mdData.index + 2] === "_"
       ) {
-        fs.appendFileSync(mdData.fileToWrite, "<hr>");
+        mdData.appendFile("<hr>");
         mdData.index += 2;
         break;
       }
@@ -61,7 +68,7 @@ export function writeHTML(mdData, mode) {
         mdData.content[mdData.index + 1] === "-" &&
         mdData.content[mdData.index + 2] === "-"
       ) {
-        fs.appendFileSync(mdData.fileToWrite, "<hr>");
+        mdData.appendFile("<hr>");
         mdData.index += 2;
         break;
       }
@@ -97,11 +104,11 @@ const main = () => {
     const mdData = new MdData(fs.readFileSync(argv[2], "utf-8"), 0, argv[3]);
 
     // Create or erase the content from the file
-    fs.writeFileSync(mdData.fileToWrite, "<html><body>");
+    mdData.writeFile("<html><body>");
     for (mdData.index; mdData.index < mdData.content.length; mdData.index++)
       writeHTML(mdData, "default");
     //Finish the HTML body
-    fs.appendFileSync(mdData.fileToWrite, "</body></html>");
+    mdData.appendFile("</body></html>");
   } catch (err) {
     console.log(err);
   }

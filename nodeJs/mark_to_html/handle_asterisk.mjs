@@ -44,7 +44,7 @@ function handle_asterisk(mdData, mode) {
   ) {
     //We need to close the paragraph tag, if it's opened
     if (mdData.inParagraph) mdData.closeParagraph();
-    fs.appendFileSync(mdData.fileToWrite, "<hr>");
+    mdData.appendFile("<hr>");
     mdData.index--;
     return;
   }
@@ -52,7 +52,7 @@ function handle_asterisk(mdData, mode) {
   if (!check_asterisk(mdData, asterisk_counter)) {
     //We need to open the paragraph tag, if there's no opened tag
     if (!mdData.inParagraph && mode === "default") mdData.openParagraph();
-    fs.appendFileSync(mdData.fileToWrite, "*");
+    mdData.appendFile("*");
     mdData.index -= asterisk_counter;
     return;
   }
@@ -63,27 +63,27 @@ function handle_asterisk(mdData, mode) {
       // goes back to the asterisk position
       mdData.index--;
       if (mode === "insideAList") {
-        fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+        mdData.appendFile(mdData.contentIndex);
         return;
       }
       convertList(mdData, "unorderedList");
       return;
     }
-    fs.appendFileSync(mdData.fileToWrite, "<em>");
+    mdData.appendFile("<em>");
     finish_as = "</em>";
   } else if (asterisk_counter === 2) {
-    fs.appendFileSync(mdData.fileToWrite, "<strong>");
+    mdData.appendFile("<strong>");
     finish_as = "</strong>";
   } else if (asterisk_counter >= 3) {
-    fs.appendFileSync(mdData.fileToWrite, "<strong><em>");
+    mdData.appendFile("<strong><em>");
     finish_as = "</em></strong>";
   }
 
   while (mdData.contentIndex != "*") {
-    fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
+    mdData.appendFile(mdData.contentIndex);
     mdData.index++;
   }
-  fs.appendFileSync(mdData.fileToWrite, finish_as);
+  mdData.appendFile(finish_as);
   mdData.index += asterisk_counter - 1;
 }
 
