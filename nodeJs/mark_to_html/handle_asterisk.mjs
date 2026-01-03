@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import convertList from "./convert_list.mjs";
+import { convertList } from "./convert_list.mjs";
 
 // Checking if it's well formated. In case the user types "***something" I need to write
 // "***something" and not <strong>something</strong>, because there's no asterisk in the end.
@@ -42,13 +42,16 @@ function handle_asterisk(mdData, mode) {
     asterisk_counter >= 3 &&
     (mdData.contentIndex === "\n" || !mdData.contentIndex)
   ) {
+    //We need to close the paragraph tag, if it's opened
+    if (mdData.inParagraph) mdData.closeParagraph();
     fs.appendFileSync(mdData.fileToWrite, "<hr>");
     mdData.index--;
     return;
   }
 
   if (!check_asterisk(mdData, asterisk_counter)) {
-    // fs.appendFileSync(mdData.fileToWrite, `${"*".repeat(asterisk_counter)}`);
+    //We need to open the paragraph tag, if there's no opened tag
+    if (!mdData.inParagraph && mode === "default") mdData.openParagraph();
     fs.appendFileSync(mdData.fileToWrite, "*");
     mdData.index -= asterisk_counter;
     return;

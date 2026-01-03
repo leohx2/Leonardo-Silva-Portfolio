@@ -128,6 +128,8 @@ function convertList(mdData, listType) {
   // Checking the right syntax
 
   if (rightSyntax(mdData, "firstList", listType)) {
+    //We need to close the paragraph tag, if it's opened before we write a list
+    if (mdData.inParagraph) mdData.closeParagraph();
     fs.appendFileSync(
       mdData.fileToWrite,
       `${listType === "orderedList" ? "<ol>" : "<ul>"}`
@@ -141,8 +143,10 @@ function convertList(mdData, listType) {
     // make sure the index is in the right position, otherwise it's "one position ahead"
     if (listType === "orderedList") mdData.index--;
   } else {
+    //We need to open the paragraph tag, if it's closed before we write the char
+    if (!mdData.inParagraph) mdData.openParagraph();
     fs.appendFileSync(mdData.fileToWrite, mdData.contentIndex);
   }
 }
 
-export default convertList;
+export { convertList, isInArray };

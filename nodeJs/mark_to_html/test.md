@@ -1,14 +1,14 @@
 # O Meu Primeiro Teste de Conversão
 
-Este é um ficheiro de exemplo para testar o **Mini-Projeto 1**. Se estiveres a ler isto num browser com formatação, significa que o teu script funcionou!
-
+Este é um ficheiro de exemplo para testar o **Mini-Projeto 1**. Se estiveres a ler isto num browser com formatação, significa que o teu script funcionou!  
+Aqui tem de haver um espaço
 ## Coisas que estou a aprender
-Aqui está uma lista do que este projeto ensina:
+Aqui está uma lista do que este projeto ensina:  
 
-1. # First item
-2. ## Second in a list
-3. ### Third item
-    1. **Indented item 1**
+1. # First item  
+2. ## Second  in a list  
+3. ### Third<br> item<br>
+    1. **Indented <br>item 1**
     2. *Indented item 2*
         1. ***2x Indented item  1**
         1. *2x Indented item 2 1. test a ul inside a ol
@@ -44,3 +44,5 @@ console.log(mensagem);
 ***
 ---
 ___
+
+Fim

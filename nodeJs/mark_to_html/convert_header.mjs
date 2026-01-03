@@ -9,10 +9,17 @@ function convertHeader(mdData) {
   }
 
   if (mdData.contentIndex != " ") {
+    // If we are here, we know that there is no title, just a regular paragraph
+    if (!mdData.inParagraph) {
+      mdData.openParagraph();
+    }
     fs.appendFileSync(mdData.fileToWrite, `${"#".repeat(h_size)}`);
     mdData.index--;
     return;
   }
+
+  // Here we know that we're writingle and title, so we need to close the paragraph tag, if it's opened
+  if (mdData.inParagraph) mdData.closeParagraph();
 
   fs.appendFileSync(
     mdData.fileToWrite,
