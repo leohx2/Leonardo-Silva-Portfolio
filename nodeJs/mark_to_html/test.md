@@ -24,10 +24,10 @@ Let's see a list of different things
 ### Unordered list:
 - ul 1
 - ul 1.2
-    + ul 2
-    + *Just an asteriks
-        - *Italic list* 1. test
-        - **Bold 3.1** * a ul inside another ul
+    - ul 2
+    - *Just an asteriks
+        - *Italic list*
+        - **Bold 3.1**
         - ***Both 3.1***
 - + two lists
 * ***

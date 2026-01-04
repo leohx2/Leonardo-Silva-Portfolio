@@ -1,150 +1,54 @@
-<html>
-  <body>
-    <h1 style="margin-bottom: 0px">Title 1</h1>
-    <hr />
+<html><body style="padding:2rem"><h1 style=margin-bottom:0px> Markdown to HTML Converter (CLI)</h1><hr >
 
-    <p>
-      Este é um ficheiro de exemplo para testar o
-      <strong>Mini-Projeto 1</strong>. Se estiveres a ler isto num browser com
-      formatação, significa que o teu script funcionou!<br />Aqui tem de haver
-      um espaço
-    </p>
-    <p>
-      This is a test file to test out my <strong>Mini-project 1</strong>. If
-      it's well formated means it worked well
-    </p>
-    <h2 style="margin-bottom: 0px">Title 2</h2>
-    <hr />
+<p>A custom Command Line Interface (CLI) tool built from scratch in <strong>Node.js</strong> to convert Markdown files into HTML. 
+</p>
+<p><strong>Educational Project:</strong> This parser was built entirely with <strong>Vanilla JavaScript (Node.js)</strong> without relying on any external parsing libraries (like <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">marked</code> or <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">markdown-it</code>). The goal was to understand data manipulation, file streams, and parser logic "under the hood."
+</p>
+<h2 style=margin-bottom:0px> Features</h2><hr >
 
-    <p>Let's see a list of different things</p>
-    <ol>
-      <li><h4>First item</h4></li>
-      <li><h5>Second in a list</h5></li>
-      <li>
-        <h6>
-          Third<br />
-          item with break lines<br />
-        </h6>
-      </li>
-      <ol>
-        <li>
-          <strong>Indented <br />item 1 bold and with break line</strong>
-        </li>
-        <li><em>Indented item 2</em></li>
-        <ol>
-          <li>*<strong>2x Indented item 1</strong></li>
-          <li>*2x Indented item 2 1. test a ul inside a ol</li>
-        </ol>
-      </ol>
-      <li><h6>Fourth item</h6></li>
-      <li><hr /></li>
-      <li>
-        A link
-        <a
-          href="https://unsplash.com/pt-br/fotografias/gato-preto-no-chao-de-madeira-marrom-gbTg2qob3hY"
-          target="_blank"
-          title="teste title"
-          style="text-decoration: none"
-        >
-          to the image source
-        </a>
-      </li>
-      <li>
-        An image
-        <img
-          src="https://images.unsplash.com/photo-1604447190317-195eb0c28eee?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          title="Image title"
-          alt="A cute kitten "
-          style="max-height: 100vh; max-width: 100vw; display: block"
-        />
-      </li>
-    </ol>
-    <h3>Unordered list:</h3>
-    <ul>
-      <li>ul 1</li>
-      <li>ul 1.2</li>
-      <ul>
-        <li>ul 2</li>
-        <li>*Just an asteriks</li>
-        <ul>
-          <li><em>Italic list</em> 1. test</li>
-          <li><strong>Bold 3.1</strong> * a ul inside another ul</li>
-          <li>
-            <strong><em>Both 3.1</em></strong>
-          </li>
-        </ul>
-        <li>two lists</li>
-      </ul>
-      <li><hr /></li>
-    </ul>
-    <h3>What about style?</h3>
-    <p>
-      What do you think about <strong>bold</strong>? <em>Italic</em>? What about
-      <strong><em>both, bold and italic!</em></strong>
-    </p>
-    <h3>Let's see the code section:</h3>
+<ul><li style="padding:0.15rem 0"><strong>Zero Dependencies:</strong> Built using only native Node.js modules (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">fs</code>, <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">process</code>).</li><li style="padding:0.15rem 0"><strong>State Machine Architecture:</strong> Uses a custom class to manage parsing context and file pointers.</li><li style="padding:0.15rem 0"><strong>Recursive Parsing:</strong> Supports infinitely nested lists (Ordered & Unordered) using recursion.</li><li style="padding:0.15rem 0"><strong>ES Modules:</strong> Written using modern <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">.mjs</code> syntax.</li><li style="padding:0.15rem 0"><strong>Basic syntax Markdown Support:</strong></li><ul><li style="padding:0.15rem 0">Headers (H1 - H6)</li><li style="padding:0.15rem 0">Formatting (<strong>Bold</strong>, <em>Italic</em>, <strong><em>Both</em></strong>)</li><li style="padding:0.15rem 0">Lists (Ordered & Unordered with nesting)</li><li style="padding:0.15rem 0">Images & Links</li><li style="padding:0.15rem 0">Code Blocks & Inline Code</li><li style="padding:0.15rem 0">Horizontal Rules (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">---</code>, <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">***</code>, <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">___</code>)</li><li style="padding:0.15rem 0">Character Escaping</li><li style="padding:0.15rem 0">
+          <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" title=""
+          style="text-decoration: none">
+          Markdown guide org
+          </a>
+          </li></ul></ul><h2 style=margin-bottom:0px> Prerequisites</h2><hr >
 
-    <p>
-      Because I'm trying node.js, that was my choice to start and try the
-      language logic! Below you'll see some horizontal lines and code tests in
-      diferent formats
-    </p>
-    <hr />
-    <hr />
-    <hr />
+<ul><li style="padding:0.15rem 0"><strong>Node.js</strong> (Version 14+ recommended for ESM support).</li></ul><h2 style=margin-bottom:0px> Installation & Usage</h2><hr >
 
-    <p>
-      The first code starts here:
-      <code
-        style="
-          padding: 0.1rem 0.4rem;
-          border-radius: 5px;
-          color: white;
-          background-color: #0e0e0e;
-        "
-        >const codeFormat = 1</code
-      >
-      end of the 1st code
-    </p>
-    <p>
-      <code
-        style="
-          padding: 0.1rem 0.4rem;
-          border-radius: 5px;
-          color: white;
-          background-color: #0e0e0e;
-        "
-      >
-        const codeFormat = `2` console.log(codeFormat): "2"
-      </code>
-      End of the 2nd code
-    </p>
-    <code
-      style="
-        display: block;
-        width: 100vw;
-        padding: 1rem;
-        color: white;
-        background-color: #0e0e0e;
-        border-radius: 5px;
-      "
-      >const codeFormat = '3'<br />const message = `block code`<br
-    /></code>
-    <p>End of the 3rd code</p>
-    <hr />
-    <hr />
-    <hr />
+<ol><li style="padding:0.15rem 0">  <strong>Clone the repository:</strong><br> <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">
+    git clone https://github.com/leohx2/Leonardo-Silva-Portfolio.git && 
+    cd nodeJs/mark-to-html/
+    </code></li><li style="padding:0.15rem 0">  <strong>Run the converter:</strong><br> Pass the source file and the destination file as arguments<br> <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">
+    node mark_to_html.mjs MD_FILE_NAME.md DESTINATION_FILE_NAME.html
+    </code></li><li style="padding:0.15rem 0">  <strong>Check the result:</strong><br> Open <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">DESTINATION_FILE_NAME.html</code> in your browser to see the converted output.</li></ol><h2 style=margin-bottom:0px> Project Architecture</h2><hr >
 
-    <h3>Escaping Characters:</h3>
+<p>The project is modularized to separate concerns, keeping the main loop clean:
+</p>
+<ul><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">mark_to_html.mjs</code>: Entry point. Contains the main loop and the <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">MdData</code> class (State Management).</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">convert_header.mjs</code>: Parses headers (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">#</code>) and manages hierarchy.</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">convert_list.mjs</code>: Handles complex list logic, using <strong>recursion</strong> for nesting (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">&lt;ul&gt;</code>/<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">&lt;ol&gt;</code>).</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">convert_link.mjs</code>: Parses both links (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">[text](url)</code>) and images (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">![alt](url)</code>).</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">convert_code.mjs</code>: Manages code blocks (fenced or indented) and inline code styles.</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">handle_asterisk.mjs</code>: Centralizes logic for <strong>Bold</strong>, <em>Italic</em>, and Horizontal Rules (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">***</code>, <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">---</code>, <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">___</code>).</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">convert_escaping.mjs</code>: Handles character escaping (e.g., <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">*</code>) to prevent syntax conflicts.</li><li style="padding:0.15rem 0"><code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">convert_paragraph_and_linebreak.mjs</code>: Controls text flow, ensuring correct <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">&lt;p&gt;</code> and <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">&lt;br&gt;</code> placement.</li></ul><h2 style=margin-bottom:0px> Technical Highlights</h2><hr >
 
-    <p>-> \ ` * _ { } [ ] < > ( ) # + - . !</p>
-    <ol>
-      <li>
-        Let's try them inside a list, this is half of them -> \ ` * _ { } [ ]
-        and the other half below
-      </li>
-      <li>< > ( ) # + - . ! | now we're done :)</li>
-    </ol>
-    <strong><em>The End</em></strong>
-  </body>
-</html>
+<h3 style=margin-bottom:0.5rem> The "Context Object" Pattern</h3>
+<p>Instead of passing strings between functions, the project uses a single class instance (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">MdData</code>) passed by reference. This allows different modules to read and modify the global parsing state (current index, file buffer, active paragraphs) efficiently.
+</p>
+<h3 style=margin-bottom:0.5rem> Recursive List Handling</h3>
+<p>Parsing nested lists is one of the hardest parts of Markdown. This project detects indentation levels and calls the list parser recursively to generate valid nested HTML (<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">&lt;ul&gt;</code> inside <code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">&lt;li&gt;</code>).
+</p>
+<h2 style=margin-bottom:0px> Author</h2><hr >
+
+<p><strong>Leonardo Rosendo Silva</strong> <em>Backend Student & Frontend Developer</em>
+</p>
+<p><strong>Feel free to checkout my website 
+          <a href="https://silvaleonardo.dev" target="_blank" title=""
+          style="text-decoration: none">
+          silvaleonardo.dev
+          </a>
+          </strong>
+</p>
+<hr>
+<p><em>Built for educational purposes as part of my backend development portfolio.</em>
+</p>
+<p><strong>Note: I am implementing the basic syntax from the 
+          <a href="https://www.markdownguide.org/basic-syntax/" target="_blank" title=""
+          style="text-decoration: none">
+          Markdown guide org
+          </a>
+          , and I'm not taking into consideration alternative syntax</strong></body></html>

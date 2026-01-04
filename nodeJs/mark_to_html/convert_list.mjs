@@ -17,12 +17,14 @@ function rightSyntax(mdData, mode, listType) {
       return (
         !isNaN(mdData.contentIndex) &&
         mdData.content[mdData.index + 1] === "." &&
-        mdData.content[mdData.index + 2] === " "
+        mdData.content[mdData.index + 2] === " " &&
+        (mdData.content[mdData.index - 1] === "\n" || mdData.index == 0)
       );
     else
       return (
         isInArray(mdData.contentIndex, unorderedListChar) &&
-        mdData.content[mdData.index + 1] === " "
+        mdData.content[mdData.index + 1] === " " &&
+        (mdData.content[mdData.index - 1] === "\n" || mdData.index == 0)
       );
   } else {
     if (listType === "orderedList")
@@ -61,6 +63,47 @@ function neastedList(mdData, blankIndexes, listType) {
   return false;
 }
 
+/**
+ * If we have something like this:
+ * 
+ *1. List 
+      list continuation
+      continuation 2
+  we must convert to 
+  <li>
+    List list continuatuon continuation 2
+  </li>
+  That function will check that indentation that must be 4 spaces to count
+ */
+function checkIndententionListiTem(mdData, blankIndexes, listType) {
+  const unorderedListChar = ["+", "*", "-"];
+  const verifySpaces = () => {
+    return (
+      mdData.contentIndex === "\n" &&
+      mdData.content.startsWith(
+        `${" ".repeat(4)}`,
+        mdData.index + 1 + blankIndexes
+      )
+    );
+  };
+
+  if (!mdData.contentIndex) return false;
+  else if (
+    (listType === "orderedList" &&
+      verifySpaces() &&
+      isNaN(mdData.content[mdData.index + 5 + blankIndexes])) ||
+    (listType === "unorderedList" &&
+      verifySpaces() &&
+      !isInArray(
+        mdData.content[mdData.index + 5 + blankIndexes],
+        unorderedListChar
+      ))
+  ) {
+    mdData.index += 4;
+    return true;
+  } else return mdData.contentIndex != "\n";
+}
+
 function writeLists(mdData, blankIndexes, listType) {
   const unorderedListChar = ["+", "*", "-", " "];
 
@@ -78,8 +121,11 @@ function writeLists(mdData, blankIndexes, listType) {
     ) {
       if (
         // Special case, when dealing with * inside a list
+        // We must prevent to have the same behavior when it's a bold sentence
+        // inside a list but keep if there's a nestead list
         mdData.contentIndex === "*" &&
-        isInArray(mdData.content[mdData.index - 2], unorderedListChar)
+        isInArray(mdData.content[mdData.index - 2], unorderedListChar) &&
+        mdData.content[mdData.index + 1] != " "
       ) {
         break;
       }
@@ -107,8 +153,8 @@ function writeLists(mdData, blankIndexes, listType) {
     return;
   }
 
-  mdData.appendFile("<li>");
-  while (mdData.contentIndex != "\n" && mdData.contentIndex) {
+  mdData.appendFile(`<li style="padding:0.15rem 0">`);
+  while (checkIndententionListiTem(mdData, blankIndexes, listType)) {
     writeHTML(mdData, "insideAList");
     mdData.index++;
   }
@@ -132,7 +178,6 @@ function convertList(mdData, listType) {
     if (listType === "orderedList") mdData.index--;
   } else {
     //We need to open the paragraph tag, if it's closed before we write the char
-    if (!mdData.inParagraph) mdData.openParagraph();
     mdData.appendFile(mdData.contentIndex);
   }
 }

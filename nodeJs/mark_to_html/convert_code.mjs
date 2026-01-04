@@ -21,8 +21,8 @@ function converCodeIndent(mdData) {
   }
 }
 
-function convertCode(mdData) {
-  if (!mdData.inParagraph) mdData.openParagraph();
+function convertCode(mdData, mode) {
+  if (!mdData.inParagraph && mode === "default") mdData.openParagraph();
   mdData.appendFile(
     `<code style="padding:0.1rem 0.4rem; border-radius:5px ;color:white; background-color:#0E0E0E">`
   );

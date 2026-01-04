@@ -6,7 +6,7 @@ function writeParagraph(mdData, mode) {
 
   mdData.appendFile(mdData.contentIndex);
 
-  if (mdData.inParagraph) {
+  if (mdData.inParagraph && mode === "default") {
     if (
       (mdData.contentIndex === "\n" &&
         mdData.content[mdData.index + 1] === "\n") ||

@@ -62,7 +62,6 @@ function convertLinkAndImage(mdData, type) {
       // If we are here, it means we have the whole link
       aux.link = mdData.content.slice(aux.linkStartPosition, aux.auxCounter);
       //We need to close the paragraph tag, if it's opened before we write a link or image
-      if (mdData.inParagraph) mdData.closeParagraph();
       if (type === "image") {
         mdData.appendFile(
           `

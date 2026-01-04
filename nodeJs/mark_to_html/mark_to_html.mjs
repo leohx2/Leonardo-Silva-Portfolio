@@ -30,7 +30,9 @@ class MdData {
   }
 
   appendFile(string) {
-    fs.appendFileSync(this.fileToWrite, string);
+    if (string === "<") fs.appendFileSync(this.fileToWrite, "&lt;");
+    else if (string === ">") fs.appendFileSync(this.fileToWrite, "&gt;");
+    else fs.appendFileSync(this.fileToWrite, string);
   }
 
   openParagraph() {
@@ -90,9 +92,8 @@ export function writeHTML(mdData, mode) {
     case " ": {
       if (
         mdData.contentIndex === " " &&
-        mdData.content[mdData.index + 1] == " " &&
-        mdData.content[mdData.index + 2] == " " &&
-        mdData.content[mdData.index + 3] == " "
+        mdData.content.startsWith(`${" ".repeat(3)}`, mdData.index + 1) &&
+        mode === "default"
       ) {
         mdData.appendFile(
           `<code style="display:block; width:100vw; padding:1rem; color:white; background-color:#0E0E0E; border-radius:5px">`
@@ -109,7 +110,7 @@ export function writeHTML(mdData, mode) {
       break;
     }
     case "`": {
-      convertCode(mdData);
+      convertCode(mdData, mode);
       break;
     }
     case "\\": {
@@ -130,7 +131,7 @@ const main = () => {
     const mdData = new MdData(fs.readFileSync(argv[2], "utf-8"), 0, argv[3]);
 
     // Create or erase the content from the file
-    mdData.writeFile("<html><body>");
+    mdData.writeFile(`<html><body style="padding:2rem">`);
     for (mdData.index; mdData.index < mdData.content.length; mdData.index++)
       writeHTML(mdData, "default");
     //Finish the HTML body

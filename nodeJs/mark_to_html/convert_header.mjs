@@ -1,6 +1,6 @@
 import fs from "node:fs";
 
-function convertHeader(mdData) {
+function convertHeader(mdData, mode) {
   let h_size = 0;
 
   while (mdData.contentIndex === "#") {
@@ -10,7 +10,7 @@ function convertHeader(mdData) {
 
   if (mdData.contentIndex != " ") {
     // If we are here, we know that there is no title, just a regular paragraph
-    if (!mdData.inParagraph) {
+    if (!mdData.inParagraph && mode === "default") {
       mdData.openParagraph();
     }
     mdData.appendFile(`${"#".repeat(h_size)}`);
@@ -22,7 +22,9 @@ function convertHeader(mdData) {
   if (mdData.inParagraph) mdData.closeParagraph();
 
   mdData.appendFile(
-    `<h${h_size} ${h_size < 3 ? "style=margin-bottom:0px" : ""}>`
+    `<h${h_size} ${
+      h_size < 3 ? "style=margin-bottom:0px" : "style=margin-bottom:0.5rem"
+    }>`
   );
 
   while (mdData.contentIndex != "\n" && mdData.contentIndex) {

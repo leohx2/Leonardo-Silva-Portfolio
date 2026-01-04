@@ -1,5 +1,6 @@
-import fs from "node:fs";
+import fs, { write } from "node:fs";
 import { convertList } from "./convert_list.mjs";
+import { writeHTML } from "./mark_to_html.mjs";
 
 // Checking if it's well formated. In case the user types "***something" I need to write
 // "***something" and not <strong>something</strong>, because there's no asterisk in the end.
@@ -49,6 +50,17 @@ function handle_asterisk(mdData, mode) {
     return;
   }
 
+  if (asterisk_counter === 1 && mdData.contentIndex === " ") {
+    // goes back to the asterisk position
+    mdData.index--;
+    if (mode === "insideAList") {
+      mdData.appendFile(mdData.contentIndex);
+      return;
+    }
+    convertList(mdData, "unorderedList");
+    return;
+  }
+
   if (!check_asterisk(mdData, asterisk_counter)) {
     //We need to open the paragraph tag, if there's no opened tag
     if (!mdData.inParagraph && mode === "default") mdData.openParagraph();
@@ -57,18 +69,10 @@ function handle_asterisk(mdData, mode) {
     return;
   }
 
-  // Handle italic, bold or both
+  // Open paragraph necessary
+  if (!mdData.inParagraph && mode === "default") mdData.openParagraph();
+
   if (asterisk_counter === 1) {
-    if (mdData.contentIndex === " ") {
-      // goes back to the asterisk position
-      mdData.index--;
-      if (mode === "insideAList") {
-        mdData.appendFile(mdData.contentIndex);
-        return;
-      }
-      convertList(mdData, "unorderedList");
-      return;
-    }
     mdData.appendFile("<em>");
     finish_as = "</em>";
   } else if (asterisk_counter === 2) {
@@ -80,7 +84,8 @@ function handle_asterisk(mdData, mode) {
   }
 
   while (mdData.contentIndex != "*") {
-    mdData.appendFile(mdData.contentIndex);
+    // mdData.appendFile(mdData.contentIndex);
+    writeHTML(mdData, "insideAList");
     mdData.index++;
   }
   mdData.appendFile(finish_as);
