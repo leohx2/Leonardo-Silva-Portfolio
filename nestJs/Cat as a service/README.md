@@ -12,6 +12,6 @@ The repository is structured into two main directories:
 * **Backend:** NestJS, TypeScript
 * **Frontend:** React, TypeScript
 
-## 📸 Preview
+## Preview
 
-![cats api web app](/catsApi.png)
+![cats api web app](./catsApi.png)
