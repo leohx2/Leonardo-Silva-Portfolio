@@ -1,6 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CatSelector, CatProp, NewCatData } from './app.service';
-import { get } from 'http';
 
 @Controller()
 export class CatController {
@@ -12,12 +11,18 @@ export class CatController {
     return this.catService.getAllCats();
   }
 
-  @Get(':id')
-  getCat(@Param('id') catId: string):  CatProp | string{
+  
+  @Get('allIds')
+  getLength(): string[] {
+    return this.catService.getAllIds();
+  }
+  
+  @Get('get/:id')
+  getCat(@Param('id') catId: string):  CatProp[] | string{
     return this.catService.getCat(catId);
   }
 
-  @Post()
+  @Post('addCat')
   createCat(@Body() newCatData: NewCatData): string
   {
     return this.catService.createNewCat(newCatData);
