@@ -9,10 +9,10 @@
 .buttonsSection {
   flex-basis: 270px;
   height: 100dvh;
-  background-color: #ff878730;
+  background-color: #ff770030;
   display: flex;
   flex-direction: column;
-  padding-left: 1.5rem;
+  align-items: center;
 }
 
 .buttonsSection h1 {
@@ -28,10 +28,10 @@
 }
 
 .btnContainer button {
-  background-color: #feebd6;
-  border: 1px solid #574141;
+  background-color: #bba79c;
+  border: 1px solid #bba79c;
   border-radius: 5px;
-  color: #574141;
+  color: #ffffff;
   cursor: pointer;
   height: 33px;
   font-size: 14px;
@@ -43,6 +43,7 @@
 .btnContainer button:hover,
 .submitBtn:hover {
   background-color: #a36854;
+  border-color: #a36854;
   color: #fff0de;
 }
 
@@ -100,7 +101,7 @@ input:focus {
 
 .submitBtn {
   background-color: #feebd6;
-  border: 1px solid #574141;
+  border: 1px solid #feebd6;
   border-radius: 100%;
   flex-basis: 50px;
   height: 50px;
