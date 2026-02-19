@@ -1,0 +1,111 @@
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.buttonsSection {
+  flex-basis: 270px;
+  height: 100dvh;
+  background-color: #ff878730;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.5rem;
+}
+
+.buttonsSection h1 {
+  color: #574141;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 23px;
+}
+
+.btnContainer button {
+  background-color: #feebd6;
+  border: 1px solid #574141;
+  border-radius: 5px;
+  color: #574141;
+  cursor: pointer;
+  height: 33px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 141px;
+  transition: all 0.5s ease-in-out;
+}
+
+.btnContainer button:hover,
+.submitBtn:hover {
+  background-color: #a36854;
+  color: #fff0de;
+}
+
+.catsSection {
+  padding-left: 2rem;
+  flex-basis: calc(100% - (270px - 2rem));
+}
+
+.imgsContainer {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card {
+  height: 300px;
+  width: 300px;
+}
+
+.imgCreditDetails p {
+  margin: 0;
+  color: #574141;
+  font-weight: bold;
+}
+
+.imgCreditDetails a {
+  color: #574141;
+}
+
+img {
+  height: 60%;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  column-gap: 3rem;
+}
+
+input {
+  flex-basis: 25%;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #574141;
+  height: calc(23px - 0.3rem);
+}
+
+input:focus {
+  outline: none;
+}
+
+.submitBtn {
+  background-color: #feebd6;
+  border: 1px solid #574141;
+  border-radius: 100%;
+  flex-basis: 50px;
+  height: 50px;
+  font-size: 35px;
+  color: #574141;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}

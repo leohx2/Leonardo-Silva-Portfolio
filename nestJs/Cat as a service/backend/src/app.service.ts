@@ -28,12 +28,16 @@ export class CatSelector {
     return pseudoDataBase;
   }
 
-  // Return the desired cat, according to the ID or an error message
-  getCat(catId: string): CatProp | string{
-    const catToReturn = pseudoDataBase.find(item => item.id === catId);
+  // Get cats lenght, send back a array with all ID's
+  getAllIds(): string[] {
+  return pseudoDataBase.map(item => item.id);
+}
 
+  // Return the desired cat, according to the ID or an error message
+  getCat(catId: string): CatProp[] | string{
+    const catToReturn = pseudoDataBase.find(item => item.id === catId);
     if (catToReturn)
-      return catToReturn;
+      return [catToReturn];
     else
       return `Cat #${catId} was not found :(`;
   }
