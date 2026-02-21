@@ -42,3 +42,9 @@ a {
   cursor: pointer;
   text-decoration: none;
 }
+
+.audiowideFont {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
