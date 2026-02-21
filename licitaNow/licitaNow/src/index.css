@@ -2,7 +2,28 @@
   font-family: system-ui, sans-serif;
   scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #77b600;
+  border-radius: 10px;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
 body,
+html,
 p,
 h1,
 h2 {
@@ -13,4 +34,10 @@ h2 {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
 }

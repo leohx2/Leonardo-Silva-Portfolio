@@ -32,14 +32,54 @@ const NavBar = () => {
       <div className='subMenu'>
         <p>Sobre</p>
         <SvgSelector svgName="subMenuArrow" width="0.7rem" height="0.7rem" cssClass="subMenuArrow" colorHEX="#f6f6f6"/>
+        <div className='subMenuContent short'>
+          <a href="https://licitanow.com/sobre" target='__blank'>
+            <SvgSelector svgName="profile" cssClass="svgStroke" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Sobre nós</span>
+          </a>
+          <a href="https://licitanow.com/creditos" target='__blank'>
+            <SvgSelector svgName="creditCard" cssClass="svgStroke" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Créditos</span>
+          </a>
+          <a href="https://licitanow.com/precos" target='__blank'>
+            <SvgSelector svgName="coin" cssClass="svgFill" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Preços</span>
+          </a>
+          <a href="https://licitanow.com/eventos" target='__blank'>
+            <SvgSelector svgName="location" cssClass="svgFill" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Eventos</span>
+          </a>
+        </div>
       </div>
-      <a href="#">Como funciona</a>
+      <a href="https://licitanow.com/como" target='_blank'>Como funciona</a>
       <div className='subMenu'>
         <p>Soluções</p>
         <SvgSelector svgName="subMenuArrow" width="0.7rem" height="0.7rem" cssClass="subMenuArrow" colorHEX="#f6f6f6"/>
+        <div className='subMenuContent long'>
+          <a href="https://licitanow.com/concursos" target='__blank'>
+            <SvgSelector svgName="hammer" cssClass="svgFill" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Concursos</span>
+          </a>
+          <a href="https://licitanow.com/servicos" target='__blank'>
+            <SvgSelector svgName="todoList" cssClass="svgStroke" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Serviços</span>
+          </a>
+          <a href="https://licitanow.com/arquivo" target='__blank'>
+            <SvgSelector svgName="archive" cssClass="svgFill" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Arquivo</span>
+          </a>
+          <a href="https://licitanow.com/intervencoes" target='__blank'>
+            <SvgSelector svgName="worker" cssClass="svgFill" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Intervenções</span>
+          </a>
+          <a href="https://licitanow.com/colaboracao" target='__blank'>
+            <SvgSelector svgName="colab" cssClass="svgFill " width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
+            <span>Colaboração</span>
+          </a>
+        </div>
       </div>
-      <a href="#">Suporte</a>
-      <button className='navButton'>Entrar</button>
+      <a href="https://licitanow.com/suporte/0" target='_blank'>Suporte</a>
+      <a href="https://licitanow.com/login_page" target='_blank' className='navButton'>Entrar</a>
     </div>
   </nav>
   );

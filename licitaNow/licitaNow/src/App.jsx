@@ -10,6 +10,9 @@ function App() {
     <>
       <NavBar/>
       <Carousel/>
+      <div style={{height: "100dvh", width: "100%"}}>
+        testar nav
+      </div>
     </>
   )
 }
