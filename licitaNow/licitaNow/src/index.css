@@ -1,0 +1,16 @@
+:root {
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+body,
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
