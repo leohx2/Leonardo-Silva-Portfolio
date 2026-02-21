@@ -47,7 +47,7 @@ const SecondItem = () => {
       <div className='carouselContent'>
         <h1>Bucamos Excelência em Todos os Serviços</h1>
         <h2>Com mais de 25 anos de experência no mercado!</h2>
-          <a className='hoverAction'>
+          <a href="https://licitanow.com/como" target='__blank' className='hoverAction'>
             <span>Saber mais</span>
           </a>
       </div>

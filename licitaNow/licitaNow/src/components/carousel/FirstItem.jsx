@@ -12,10 +12,10 @@ const FirstItem = () => {
         <h1>A Nova Geração de Concursos Online</h1>
         <h2>Inovação e confiança em cada proposta</h2>
         <div className='carouselActions'>
-          <a className='hoverAction'>
+          <a href="https://licitanow.com/login_page" target='__blank' className='hoverAction'>
             <span>Começar agora</span>
           </a>
-          <a className='hoverAction'>
+          <a href="https://licitanow.com/pesquisar_concursos" target='__blank' className='hoverAction'>
             <span>Pesquisar Concursos</span>
           </a>
         </div>

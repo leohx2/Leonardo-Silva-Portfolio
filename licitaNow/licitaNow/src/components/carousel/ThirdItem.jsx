@@ -5,9 +5,9 @@ const ThirdItem = () => {
     <section className="deafultContainer">
       <div className='thirdItemBackground backgroundConfig'></div>
       <div className='carouselContent'>
-        <h1>A procura de ajuda?</h1>
+        <h1>À procura de ajuda?</h1>
         <h2>Temos uma equipa pronta para ajudar no que precisar!</h2>
-          <a className='hoverAction'>
+          <a href="https://licitanow.com/suporte/0" target='__blank' className='hoverAction'>
             <span>Contactar</span>
           </a>
       </div>
