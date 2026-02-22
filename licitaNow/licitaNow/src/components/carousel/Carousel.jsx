@@ -29,13 +29,13 @@ const NextArrow = (props) => {
 const Carousel = () => {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     prevArrow: <PrevArrow/>,
     nextArrow: <NextArrow/>,
     autoplay: false,
-    autoplaySpeed: 8000,
+    autoplaySpeed: 5500,
     pauseOnHover: false,
     cssEase: "linear",
     swipe: false,

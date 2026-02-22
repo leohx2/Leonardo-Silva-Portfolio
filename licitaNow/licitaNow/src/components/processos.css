@@ -1,0 +1,22 @@
+.processosContainer {
+  align-items: start;
+  column-gap: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 930px;
+  margin-top: 1rem;
+  text-align: center;
+  width: 70%;
+  overflow: hidden;
+}
+
+.processoNumber {
+  color: #77b600;
+  font-size: 6.5em;
+  position: relative;
+}
+
+.animationUp {
+  transform: translateX(110%);
+  opacity: 0;
+}

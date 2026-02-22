@@ -4,11 +4,11 @@ import './tiposDeConcurso.css'
 const TiposDeConcurso = () => {
 
   return(
-    <section className="tiposSection">
-      <h2 className="tiposTitle">
+    <section className="sectionStyle">
+      <h2 className="title">
         Lance <span>concursos</span> para qualquer etapa da sua obra
       </h2>
-      <div className="tiposSubTitle">
+      <div className="subtitle">
         <p>
           Da conceção aos acabamentos, a nossa plataforma adapta-se a todas as necessidades do setor da construção.
         </p>

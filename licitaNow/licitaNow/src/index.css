@@ -48,3 +48,73 @@ a {
   font-weight: 400;
   font-style: normal;
 }
+
+.title {
+  font-size: 2.3rem;
+}
+
+.title span {
+  color: #77b600;
+}
+
+.subtitle {
+  color: #686868;
+  text-align: center;
+  width: 40%;
+}
+
+.sectionStyle {
+  align-items: center;
+  row-gap: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0 1rem;
+  width: 100%;
+}
+
+.linkWithArrow {
+  align-items: center;
+  background-color: #77b600;
+  border: 1px solid #77b600;
+  border-radius: 50px;
+  column-gap: 0.5rem;
+  display: flex;
+  margin-top: 3rem;
+  padding: 0.7rem 2rem 0.7rem 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.linkWithArrow:hover {
+  background-color: #f5f3f4;
+  border-color: #639800;
+  color: #639800;
+}
+
+.divArrow {
+  display: flex;
+  height: 24px;
+  column-gap: 2px;
+  overflow: hidden;
+  width: 24px;
+}
+
+.arrowHoverEffect {
+  display: flex;
+  column-gap: 2px;
+  height: 24px;
+  width: 48px;
+}
+
+.arrowHoverEffect svg {
+  transform: translateX(-101%);
+}
+
+.linkWithArrow:hover .arrowHoverEffect svg {
+  transform: translateX(0);
+}
+
+.differentSection {
+  background-color: #fafafa;
+  padding-top: 6rem !important;
+}

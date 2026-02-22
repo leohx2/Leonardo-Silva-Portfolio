@@ -10,7 +10,6 @@ const SecondItem = () => {
 
 
   useEffect(() => {
-    console.log("\ndentro do useEffectn\n");
     const observer = new IntersectionObserver(
       (entries) => {
 

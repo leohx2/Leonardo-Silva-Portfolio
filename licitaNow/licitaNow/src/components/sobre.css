@@ -1,0 +1,49 @@
+.sobreContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 930px;
+  padding-top: 2rem;
+  width: 60%;
+  overflow: hidden;
+}
+
+.sobreContainer p {
+  color: #686868;
+}
+
+.sobreIndividual {
+  transition: all 0.8s ease-in-out;
+  padding: 0 0.5rem 2rem;
+  border-radius: 10px;
+}
+
+.sobreIndividual:hover {
+  background-color: #76b6001d;
+}
+
+.sobreTitle {
+  align-items: center;
+  display: flex;
+  column-gap: 1rem;
+  width: 100%;
+}
+
+.sobreTitle h3 {
+  font-size: 1.7rem;
+}
+
+.descriptionSobre {
+  color: #092d00;
+  font-weight: bolder;
+  font-size: 0.9rem;
+  margin-top: 0.7rem;
+}
+
+.numberSobre {
+  margin-top: 3rem;
+  justify-content: space-between;
+  max-width: 930px;
+  width: 60%;
+}
