@@ -96,7 +96,7 @@ a {
   height: 24px;
   column-gap: 2px;
   overflow: hidden;
-  width: 24px;
+  width: 25px;
 }
 
 .arrowHoverEffect {
@@ -110,11 +110,12 @@ a {
   transform: translateX(-101%);
 }
 
-.linkWithArrow:hover .arrowHoverEffect svg {
+.linkWithArrow:hover .arrowHoverEffect svg,
+.callOutBtns a:hover .arrowHoverEffect svg {
   transform: translateX(0);
 }
 
 .differentSection {
   background-color: #fafafa;
-  padding-top: 6rem !important;
+  padding-top: 3rem !important;
 }
