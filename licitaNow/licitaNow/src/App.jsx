@@ -5,6 +5,7 @@ import Carousel from './components/Carousel/Carousel'
 import TiposDeConcurso from './components/TiposDeConcurso'
 import Processos from './components/Processos'
 import SobreLicitaNow from './components/SobreLicitaNow'
+import CallOut from './components/CallOut'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <TiposDeConcurso/>
       <Processos/>
       <SobreLicitaNow />
+      <CallOut />
     </>
   )
 }
