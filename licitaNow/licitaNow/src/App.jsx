@@ -6,6 +6,9 @@ import TiposDeConcurso from './components/TiposDeConcurso'
 import Processos from './components/Processos'
 import SobreLicitaNow from './components/SobreLicitaNow'
 import CallOut from './components/CallOut'
+import JoinUs from './components/JoinUs'
+import GoUp from './components/GoUp'
+import Cookies from './components/Cookies'
 
 function App() {
 
@@ -17,6 +20,9 @@ function App() {
       <Processos/>
       <SobreLicitaNow />
       <CallOut />
+      <JoinUs/>
+      <GoUp/>
+      <Cookies />
     </>
   )
 }
