@@ -261,6 +261,37 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
             </g>
           </svg>
         )
+      case "correct":
+        return(
+          <svg width={width} height={height} fill={colorHEX} className={cssClass ? cssClass : ""} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 335.765 335.765" xml:space="preserve" stroke={colorHEX}>
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <g> <g> 
+                <polygon points="311.757,41.803 107.573,245.96 23.986,162.364 0,186.393 107.573,293.962 335.765,65.795 "></polygon> 
+              </g> </g>
+            </g>
+          </svg>
+        )
+      case "upArrow":
+        return(
+          <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <path className={cssClass ? cssClass : ""} fill-rule="evenodd" clip-rule="evenodd" d="M12 3C12.2652 3 12.5196 3.10536 12.7071 3.29289L19.7071 10.2929C20.0976 10.6834 20.0976 11.3166 19.7071 11.7071C19.3166 12.0976 18.6834 12.0976 18.2929 11.7071L13 6.41421V20C13 20.5523 12.5523 21 12 21C11.4477 21 11 20.5523 11 20V6.41421L5.70711 11.7071C5.31658 12.0976 4.68342 12.0976 4.29289 11.7071C3.90237 11.3166 3.90237 10.6834 4.29289 10.2929L11.2929 3.29289C11.4804 3.10536 11.7348 3 12 3Z" fill={colorHEX}></path> 
+            </g>
+          </svg>
+        )
+      case "cookie":
+        return(
+          <svg width={width} height={height} fill={colorHEX} className={cssClass ? cssClass : ""} viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke={colorHEX}>
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <path d="M225.94092,114.89844a15.91968,15.91968,0,0,0-13.46094-3.085,23.99389,23.99389,0,0,1-29.27832-23.14063,15.94771,15.94771,0,0,0-15.87354-15.875A23.99268,23.99268,0,0,1,144.187,43.51953a16.01308,16.01308,0,0,0-15.562-19.51367c-.21729-.001-.43018-.00195-.647-.00195A104,104,0,1,0,231.99463,127.3623v-.001A15.97461,15.97461,0,0,0,225.94092,114.89844ZM75.51465,99.51465a12.0001,12.0001,0,1,1,0,16.9707A12.00062,12.00062,0,0,1,75.51465,99.51465Zm24.9707,72.9707a12.0001,12.0001,0,1,1,0-16.9707A12.00062,12.00062,0,0,1,100.48535,172.48535Zm27.0293-40a12.0001,12.0001,0,1,1,16.9707,0A12.00019,12.00019,0,0,1,127.51465,132.48535Zm36.9707,48a12.0001,12.0001,0,1,1,0-16.9707A12.00062,12.00062,0,0,1,164.48535,180.48535Z"></path> 
+            </g>
+          </svg>
+        )
   }
 };
 

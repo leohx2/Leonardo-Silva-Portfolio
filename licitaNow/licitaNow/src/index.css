@@ -85,7 +85,8 @@ a {
   transition: all 0.4s ease-in-out;
 }
 
-.linkWithArrow:hover {
+.linkWithArrow:hover,
+.upAndCookies button:hover {
   background-color: #f5f3f4;
   border-color: #639800;
   color: #639800;
@@ -118,4 +119,50 @@ a {
 .differentSection {
   background-color: #fafafa;
   padding-top: 3rem !important;
+}
+
+.upAndCookies {
+  align-items: center;
+  bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 2%;
+  row-gap: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.upAndCookies button {
+  align-items: center;
+  display: flex;
+  background-color: #77b600;
+  border-radius: 100%;
+  border: 1px solid #77b600;
+  cursor: pointer;
+  padding: 10px;
+  transition: all 0.4s ease-in-out;
+}
+
+.upArrowSvgContainer {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.upArrowSvgActive {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.upAndCookies button:hover .upArrowSvg {
+  fill: #639800;
+}
+.upAndCookies button:hover .cookieSvg {
+  fill: #639800;
+  transform: rotateX(360deg);
+}
+
+.cookieSvg {
+  padding: 4px !important;
 }
