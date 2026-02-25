@@ -75,6 +75,8 @@ const JoinUs = () => {
               </button>
           </div>
         </div>
+        <label for="fmensagem">Mensagem</label>
+        <textarea id='fmensagem' name="fmensagem" placeholder='Compartilhe detalhes que nos ajudem a conhecer melhor o seu background' rows="10" cols="50"></textarea>
         <input type='submit' value={"Enviar pedido de adesão"} id="submiteBtn" name='submitbtn'/>
       </form>
     </section>

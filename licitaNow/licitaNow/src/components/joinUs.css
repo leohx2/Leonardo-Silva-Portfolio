@@ -32,6 +32,14 @@
   color: #777777;
 }
 
+.formContainer textarea {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px -1px rgb(180, 180, 180);
+  border: 1px solid #fff;
+  padding: 0.4rem 0.7rem;
+  transition: all 0.4s ease-in-out;
+}
+
 .formContainer input,
 .formContainer select {
   border-radius: 50px;
@@ -42,6 +50,7 @@
 }
 
 .formContainer input:focus,
+.formContainer textarea:focus,
 .formContainer select:focus {
   outline: none;
   border-color: #76b60093;

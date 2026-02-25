@@ -9,6 +9,7 @@ import CallOut from './components/CallOut'
 import JoinUs from './components/JoinUs'
 import GoUp from './components/GoUp'
 import Cookies from './components/Cookies'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       <JoinUs/>
       <GoUp/>
       <Cookies />
+      <Footer />
     </>
   )
 }

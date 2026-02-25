@@ -24,7 +24,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
             <polygon points="332.668,490 82.631,244.996 332.668,0 407.369,76.493 235.402,244.996 407.369,413.507 "></polygon>
           </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g>
         </svg>
-      )
+      );
     case "profile":
       return(
         <svg className={cssClass ? cssClass : ""} width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -34,7 +34,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
             <path className={cssClass ? cssClass : ""} d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke={colorHEX} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
           </g>
         </svg>
-      )
+      );
     case "creditCard":
       return(
         <svg className={cssClass ? cssClass : ""} width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
             </path>
           </g> </g>
         </svg>
-      )
+      );
       case "coin":
         return(
           <svg className={cssClass ? cssClass : ""} width={width} height={height} version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xmlSpace="preserve" fill="#000000">
@@ -56,7 +56,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path className="st0" d="M256,64c105.859,0,192,86.125,192,192c0,105.859-86.141,192-192,192c-105.875,0-192-86.141-192-192 C64,150.125,150.125,64,256,64 M256,0C114.609,0,0,114.625,0,256c0,141.391,114.609,256,256,256c141.375,0,256-114.609,256-256 C512,114.625,397.375,0,256,0z"></path>
             </g> </g>
           </svg>
-        )
+        );
       case "location":
         return (
           <svg className={cssClass ? cssClass : ""} width={width} height={height} version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xmlSpace="preserve" fill="#000000">
@@ -67,7 +67,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path className="st0" d="M255.997,233.979c-43.785,0-79.274,35.502-79.274,79.274h158.546 C335.268,269.481,299.775,233.979,255.997,233.979z"></path>
             </g> </g>
           </svg>
-        )
+        );
       case "hammer":
         return(
           <svg fill={colorHEX} className={cssClass ? cssClass : ""} width={width} height={height} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 407.467 407.467" xmlSpace="preserve" stroke={colorHEX}><g id="SVGRepo_bgCarrier" strokeWidth="0">
@@ -76,7 +76,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path d="M180.109,332.467h-156v30h-20v45h200v-45h-24V332.467z M39.109,347.467h126v15h-126V347.467z M189.109,377.467v15h-170v-15 h5h156H189.109z"></path>
             </g> </g>
           </svg>
-        )
+        );
       case "todoList":
         return(
           <svg className={cssClass ? cssClass : ""} width={width} height={height} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" enableBackground="new 0 0 64 64" xmlSpace="preserve" fill="#000000" stroke="#000000">
@@ -95,7 +95,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <polygon className={cssClass ? cssClass : ""} fill="none" stroke={colorHEX} strokeWidth="2" strokeMiterlimit="10" points="36,5 36,1 28,1 28,5 24,5 22,13 42,13 40,5 "></polygon>
             </g>
           </svg>
-        )
+        );
       case "archive":
         return(
           <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +106,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </path>
             </g>
           </svg>
-        )
+        );
       case "worker":
         return(
           <svg className={cssClass ? cssClass : ""} width={width} height={height} viewBox="0 0 1024 1024" fill={colorHEX} version="1.1" xmlns="http://www.w3.org/2000/svg" stroke={colorHEX}>
@@ -117,7 +117,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </path>
             </g>
           </svg>
-        )
+        );
       case "colab":
         return(
           <svg fill={colorHEX} className={cssClass ? cssClass : ""} width={width} height={height} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 795.601 795.601" xmlSpace="preserve" stroke={colorHEX}>
@@ -132,7 +132,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path d="M587.4,401.3c1,3.7,1.7,7.1,1.6,10.4c0,1.1-0.1,2.199-0.3,3.199c-0.9,3.101-7.5,13.601-8.5,15.4 c11.6,12.5,26.8,15.3,41.9,18.5c4.5,0.9,9,1.5,13.8,2.1c1.6,0.301,3.1,0.601,4.7,0.9l-7.7,22.4c0,0-0.2,32.699,31.399,52.6h0.2 c31.601-19.9,31.4-52.6,31.4-52.6l-7.7-22.4c1.6-0.3,3.2-0.6,4.7-0.9c4.8-0.6,9.399-1.199,13.8-2.1c15.1-3.2,30.4-6.1,41.9-18.5 c-1-1.8-7.601-12.2-8.5-15.4c-0.2-1.1-0.301-2.1-0.301-3.199c0-3.301,0.601-6.801,1.601-10.4c1-3.5,2.1-7,3.1-10.5 c5.101-11.4,8-24,8-37.3c0-49.5-39.3-89.7-88.2-90.6l0,0h-0.1h-0.1l0,0c-48.9,0.9-88.2,41.1-88.2,90.6c0,13.3,2.8,25.9,8,37.3 C585.4,394.4,586.5,397.8,587.4,401.3z"></path>
             </g> </g> </g>
           </svg>
-        )
+        );
       case "harmer2":
         return(
           <svg className={cssClass ? cssClass : ""} width={width} height={height} viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -145,7 +145,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </g>
             </g>
           </svg>
-        )
+        );
       case "tools":
         return(
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className={cssClass ? cssClass : ""} width={width} height={height} viewBox="0 0 32 32" enableBackground="new 0 0 32 32" xmlSpace="preserve" fill={colorHEX} transform="matrix(-1, 0, 0, 1, 0, 0)">
@@ -165,7 +165,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </g>
             </g>
           </svg>
-        )
+        );
       case "services":
         return(
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width={width} height={height} viewBox="0 0 64 64" enableBackground="new 0 0 64 64" xmlSpace="preserve" fill="#000000">
@@ -186,7 +186,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <polyline fill="none" stroke={colorHEX} className={cssClass ? cssClass : ""} strokeWidth="2" strokeMiterlimit="10" points="55,7 51,7 51,17 "></polyline> 
             </g>
           </svg>
-        )
+        );
       case "people":
         return(
           <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,7 +196,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path className={cssClass ? cssClass : ""} fillRule="evenodd" clipRule="evenodd" d="M3 18C3 15.3945 4.66081 13.1768 6.98156 12.348C7.61232 12.1227 8.29183 12 9 12C9.70817 12 10.3877 12.1227 11.0184 12.348C11.3611 12.4703 11.6893 12.623 12 12.8027C12.3107 12.623 12.6389 12.4703 12.9816 12.348C13.6123 12.1227 14.2918 12 15 12C15.7082 12 16.3877 12.1227 17.0184 12.348C19.3392 13.1768 21 15.3945 21 18V21H15.75V19.5H19.5V18C19.5 15.5147 17.4853 13.5 15 13.5C14.4029 13.5 13.833 13.6163 13.3116 13.8275C14.3568 14.9073 15 16.3785 15 18V21H3V18ZM9 11.25C8.31104 11.25 7.66548 11.0642 7.11068 10.74C5.9977 10.0896 5.25 8.88211 5.25 7.5C5.25 5.42893 6.92893 3.75 9 3.75C10.2267 3.75 11.3158 4.33901 12 5.24963C12.6842 4.33901 13.7733 3.75 15 3.75C17.0711 3.75 18.75 5.42893 18.75 7.5C18.75 8.88211 18.0023 10.0896 16.8893 10.74C16.3345 11.0642 15.689 11.25 15 11.25C14.311 11.25 13.6655 11.0642 13.1107 10.74C12.6776 10.4869 12.2999 10.1495 12 9.75036C11.7001 10.1496 11.3224 10.4869 10.8893 10.74C10.3345 11.0642 9.68896 11.25 9 11.25ZM13.5 18V19.5H4.5V18C4.5 15.5147 6.51472 13.5 9 13.5C11.4853 13.5 13.5 15.5147 13.5 18ZM11.25 7.5C11.25 8.74264 10.2426 9.75 9 9.75C7.75736 9.75 6.75 8.74264 6.75 7.5C6.75 6.25736 7.75736 5.25 9 5.25C10.2426 5.25 11.25 6.25736 11.25 7.5ZM15 5.25C13.7574 5.25 12.75 6.25736 12.75 7.5C12.75 8.74264 13.7574 9.75 15 9.75C16.2426 9.75 17.25 8.74264 17.25 7.5C17.25 6.25736 16.2426 5.25 15 5.25Z" fill={colorHEX}></path> 
             </g>
           </svg>
-        )
+        );
       case "rightArrow2":
         return(
           <svg width={width} height={height} viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#000000">
@@ -213,7 +213,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
                   </g>
                 </g> </g> </g>
           </svg>
-        )
+        );
       case "locker":
         return(
           <svg width={width} height={height} fill={colorHEX} className={cssClass ? cssClass : ""} version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
@@ -226,7 +226,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </g> 
             </g>
           </svg>
-        )
+        );
       case "eye":
         return(
           <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +237,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path className={cssClass ? cssClass : ""} fill-rule="evenodd" clip-rule="evenodd" d="M12 3.25C7.48587 3.25 4.44529 5.9542 2.68057 8.24686L2.64874 8.2882C2.24964 8.80653 1.88206 9.28392 1.63269 9.8484C1.36564 10.4529 1.25 11.1117 1.25 12C1.25 12.8883 1.36564 13.5471 1.63269 14.1516C1.88206 14.7161 2.24964 15.1935 2.64875 15.7118L2.68057 15.7531C4.44529 18.0458 7.48587 20.75 12 20.75C16.5141 20.75 19.5547 18.0458 21.3194 15.7531L21.3512 15.7118C21.7504 15.1935 22.1179 14.7161 22.3673 14.1516C22.6344 13.5471 22.75 12.8883 22.75 12C22.75 11.1117 22.6344 10.4529 22.3673 9.8484C22.1179 9.28391 21.7504 8.80652 21.3512 8.28818L21.3194 8.24686C19.5547 5.9542 16.5141 3.25 12 3.25ZM3.86922 9.1618C5.49864 7.04492 8.15036 4.75 12 4.75C15.8496 4.75 18.5014 7.04492 20.1308 9.1618C20.5694 9.73159 20.8263 10.0721 20.9952 10.4545C21.1532 10.812 21.25 11.2489 21.25 12C21.25 12.7511 21.1532 13.188 20.9952 13.5455C20.8263 13.9279 20.5694 14.2684 20.1308 14.8382C18.5014 16.9551 15.8496 19.25 12 19.25C8.15036 19.25 5.49864 16.9551 3.86922 14.8382C3.43064 14.2684 3.17374 13.9279 3.00476 13.5455C2.84684 13.188 2.75 12.7511 2.75 12C2.75 11.2489 2.84684 10.812 3.00476 10.4545C3.17374 10.0721 3.43063 9.73159 3.86922 9.1618Z" fill={colorHEX}></path>
             </g>
           </svg>
-        )
+        );
       case "gift":
         return(
           <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -260,7 +260,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </g>
             </g>
           </svg>
-        )
+        );
       case "correct":
         return(
           <svg width={width} height={height} fill={colorHEX} className={cssClass ? cssClass : ""} version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 335.765 335.765" xml:space="preserve" stroke={colorHEX}>
@@ -272,7 +272,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               </g> </g>
             </g>
           </svg>
-        )
+        );
       case "upArrow":
         return(
           <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -282,7 +282,7 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path className={cssClass ? cssClass : ""} fill-rule="evenodd" clip-rule="evenodd" d="M12 3C12.2652 3 12.5196 3.10536 12.7071 3.29289L19.7071 10.2929C20.0976 10.6834 20.0976 11.3166 19.7071 11.7071C19.3166 12.0976 18.6834 12.0976 18.2929 11.7071L13 6.41421V20C13 20.5523 12.5523 21 12 21C11.4477 21 11 20.5523 11 20V6.41421L5.70711 11.7071C5.31658 12.0976 4.68342 12.0976 4.29289 11.7071C3.90237 11.3166 3.90237 10.6834 4.29289 10.2929L11.2929 3.29289C11.4804 3.10536 11.7348 3 12 3Z" fill={colorHEX}></path> 
             </g>
           </svg>
-        )
+        );
       case "cookie":
         return(
           <svg width={width} height={height} fill={colorHEX} className={cssClass ? cssClass : ""} viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)" stroke={colorHEX}>
@@ -291,7 +291,62 @@ const SvgSelector = ({ svgName, width, height, colorHEX, cssClass }) => {
               <path d="M225.94092,114.89844a15.91968,15.91968,0,0,0-13.46094-3.085,23.99389,23.99389,0,0,1-29.27832-23.14063,15.94771,15.94771,0,0,0-15.87354-15.875A23.99268,23.99268,0,0,1,144.187,43.51953a16.01308,16.01308,0,0,0-15.562-19.51367c-.21729-.001-.43018-.00195-.647-.00195A104,104,0,1,0,231.99463,127.3623v-.001A15.97461,15.97461,0,0,0,225.94092,114.89844ZM75.51465,99.51465a12.0001,12.0001,0,1,1,0,16.9707A12.00062,12.00062,0,0,1,75.51465,99.51465Zm24.9707,72.9707a12.0001,12.0001,0,1,1,0-16.9707A12.00062,12.00062,0,0,1,100.48535,172.48535Zm27.0293-40a12.0001,12.0001,0,1,1,16.9707,0A12.00019,12.00019,0,0,1,127.51465,132.48535Zm36.9707,48a12.0001,12.0001,0,1,1,0-16.9707A12.00062,12.00062,0,0,1,164.48535,180.48535Z"></path> 
             </g>
           </svg>
-        )
+        );
+      case "facebook":
+        return(
+          <svg width={width} height={height}  viewBox="0 0 24 24" id="meteor-icon-kit__regular-facebook" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+              <path className={cssClass ? cssClass : ""} fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 17.9895 4.38823 22.954 10.125 23.8542V15.4688H7.07812V12H10.125V9.35625C10.125 6.34875 11.9165 4.6875 14.6576 4.6875C15.9705 4.6875 17.3438 4.92188 17.3438 4.92188V7.875H15.8306C14.3399 7.875 13.875 8.80001 13.875 9.74899V12H17.2031L16.6711 15.4688H13.875V23.8542C19.6118 22.954 24 17.9895 24 12Z" fill={colorHEX}></path>
+            </g>
+          </svg>
+        );
+      case "instagram":
+        return(
+          <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier" > 
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill={colorHEX} className={cssClass ? cssClass : ""} ></path>
+              <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill={colorHEX} className={cssClass ? cssClass : ""}></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill={colorHEX} className={cssClass ? cssClass : ""}></path>
+            </g>
+          </svg>
+        );
+      case "linkedin":
+        return(
+          <svg fill={colorHEX} className={cssClass ? cssClass : ""} width={width} height={height} version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-143 145 512 512" xml:space="preserve" stroke={colorHEX}>
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M41.4,508.1H-8.5V348.4h49.9 V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7 C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6 c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z "></path> 
+            </g>
+          </svg>
+        );
+      case "x":
+      return(
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill={colorHEX} 
+          viewBox="0 0 300 271" 
+          width={width} height={height}
+          className={cssClass ? cssClass : ""} 
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
+        </svg>
+      );
+      case "email":
+        return(
+          <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier"> 
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M3.75 5.25L3 6V18L3.75 18.75H20.25L21 18V6L20.25 5.25H3.75ZM4.5 7.6955V17.25H19.5V7.69525L11.9999 14.5136L4.5 7.6955ZM18.3099 6.75H5.68986L11.9999 12.4864L18.3099 6.75Z" fill={colorHEX} className={cssClass ? cssClass : ""}></path> 
+            </g>
+          </svg>
+        );
   }
 };
 
