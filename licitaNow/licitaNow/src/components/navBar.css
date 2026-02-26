@@ -205,10 +205,12 @@ polyline {
     transform: translateX(0%);
   }
 
+  .entrarContainer {
+    width: 80%;
+  }
+
   .navButton {
-    align-self: start;
-    margin: 0.5rem 0 0 1.5rem;
-    padding: 0.5rem 3rem !important;
+    padding: 0.5rem 4rem !important;
   }
 
   .subMenu,

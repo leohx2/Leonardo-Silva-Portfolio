@@ -95,8 +95,9 @@ hr {
 .numberContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-evenly !important;
   position: relative;
+  row-gap: 3rem;
   width: 70%;
   z-index: 1;
 }

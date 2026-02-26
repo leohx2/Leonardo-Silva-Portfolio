@@ -109,7 +109,9 @@ const NavBar = () => {
         </div>
       </div>
       <a className="mobileNavLink" href="https://licitanow.com/suporte/0" target='_blank'>Suporte</a>
-      <a href="https://licitanow.com/login_page" target='_blank' className='navButton'>Entrar</a>
+      <div className='entrarContainer'>
+        <a href="https://licitanow.com/login_page" target='_blank' className='navButton'>Entrar</a>
+      </div>
     </div>
   </nav>
   );
