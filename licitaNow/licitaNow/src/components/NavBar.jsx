@@ -1,13 +1,25 @@
 import './navBar.css';
 import logo from '../assets/logo.png';
 import useViewPort from '../customHooks/useViewPort';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import SvgSelector from '../assets/SvgSelector'
 
 const NavBar = () => {
   const navBarRef = useRef(null);
   const portView = useViewPort();
-  const scrollYThreshHold = portView === "small" ? 5 : 30;
+  const scrollYThreshHold = portView === "small" ? 20 : 30;
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [isSubMenuOpen2, setIsSubMenuOpen2] = useState(false);
+
+  const openCloseMobileMenu = () => {
+    setIsMenuOpen(!isMenuOpen)
+  }
+
+  const openCloseSubMobileMenu = (id) => {
+    if (id == 1) setIsSubMenuOpen(!isSubMenuOpen)
+    else if (id == 2) setIsSubMenuOpen2(!isSubMenuOpen2)
+  }
 
   useEffect(() => {
     const changeY = () => {
@@ -28,11 +40,25 @@ const NavBar = () => {
     <a href='#'>
       <img className='navLogo' src={logo}/>
     </a>
-    <div className='navOptions'>
+    {portView !== "large" && (
+      <button className='mobileMenuBtn' onClick={openCloseMobileMenu}>
+        <SvgSelector svgName="mobileMenu" cssClass="svgStroke" width="33px" height="33px" colorHEX="#f6f6f6"/>
+      </button>
+    )}
+    <div className={`navOptions ${isMenuOpen ? "openned" : ""}`} >
+      {portView !== "large" && (
+      <button className='closeMenuBtn' onClick={openCloseMobileMenu}>
+        <SvgSelector svgName="close" cssClass="svgStroke" width="30px" height="30px" colorHEX="#f6f6f6"/>
+      </button>
+    )}
       <div className='subMenu'>
-        <p>Sobre</p>
-        <SvgSelector svgName="subMenuArrow" width="0.7rem" height="0.7rem" cssClass="subMenuArrow" colorHEX="#f6f6f6"/>
-        <div className='subMenuContent short'>
+        <div className='subMenuTitle' onClick={() => openCloseSubMobileMenu(1)}>
+          <p>Sobre</p>
+          <div className='rightArrow'>
+            <SvgSelector svgName="subMenuArrow" width="0.7rem" height="0.7rem" cssClass={`subMenuArrow right ${isSubMenuOpen ? 'rotateArrow' : ''}`} colorHEX="#f6f6f6"/>
+          </div>
+        </div>
+        <div className={`short ${portView === "large" ? 'subMenuContent' : 'subMenuContentMobile'} ${isSubMenuOpen ? 'activeSubMenu' : ' '}`}>
           <a href="https://licitanow.com/sobre" target='__blank'>
             <SvgSelector svgName="profile" cssClass="svgStroke" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
             <span>Sobre nós</span>
@@ -51,11 +77,15 @@ const NavBar = () => {
           </a>
         </div>
       </div>
-      <a href="https://licitanow.com/como" target='_blank'>Como funciona</a>
+      <a className="mobileNavLink" href="https://licitanow.com/como" target='_blank'>Como funciona</a>
       <div className='subMenu'>
-        <p>Soluções</p>
-        <SvgSelector svgName="subMenuArrow" width="0.7rem" height="0.7rem" cssClass="subMenuArrow" colorHEX="#f6f6f6"/>
-        <div className='subMenuContent long'>
+        <div className='subMenuTitle' onClick={() => openCloseSubMobileMenu(2)}>
+          <p>Soluções</p>
+          <div className={`rightArrow`}>
+            <SvgSelector svgName="subMenuArrow" width="0.7rem" height="0.7rem" cssClass={`subMenuArrow right ${isSubMenuOpen2 ? 'rotateArrow' : ''}`} colorHEX="#f6f6f6"/>
+          </div>
+        </div>
+        <div className={`long ${portView === "large" ? 'subMenuContent' : 'subMenuContentMobile'} ${isSubMenuOpen2 ? 'activeSubMenu' : ' '}`}>
           <a href="https://licitanow.com/concursos" target='__blank'>
             <SvgSelector svgName="hammer" cssClass="svgFill" width="0.8rem" height="0.8rem" colorHEX="#f6f6f6"/>
             <span>Concursos</span>
@@ -78,7 +108,7 @@ const NavBar = () => {
           </a>
         </div>
       </div>
-      <a href="https://licitanow.com/suporte/0" target='_blank'>Suporte</a>
+      <a className="mobileNavLink" href="https://licitanow.com/suporte/0" target='_blank'>Suporte</a>
       <a href="https://licitanow.com/login_page" target='_blank' className='navButton'>Entrar</a>
     </div>
   </nav>

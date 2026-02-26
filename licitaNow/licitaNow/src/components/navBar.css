@@ -21,7 +21,7 @@ polyline {
   padding: 2rem 3rem;
   transition: all 0.4s ease-in-out;
   width: 100%;
-  z-index: 99;
+  z-index: 90;
 }
 
 .navBarActive {
@@ -73,14 +73,15 @@ polyline {
 
 .subMenu:hover .subMenuArrow {
   fill: #77b600;
-  rotate: 90deg;
+  rotate: -90deg;
 }
 
 .navBarActive .navOptions {
   column-gap: 2rem;
 }
 
-.subMenu {
+.subMenu,
+.subMenuTitle {
   align-items: center;
   column-gap: 5px;
   cursor: pointer;
@@ -182,8 +183,127 @@ polyline {
   color: #497000;
 }
 
-.carouselActions {
-  column-gap: 2rem;
-  display: flex;
-  justify-content: center;
+@media screen and (max-width: 1024px) {
+  .navOptions {
+    align-items: center;
+    background-color: #141414;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    padding: 4rem 0;
+    position: fixed;
+    right: 0;
+    row-gap: 1.5rem;
+    top: 0;
+    transform: translateX(105%);
+    transition: all 0.4s ease-in-out !important;
+    width: 100%;
+  }
+
+  .navOptions.openned {
+    transform: translateX(0%);
+  }
+
+  .navButton {
+    align-self: start;
+    margin: 0.5rem 0 0 1.5rem;
+    padding: 0.5rem 3rem !important;
+  }
+
+  .subMenu,
+  .mobileNavLink {
+    border-bottom: 1px solid lightgray;
+    width: 80%;
+    padding-left: 0 !important;
+  }
+
+  .mobileMenuBtn,
+  .closeMenuBtn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .closeMenuBtn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    z-index: 99;
+  }
+
+  .subMenu {
+    align-items: start;
+    flex-direction: column;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .subMenuTitle {
+    width: 100%;
+  }
+
+  .subMenuContentMobile {
+    align-items: flex-start;
+    background-color: #80808013;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .subMenuContentMobile {
+    align-items: flex-start;
+    background-color: #80808013;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 0px !important;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+  }
+
+  .short.activeSubMenu {
+    height: 220px !important;
+    margin-top: 1rem;
+    opacity: 1;
+  }
+
+  .long.activeSubMenu {
+    height: 300px !important;
+    margin-top: 1rem;
+    opacity: 1;
+  }
+
+  .subMenuContentMobile a {
+    -webkit-tap-highlight-color: transparent;
+    width: 100%;
+    justify-content: start;
+  }
+
+  .short a {
+    height: 25%;
+  }
+
+  .long a {
+    height: 20%;
+  }
+
+  .navOptions a:hover,
+  .subMenu:hover {
+    color: inherit;
+  }
+
+  .subMenu:hover .subMenuArrow {
+    fill: #f6f6f6;
+    rotate: unset;
+  }
+
+  .rotateArrow {
+    rotate: -90deg !important;
+  }
 }

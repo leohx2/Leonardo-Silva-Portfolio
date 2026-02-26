@@ -25,9 +25,12 @@ const JoinUs = () => {
       <h2 className="title">
         Junte-se à nossa rede de <span>colaboradores</span>
       </h2>
-      <p className="subTitle">
-        Procuramos expandir negócios e encontrar profissionais que se identifiquem com a nossa missão
-      </p>
+      <div className="subtitle">
+        <p >
+          Procuramos expandir negócios e encontrar profissionais que se identifiquem com a nossa missão
+        </p>
+      </div>
+
       <form className='formContainer' onSubmit={(e) => {handleSubmit(e)}}>
         <div className='formTitle'>
           <h5>Adesão ao Programa de Colaboradores</h5>
@@ -56,21 +59,12 @@ const JoinUs = () => {
           <p>Experiência:</p>
           <div className='expButtons'>
             <button type='button' onClick={(e) => {handleClick(e)}}>
-              <div className='correctContainer'>
-                <SvgSelector svgName={"correct"}  width={"8px"} height={"8px"} colorHEX={"#fff"} cssClass={"correctSvg"}/>
-              </div>
               1 à 5 anos
             </button>
             <button type='button' onClick={(e) => {handleClick(e)}}>
-              <div className='correctContainer'>
-                <SvgSelector svgName={"correct"}  width={"8px"} height={"8px"} colorHEX={"#fff"} cssClass={"correctSvg"}/>
-              </div>
               6 à 15 anos
               </button>
             <button type='button' onClick={(e) => {handleClick(e)}}>
-              <div className='correctContainer'>
-                <SvgSelector svgName={"correct"}  width={"8px"} height={"8px"} colorHEX={"#fff"} cssClass={"correctSvg"}/>
-              </div>
               15+ anos
               </button>
           </div>

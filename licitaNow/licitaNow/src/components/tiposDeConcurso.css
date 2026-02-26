@@ -13,7 +13,6 @@
   border-radius: 15px;
   column-gap: 2rem;
   display: flex;
-  flex-basis: 70px;
   transition: all 0.4s ease-in-out;
 }
 
@@ -21,15 +20,15 @@
   box-shadow: 0px 13px 10px -11px #092d0092;
 }
 
-.svgModalidade {
-  flex-basis: 70px;
+.svgModalidadeContainer {
+  width: 70px;
 }
 
 .modalidadeDetails {
   row-gap: 0.7rem;
   display: flex;
   flex-direction: column;
-  flex-basis: calc(100% - 70px);
+  width: calc(100% - 70px);
 }
 
 .detailsTitle {
@@ -43,4 +42,19 @@
 
 .servicesSvg {
   stroke-width: 3px;
+}
+
+@media screen and (max-width: 1024px) {
+  .modalidadesContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+    width: calc(100% - 3rem);
+  }
+
+  .modalidade:hover {
+    box-shadow: none;
+  }
 }
