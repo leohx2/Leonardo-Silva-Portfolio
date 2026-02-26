@@ -5,6 +5,7 @@ import FirstItem from "../carousel/FirstItem";
 import SvgSelector from "../../assets/SvgSelector"
 import SecondItem from "../carousel/SecondItem";
 import ThirdItem from "../carousel/ThirdItem";
+import useViewPort from "../../customHooks/useViewPort"
 
 const PrevArrow = (props) => {
   const {onClick } = props;
@@ -19,26 +20,27 @@ const PrevArrow = (props) => {
 const NextArrow = (props) => {
   const {onClick } = props;
   return (
-    <div className="nextArrow arrow"
+    <div className="nextArrow arrow rightArrow"
     onClick={onClick}>
-      <SvgSelector svgName="rightArrow" width="30px" height="30px" colorHEX="#ffffff"/>
+      <SvgSelector svgName="leftArrow" width="30px" height="30px" colorHEX="#ffffff"/>
     </div>
   )
 }
 
 const Carousel = () => {
+  const size = useViewPort()
   const settings = {
     infinite: true,
-    speed: 600,
+    speed: size != "large" ? 400 : 600,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll:1 ,
     prevArrow: <PrevArrow/>,
     nextArrow: <NextArrow/>,
     autoplay: false,
     autoplaySpeed: 5500,
     pauseOnHover: false,
     cssEase: "linear",
-    swipe: false,
+    swipe:  size != "large"  ? true : false,
   };
 
   return (

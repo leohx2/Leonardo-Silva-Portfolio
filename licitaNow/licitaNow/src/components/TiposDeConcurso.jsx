@@ -22,13 +22,9 @@ const TiposDeConcurso = () => {
         titulo={"Concursos de Serviços"} 
         descricao={"Gestão de obra, fiscalização, arquitetura, engenharia, topografia e outros serviços técnicos, tudo com total transparência e controlo."}/>
         <Modalidade svgName={"people"}
-        width={"74px"}
-        height={"74px"}
         titulo={"Concursos de Subcontratação"} 
         descricao={"Gestão de obra, fiscalização, arquitetura, engenharia, topografia e outros serviços técnicos, tudo com total transparência e controlo."}/>
         <Modalidade svgName={"tools"}
-        width={"60px"}
-        height={"60px"}
         titulo={"Outros Concursos"} 
         descricao={"Organize concursos para o aluguer de equipamentos, fornecimento de materiais de construção ou qualquer outra necessidade do setor."}/>
       </div>

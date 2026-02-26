@@ -56,3 +56,28 @@
   background-color: #00680d;
   color: #fafafa;
 }
+
+@media screen and (max-width: 1024px) {
+  .callOut {
+    width: 90%;
+  }
+
+  .callOutContent {
+    width: 85%;
+  }
+
+  .callOutBtns {
+    flex-direction: column;
+  }
+
+  .callOutContent p {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .callOutBtns a {
+    height: 40px;
+    padding: 0 0.4rem;
+    margin-top: 1.5rem;
+  }
+}

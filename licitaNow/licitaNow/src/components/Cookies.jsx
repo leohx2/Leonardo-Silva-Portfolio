@@ -1,9 +1,11 @@
 import './cookies.css'
 import SvgSelector from "../assets/SvgSelector";
 import {useRef} from 'react'
+import useViewPort from '../customHooks/useViewPort';
 
 const Cookies = () => {
   const cookiesRef = useRef(null)
+  const screenSize = useViewPort()
 
   const handleClickCookies = () => {
     if (cookiesRef) cookiesRef.current.classList.remove("activeModal")
@@ -15,7 +17,7 @@ const Cookies = () => {
       <button onClick={handleClickCookies} className='closeBtn'>x</button>
       <div className='cookiesTitle'>
         <h5>Configuração de Cookies</h5>
-        <SvgSelector svgName={"cookie"} width={"24px"} height={"24px"} colorHEX={"#fff"}/>
+        <SvgSelector svgName={"cookie"} width={screenSize === "large" ? '24px': '40px'} height={screenSize === "large" ? '24px': '40px'} colorHEX={"#fff"}/>
       </div>
       <p>Usamos apenas cookies essenciais para o funcionamento do site e não partilhamos dados com terceiros.</p>
       <p>Ao clicar em «Aceitar», autoriza e aceita o tratamento destes dados pela LicitaNow.</p>
@@ -25,7 +27,7 @@ const Cookies = () => {
       </p>
       <div className="cookiesBtn">
         <a className='hoverAction' href='https://licitanow.com/politica_de_privacidade'><span>Saber mais</span></a>
-        <button className='hoverAction' onClick={handleClickCookies}><span>Aceitar e Fechar</span></button>
+        <a className='hoverAction' onClick={handleClickCookies}><span>Aceitar e Fechar</span></a>
       </div>
     </div>
   )

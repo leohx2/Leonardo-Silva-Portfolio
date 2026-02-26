@@ -3,6 +3,10 @@
   scroll-behavior: smooth;
 }
 
+span {
+  font-family: system-ui, sans-serif;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -98,6 +102,10 @@ a {
   column-gap: 2px;
   overflow: hidden;
   width: 25px;
+}
+
+.rightArrow {
+  transform: rotateY(180deg) !important;
 }
 
 .arrowHoverEffect {
@@ -317,4 +325,35 @@ footer {
   column-gap: 2rem;
   display: flex;
   min-width: 500px;
+}
+
+@media screen and (max-width: 1024px) {
+  .sectionStyle {
+    padding: 2rem 1rem 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    width: 80%;
+  }
+  .gridContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 4rem;
+    row-gap: 4rem;
+    width: 80%;
+  }
+  .prrBarra {
+    max-width: 90%;
+  }
+
+  .copyRightLastLinks {
+    min-width: unset;
+    width: 100%;
+  }
 }

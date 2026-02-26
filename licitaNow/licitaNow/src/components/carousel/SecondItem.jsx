@@ -43,7 +43,7 @@ const SecondItem = () => {
   return(
     <section className="deafultContainer" ref={sectionRef}>
       <div className='secondItemBackground backgroundConfig'></div>
-      <div className='carouselContent'>
+      <div className='carouselContent secondItem'>
         <h1>Bucamos Excelência em Todos os Serviços</h1>
         <h2>Com mais de 25 anos de experência no mercado!</h2>
           <a href="https://licitanow.com/como" target='__blank' className='hoverAction'>

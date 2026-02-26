@@ -48,14 +48,10 @@
 }
 
 .cookiesBtn {
+  align-items: center;
   display: flex;
   margin-top: 1rem;
   column-gap: 1rem;
-}
-
-.cookiesBtn button {
-  color: white;
-  padding: 0 2rem;
 }
 
 .closeBtn {
@@ -74,4 +70,37 @@
 
 .closeBtn:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 1024px) {
+  #cookiesModal {
+    padding: 2rem;
+  }
+  .cookiesTitle {
+    align-items: start;
+    width: 80%;
+  }
+
+  .cookiesBtn .hoverAction {
+    font-size: 0.8rem !important;
+  }
+
+  .cookiesBtn {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+  }
+  /* #cookiesModal .cookiesBtn > *:nth-child(1) {
+    width: 40%;
+  }
+  #cookiesModal .cookiesBtn > *:nth-child(2) {
+    width: 60%;
+  } */
+
+  .closeBtn {
+    top: 0;
+    right: 0.5rem;
+  }
 }
