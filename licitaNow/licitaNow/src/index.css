@@ -166,3 +166,155 @@ a {
 .cookieSvg {
   padding: 4px !important;
 }
+
+footer {
+  align-items: center;
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  row-gap: 4rem;
+  width: 80%;
+}
+
+.footerSmallContainers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+}
+
+.footerSmallContainers h5 {
+  color: #f5f3f4;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.footerSmallContainers a {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.footerSmallContainers h5 span {
+  color: #77b600;
+}
+
+.footerSmallContainers p {
+  color: #f5f3f4;
+  font-size: 0.8rem;
+}
+.justifyP {
+  text-align: justify;
+}
+
+.footerLogo {
+  width: 120px;
+}
+
+.socialMediaIcons {
+  display: flex;
+  column-gap: 20px;
+}
+
+.socialMediaIcons a {
+  padding: 3px 6px;
+}
+
+.footerLinkWSvg {
+  align-items: center;
+  column-gap: 5px;
+  display: flex;
+  transition: all 0.4s ease-in-out;
+}
+
+.footerLinkWSvg:hover {
+  color: #a6ff00;
+}
+
+.socialMediaIcons a:hover .iconsFooter,
+.footerLinkWSvg:hover .iconsFooter {
+  fill: #a6ff00;
+}
+
+.footerLinkWSvg:hover .iconsFooterStroke {
+  stroke: #a6ff00;
+}
+
+.paymentOptions {
+  display: flex;
+  column-gap: 20px;
+}
+
+.paymentOptions img {
+  width: 40px;
+}
+
+.prrBarra {
+  max-width: 600px;
+}
+
+.newsletter {
+  align-items: center;
+  display: flex;
+  column-gap: 10px;
+}
+
+.newsletter input {
+  border-radius: 15px;
+  border: 2px solid transparent;
+  padding: 0.3rem 0.5rem;
+}
+
+.newsletter input:focus {
+  outline: none;
+  border-color: #77b600;
+}
+
+.newsletter button {
+  align-items: center;
+  border: none;
+  border-radius: 15px;
+  display: flex;
+  padding: 0.4rem;
+  background-color: #77b600;
+}
+
+.flexContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  row-gap: 1rem;
+  width: 80%;
+}
+
+.flexContainer hr {
+  width: 100%;
+}
+
+.footerCopyRight {
+  color: #f5f3f4;
+  display: flex;
+  column-gap: 3rem;
+  justify-content: center;
+  font-size: 14px !important;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+}
+
+.copyRightLink {
+  color: #e9cd8f;
+}
+
+.copyRightLastLinks {
+  column-gap: 2rem;
+  display: flex;
+  min-width: 500px;
+}
